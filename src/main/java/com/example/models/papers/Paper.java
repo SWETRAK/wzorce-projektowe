@@ -1,15 +1,19 @@
 package com.example.models.papers;
 
+import com.example.models.Author;
+
 import java.util.Date;
+import java.util.List;
 
 public abstract class Paper {
 
     protected String title;
     protected String description;
     protected Date publishedDate;
-    protected String ISDNIdentifier;
+    protected String ISSNIdentifier;
     protected int paperId;
     protected int pages;
+    protected List<Author> authors;
 
     public String getTitle() {
         return title;
@@ -35,12 +39,12 @@ public abstract class Paper {
         this.publishedDate = publishedDate;
     }
 
-    public String getISDNIdentifier() {
-        return ISDNIdentifier;
+    public String getISSNIdentifier() {
+        return ISSNIdentifier;
     }
 
-    public void setISDNIdentifier(String ISDNIdentifier) {
-        this.ISDNIdentifier = ISDNIdentifier;
+    public void setISSNIdentifier(String ISSNIdentifier) {
+        this.ISSNIdentifier = ISSNIdentifier;
     }
 
     public int getPaperId() {
@@ -57,6 +61,14 @@ public abstract class Paper {
 
     public void setPages(int pages) {
         this.pages = pages;
+    }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
     }
 
     // Tydzień 1, Wzorzec prototype, Kamil Pietrak

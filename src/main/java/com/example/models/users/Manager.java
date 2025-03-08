@@ -24,7 +24,7 @@ public class Manager {
         return INSTANCE;
     }
 
-    public void printInfoString() {
+    public void printInfo() {
         System.out.println("Dyrektor: " + getFirstName() + " " + getLastName() + " (" + getEmail() + ")");
     }
 

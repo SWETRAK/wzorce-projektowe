@@ -18,7 +18,7 @@ public class Client {
         this.address = address;
     }
 
-    public void printInfoString() {
+    public void printInfo() {
         System.out.println("Client: " + firstName + " " + lastName + " (" + email + ")");
     }
 

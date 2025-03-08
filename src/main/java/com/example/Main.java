@@ -18,18 +18,18 @@ public class Main {
         System.out.println("System księgarni");
 
         Manager manager = Manager.getInstance();
-        manager.printInfoString();
+        manager.printInfo();
 
         Client client1 = new Client.Builder("Klient", "Pierwszy", "klient.pierwszy@gmail.com")
                 .phoneNumber("123456789")
                 .build();
 
-        client1.printInfoString();
+        client1.printInfo();
 
         Client client2 = new Client.Builder("Klient", "Drugi", "klient.drugi@gmail.com")
                 .build();
 
-        client2.printInfoString();
+        client2.printInfo();
 
         System.out.println("Client 1 phone number: " + client1.getPhoneNumber());
         System.out.println("Client 2 phone number: " + client2.getPhoneNumber());

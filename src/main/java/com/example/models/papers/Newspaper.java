@@ -1,20 +1,31 @@
 package com.example.models.papers;
 
+import com.example.models.Author;
+
 import java.util.Date;
+import java.util.List;
 
 public class Newspaper extends Paper {
 
     public Newspaper(String ISDNIdentifier) {
-        this.ISDNIdentifier = ISDNIdentifier;
+        this.ISSNIdentifier = ISDNIdentifier;
     }
 
-    public Newspaper(String title, String description, Date publishedDate, int paperId, int pages, String ISDNIdentifier) {
+    public Newspaper(
+            String title,
+            String description,
+            Date publishedDate,
+            int paperId,
+            int pages,
+            String ISDNIdentifier,
+            List<Author> authors) {
         this.title = title;
         this.description = description;
         this.publishedDate = publishedDate;
         this.paperId = paperId;
         this.pages = pages;
-        this.ISDNIdentifier = ISDNIdentifier;
+        this.ISSNIdentifier = ISDNIdentifier;
+        this.authors = authors;
     }
 
     @Override
@@ -23,7 +34,7 @@ public class Newspaper extends Paper {
                 "title='" + this.getTitle() + '\'' +
                 ", description='" + this.getDescription() + '\'' +
                 ", publishedDate=" + this.getPublishedDate() +
-                ", ISDNIdentifier='" + this.getISDNIdentifier() + '\'' +
+                ", ISDNIdentifier='" + this.getISSNIdentifier() + '\'' +
                 ", paperId=" + this.getPaperId() +
                 ", pages=" + this.getPages() +
                 '}';
@@ -39,7 +50,8 @@ public class Newspaper extends Paper {
                 (Date) this.getPublishedDate().clone(),
                 this.getPaperId(),
                 this.getPages(),
-                this.getISDNIdentifier());
+                this.getISSNIdentifier(),
+                this.getAuthors());
     }
     // Koniec, Tydzień 1, Wzorzec factory, Kamil Pietrak
 

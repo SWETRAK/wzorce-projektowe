@@ -1,23 +1,35 @@
 package com.example.models.papers;
 
-import java.util.Date;
+import com.example.models.Author;
 
-public class Magazine extends Paper{
+import java.util.Date;
+import java.util.List;
+
+public class Magazine extends Paper {
 
     private int articleNumber;
 
     public Magazine(String ISDNIdentifier) {
-        this.ISDNIdentifier = ISDNIdentifier;
+        this.ISSNIdentifier = ISDNIdentifier;
     }
 
-    public Magazine(String title, String description, Date publishedDate, int paperId, int pages, int articleNumber, String ISDNIdentifier) {
+    public Magazine(
+            String title,
+            String description,
+            Date publishedDate,
+            int paperId,
+            int pages,
+            int articleNumber,
+            String ISSNIdentifier,
+            List<Author> authors) {
         this.title = title;
         this.description = description;
         this.publishedDate = publishedDate;
         this.paperId = paperId;
         this.pages = pages;
         this.articleNumber = articleNumber;
-        this.ISDNIdentifier = ISDNIdentifier;
+        this.ISSNIdentifier = ISSNIdentifier;
+        this.authors = authors;
     }
 
     public int getArticleNumber() {
@@ -34,7 +46,7 @@ public class Magazine extends Paper{
                 "title='" + this.getTitle() + '\'' +
                 ", description='" + this.getDescription() + '\'' +
                 ", publishedDate=" + this.getPublishedDate().toString() +
-                ", ISDNIdentifier='" + this.getISDNIdentifier() + '\'' +
+                ", ISDNIdentifier='" + this.getISSNIdentifier() + '\'' +
                 ", paperId=" + this.getPaperId() +
                 ", pages=" + this.getPages() +
                 ", articleNumber=" + this.getArticleNumber() +
@@ -52,7 +64,8 @@ public class Magazine extends Paper{
                 this.getPaperId(),
                 this.getPages(),
                 this.getArticleNumber(),
-                this.getISDNIdentifier());
+                this.getISSNIdentifier(),
+                this.getAuthors());
     }
     // Koniec, Tydzień 1, Wzorzec factory, Kamil Pietrak
 
