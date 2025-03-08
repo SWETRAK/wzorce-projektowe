@@ -40,10 +40,10 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ### Maciej
 
-- [ ] Builder -> Książki
-- [ ] Singleton -> Serwis fakturowania
-- [ ] Factory -> Filmy
-- [ ] Prototype -> Filmy
+- [x] Builder -> Książki
+- [x] Singleton -> Serwis fakturowania
+- [x] Factory -> Filmy
+- [x] Prototype -> Filmy
 
 ### Kamil
 
