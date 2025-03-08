@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Newspaper extends Paper {
 
-    public Newspaper(String ISDNIdentifier) {
-        this.ISSNIdentifier = ISDNIdentifier;
+    public Newspaper(String ISSNIdentifier) {
+        this.ISSNIdentifier = ISSNIdentifier;
     }
 
     public Newspaper(
@@ -34,7 +34,7 @@ public class Newspaper extends Paper {
                 "title='" + this.getTitle() + '\'' +
                 ", description='" + this.getDescription() + '\'' +
                 ", publishedDate=" + this.getPublishedDate() +
-                ", ISDNIdentifier='" + this.getISSNIdentifier() + '\'' +
+                ", ISSNIdentifier='" + this.getISSNIdentifier() + '\'' +
                 ", paperId=" + this.getPaperId() +
                 ", pages=" + this.getPages() +
                 '}';

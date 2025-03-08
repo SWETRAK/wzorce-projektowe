@@ -9,8 +9,8 @@ public class Magazine extends Paper {
 
     private int articleNumber;
 
-    public Magazine(String ISDNIdentifier) {
-        this.ISSNIdentifier = ISDNIdentifier;
+    public Magazine(String ISSNIdentifier) {
+        this.ISSNIdentifier = ISSNIdentifier;
     }
 
     public Magazine(
@@ -46,7 +46,7 @@ public class Magazine extends Paper {
                 "title='" + this.getTitle() + '\'' +
                 ", description='" + this.getDescription() + '\'' +
                 ", publishedDate=" + this.getPublishedDate().toString() +
-                ", ISDNIdentifier='" + this.getISSNIdentifier() + '\'' +
+                ", ISSNIdentifier='" + this.getISSNIdentifier() + '\'' +
                 ", paperId=" + this.getPaperId() +
                 ", pages=" + this.getPages() +
                 ", articleNumber=" + this.getArticleNumber() +

@@ -5,12 +5,12 @@ package com.example.models.papers;
 // Funkcja create pozwala utworzyć nowy obiekt generycznego typu, a metoda createPaper definiuje sposób tworzenia dla konkretnych typów generycznych
 public abstract class PaperFactory<TPaperType extends Paper> {
 
-    public TPaperType create(String ISDNIdentifier) {
-        TPaperType paper = createPaper(ISDNIdentifier);
+    public TPaperType create(String ISSNIdentifier) {
+        TPaperType paper = createPaper(ISSNIdentifier);
         paper.build();
         return paper;
     }
 
-    protected abstract TPaperType createPaper(String ISDNIdentifier);
+    protected abstract TPaperType createPaper(String ISSNIdentifier);
 }
 // Koniec, Wzorzec factory, Kamil Pietrak

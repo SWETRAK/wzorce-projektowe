@@ -5,8 +5,8 @@ package com.example.models.papers;
 public class MagazineFactory extends PaperFactory<Magazine> {
 
     @Override
-    protected Magazine createPaper(String ISDNIdentifier) {
-        return new Magazine(ISDNIdentifier);
+    protected Magazine createPaper(String ISSNIdentifier) {
+        return new Magazine(ISSNIdentifier);
     }
 }
 // Koniec, Wzorzec factory, Kamil Pietrak
