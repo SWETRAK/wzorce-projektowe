@@ -12,16 +12,17 @@ Projekt w java 17
 
 - Książki -> bardzo duża liczba, kilka informacji obowiązkowych, reszta opcjonalne builder ???
 - Magazyny/Gazety -> Wiele, Możemy factory zrobić tutaj
-- Muzyka -> Płyty CD/ Winyle, pliki MP3 -> Factory
+- Muzyka -> Płyty CD/ Winyle -> Factory
 - Filmy -> DVD/BlueRay -> Factory
 
-Dodatkowo każdy z produktów może być prototypem sam w sobie, bo możemy mieć np 10x książkę o tym samym tytule, ale o
+Dodatkowo każdy z produktów może być prototypem sam w sobie, bo możemy mieć np.: 10x książkę o tym samym tytule, ale o
 innym id, lub inne wydanie.
 
 ## Inne obiekty
 
 - Drukarka -> Może być singletonem, w przyszłości jakaś kolejka czy coś można dodać 
 - Serwis fakturowania -> Może być singletonem, w przyszłości jakaś kolejka czy coś można dodać 
+- Faktura -> Wiele, ale część danych taka sama we wszystkich, wiec można zrobić prototyp 
 
 ## Organizacja pracy
 
@@ -32,21 +33,21 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ### Joanna
 
-- [ ] Builder
-- [ ] Singleton
-- [ ] Factory
-- [ ] Prototype
+- [ ] Builder -> Muzyka 
+- [ ] Singleton -> Drukarka
+- [ ] Factory -> Muzyka
+- [ ] Prototype -> Muzyka
 
 ### Maciej
 
-- [ ] Builder
-- [ ] Singleton
-- [ ] Factory
-- [ ] Prototype
+- [ ] Builder -> Książki
+- [ ] Singleton -> Serwis fakturowania
+- [ ] Factory -> Filmy
+- [ ] Prototype -> Filmy
 
 ### Kamil
 
-- [ ] Builder
-- [ ] Singleton
-- [ ] Factory
-- [ ] Prototype
+- [ ] Builder -> Klienci
+- [ ] Singleton -> Dyrektor
+- [ ] Factory -> Magazyn/Gazety
+- [ ] Prototype -> Magazyn/Gazety
