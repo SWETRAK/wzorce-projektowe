@@ -6,13 +6,16 @@ package com.example.models.albums;
 import com.example.models.Author;
 import com.example.models.enums.AlbumType;
 
+import static com.example.models.enums.AlbumType.CD;
+import static com.example.models.enums.AlbumType.VINYL;
+
 public class AlbumBuilder {
-    private String type;
+    private AlbumType type;
     private String title;
     private Author author;
 
     public AlbumBuilder setType(AlbumType type) {
-        this.type = String.valueOf(type);
+        this.type = type;
         return this;
     }
 
@@ -31,9 +34,9 @@ public class AlbumBuilder {
             throw new IllegalStateException("Brakuje danych do stworzenia albumu!");
         }
 
-        return switch (type.toLowerCase()) {
-            case "cd" -> new CDAlbum(title, author);
-            case "vinyl" -> new VinylAlbum(title, author);
+        return switch (type) {
+            case CD -> new CDAlbum(title, author);
+            case VINYL -> new VinylAlbum(title, author);
             default -> throw new IllegalArgumentException("Nieznany typ albumu: " + type);
         };
     }

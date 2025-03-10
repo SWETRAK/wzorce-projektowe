@@ -55,11 +55,11 @@ public class Main {
             cdAlbum.addSong("Papercut", 3.04);
             cdAlbum.addSong("In The End", 3.36);
             cdAlbum.addSong("Crawling", 3.29);
-            System.out.println("🎵 Dodano utwory do " + cdAlbum);
+            System.out.println("Dodano utwory do " + cdAlbum);
         }
 
         // Odtworzenie CD z piosenkami
-        System.out.println("\n▶ Odtwarzanie CD z piosenkami:");
+        System.out.println("\nOdtwarzanie CD z piosenkami:");
         cd.play();
         System.out.println();
 
@@ -74,7 +74,7 @@ public class Main {
                 .setAuthor(nirvana)
                 .build();
 
-        System.out.println("✅ Album z Buildera: " + builderCd);
+        System.out.println("Album z Buildera: " + builderCd);
         builderCd.play();
         //Koniec Buildera - tydzień 1 - Joanna Kozar
 
