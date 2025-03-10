@@ -1,4 +1,4 @@
-package com.example.models;
+package com.example.models.albums;
 
 
 //tydzień 1, wzorzec Prototype, Joanna Kozar

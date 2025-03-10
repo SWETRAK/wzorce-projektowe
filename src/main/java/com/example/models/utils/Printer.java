@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.example.models.utils;
 
 // Tydzień 1, Wzorzec Singleton, Joanna Kozar
 // Klasa Printer zapewnia istnienie tylko jednej instancji drukarki
@@ -17,12 +17,12 @@ public class Printer {
         return instance;
     }
 
-    public void printInvoice(String albumTitle, String artist) {
+    public void printInvoice(String albumTitle, String artist, double price) {
         System.out.println("\nDrukowanie faktury...");
         System.out.println("----------------------------");
         System.out.println("Album: " + albumTitle);
         System.out.println("Artysta: " + artist);
-        System.out.println("Cena: 49.99 PLN");
+        System.out.println("Cena: " + price + "PLN");
         System.out.println("Faktura wydrukowana!\n");
     }
 }
