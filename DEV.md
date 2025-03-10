@@ -33,10 +33,10 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ### Joanna
 
-- [ ] Builder -> Muzyka 
-- [ ] Singleton -> Drukarka
-- [ ] Factory -> Muzyka
-- [ ] Prototype -> Muzyka
+- [x] Builder -> Muzyka 
+- [x] Singleton -> Drukarka
+- [x] Factory -> Muzyka
+- [x] Prototype -> Muzyka
 
 ### Maciej
 
