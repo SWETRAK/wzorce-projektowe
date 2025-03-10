@@ -37,7 +37,6 @@ public class AlbumBuilder {
         return switch (type) {
             case CD -> new CDAlbum(title, author);
             case VINYL -> new VinylAlbum(title, author);
-            default -> throw new IllegalArgumentException("Nieznany typ albumu: " + type);
         };
     }
 }
