@@ -25,11 +25,11 @@ public class Main {
     public static void main(String[] args) {
         System.out.print("System księgarni");
 
-        // Tworzenie autorów - tydzień 1 - Joanna Kozar
+        // Tworzenie autorów - Tydzień 2 - Joanna Kozar
         Author linkinPark = new Author("Chester", "Bennington");
         Author pinkFloyd = new Author("David", "Gilmour");
 
-        // Factory Method - tydzień 1 - Joanna Kozar
+        // Factory Method - Tydzień 2 - Joanna Kozar
         System.out.println("Tworzenie albumów za pomocą FABRYKI...");
         Album cd = AlbumFactory.createAlbum(AlbumType.CD, "Hybrid Theory", linkinPark);
         Album vinyl = AlbumFactory.createAlbum(AlbumType.VINYL, "Dark Side of the Moon", pinkFloyd);
@@ -40,15 +40,15 @@ public class Main {
         cd.play();
         vinyl.play();
         System.out.println("Odtwarzanie zakończone");
-        //koniec Factory - tydzień 1 - Joanna Kozar
+        // Koniec Factory - Tydzień 2 - Joanna Kozar
 
-        // Prototype - tydzień 1 - Joanna Kozar
+        // Prototype - Tydzień 2 - Joanna Kozar
         System.out.println("Tworzenie kopii albumów...");
         Album copyCd = cd.clone();
         Album copyVinyl = vinyl.clone();
         System.out.println("Klon CD: " + copyCd);
         System.out.println("Klon Winylu: " + copyVinyl + "\n");
-        //koniec Prototype - tydzień 1 - Joanna Kozar
+        // Koniec Prototype - Tydzień 2 - Joanna Kozar
 
         // Dodanie piosenek do CDAlbum
         if (cd instanceof CDAlbum cdAlbum) {
@@ -63,7 +63,7 @@ public class Main {
         cd.play();
         System.out.println();
 
-        //Builder - tydzień 1 - Joanna Kozar
+        // Builder - Tydzień 2 - Joanna Kozar
         System.out.println("Tworzenie albumu za pomocą BUILDERA...");
 
         Author nirvana = new Author("Kurt", "Cobain");
@@ -76,15 +76,15 @@ public class Main {
 
         System.out.println("Album z Buildera: " + builderCd);
         builderCd.play();
-        //Koniec Buildera - tydzień 1 - Joanna Kozar
+        // Koniec Buildera - Tydzień 2 - Joanna Kozar
 
 
 
-        //Singleton - tydzień 1 - Joanna Kozar
+        // Singleton - Tydzień 2 - Joanna Kozar
         System.out.println("Drukowanie faktury...");
         Printer printer = Printer.getInstance();
         printer.printInvoice("Nevermind", "Nirvana", 79.99);
-        //koniec Singletona - tydzień 1 - Joanna Kozar
+        // Koniec Singletona - Tydzień 2 - Joanna Kozar
 
 
         System.out.println("\nWszystkie operacje zakończone!");

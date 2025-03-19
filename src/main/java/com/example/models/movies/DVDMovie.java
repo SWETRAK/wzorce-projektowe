@@ -22,7 +22,7 @@ public class DVDMovie extends Movie{
         this.authors = authors;
     }
 
-    // Tydzień 1, Wzorzec prototype, Maciej Potręć
+    // Tydzień 2, Wzorzec prototype, Maciej Potręć
     // Nadpisanie, implementacja abstrakcyjnej metoda copy służąca do głębokiego kopiowania obiektu DVDMovie
     @Override
     Movie copy() {
@@ -37,7 +37,7 @@ public class DVDMovie extends Movie{
     }
     // Koniec, Wzorzec prototype, Maciej Potręć
 
-    // Tydzień 1, Wzorzec factory, Maciej Potręć
+    // Tydzień 2, Wzorzec factory, Maciej Potręć
     // Nadpisanie metody build, która akurat w tym wypadku wyświetla informacje o budowaniu obiektu DVDMovie
     @Override
     public void build() {

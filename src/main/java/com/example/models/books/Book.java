@@ -38,7 +38,7 @@ public class Book extends BookWithFormat {
         bookFormat.showBookFormat();
     }
 
-    // Tydzień 1, Wzorzec builder, Maciej Potręć
+    // Tydzień 2, Wzorzec builder, Maciej Potręć
     // Implementacja klasy Builder dla klasy Book, wymaga ona, aby użytkownik podał tytuł, opis, listę autorów oraz datę publikacji (pola obowiązkowe)
     // natomiast reszta parametrów jest opcjonalna
     public static class Builder {

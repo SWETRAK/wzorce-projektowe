@@ -2,7 +2,7 @@ package com.example.services.delivery;
 
 import com.example.services.external.InPostDeliveryService;
 
-// Tydzień 2, Wzorzec Adapter, Kamil Pietrak
+// Tydzień 3, Wzorzec Adapter, Kamil Pietrak
 // Klasa adaptera dla wysyłek InPost korzystająca z "zewnętrznego serwisu". Dostosowuje "zewnętrzną" bibliotekę do designu systemu
 public class InPostServiceAdapter implements DeliveryService{
 
@@ -18,4 +18,4 @@ public class InPostServiceAdapter implements DeliveryService{
         inPostDeliveryService.getStatus(orderId);
     }
 }
-// Koniec, Tydzień 2, Wzorzec Adapter, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Adapter, Kamil Pietrak

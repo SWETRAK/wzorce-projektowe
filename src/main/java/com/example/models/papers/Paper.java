@@ -19,13 +19,13 @@ public abstract class Paper {
     protected int pages;
     protected List<Author> authors;
 
-    // Tydzień 1, Wzorzec prototype, Kamil Pietrak
+    // Tydzień 2, Wzorzec prototype, Kamil Pietrak
     // Abstrakcyjna metoda copy służąca do głębokiego kopiowania obiektów
     abstract Paper copy();
-    // Koniec, Tydzień 1, Wzorzec prototype, Kamil Pietrak
+    // Koniec, Tydzień 2, Wzorzec prototype, Kamil Pietrak
 
-    // Tydzień 1, Wzorzec factory, Kamil Pietrak
+    // Tydzień 2, Wzorzec factory, Kamil Pietrak
     // Abstrakcyjna metoda build służąca do budowania obiektu podczas procesu zachodzącego w fabryce, np. pobieranie informacji z bazy danych itp
     abstract void build();
-    // Koniec, Tydzień 1, Wzorzec factory, Kamil Pietrak
+    // Koniec, Tydzień 2, Wzorzec factory, Kamil Pietrak
 }

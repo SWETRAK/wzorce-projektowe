@@ -2,7 +2,7 @@ package com.example.services.display;
 
 import com.example.models.books.Book;
 
-// Tydzień 2, Wzorzec Decorator, Kamil Pietrak
+// Tydzień 3, Wzorzec Decorator, Kamil Pietrak
 // Podstawowy dekorator wyświetlając tylko podstawowe informacje
 public class SimpleBookDisplay implements BookDisplay {
 
@@ -17,4 +17,4 @@ public class SimpleBookDisplay implements BookDisplay {
         System.out.print("Default Book Info: " + book.getTitle() + " " + book.getGenre());
     }
 }
-// Kociec, Tydzień 2, Wzorzec Decorator, Kamil Pietrak
+// Kociec, Tydzień 3, Wzorzec Decorator, Kamil Pietrak

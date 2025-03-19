@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 
-// Tydzień 1, Wzorzec factory, Maciej Potręć
+// Tydzień 2, Wzorzec factory, Maciej Potręć
 // Klasa factory dla typu BlueRayMovie, która dziedziczy po abstrakcyjnej klasie generycznej, do której został przekazany typ BlueRayMovie
 public class BlueRayMovieFactory extends MovieFactory<BlueRayMovie> {
     @Override

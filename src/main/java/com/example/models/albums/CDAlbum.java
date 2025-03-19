@@ -5,7 +5,7 @@ import com.example.models.Song;
 import java.util.ArrayList;
 import java.util.List;
 
-// Tydzień 1, Wzorzec Prototype, Joanna Kozar
+// Tydzień 2, Wzorzec Prototype, Joanna Kozar
 // klasa CDAlbum implementuje interfejs Album i reprezentuje album muzyczny w formacie CD
 
 public class CDAlbum implements Album {
@@ -43,4 +43,4 @@ public class CDAlbum implements Album {
         return "CDAlbum{" + "title='" + title + '\'' + ", artist='" + author + '\'' + ", tracklist=" + tracklist + '}';
     }
 }
-// tydzień 1 koniec wzorca Prototype, Joanna Kozar
+// Tydzień 2 Koniec wzorca Prototype, Joanna Kozar

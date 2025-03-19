@@ -1,7 +1,7 @@
 package com.example.models;
 
 
-//tydzień 1, klasa Song, Joanna Kozar
+//Tydzień 2, klasa Song, Joanna Kozar
 //klasa Song reprezentuje pojedynczą piosenkę w albumie
 public class Song {
     private String title;

@@ -25,7 +25,7 @@ public class Client {
         System.out.println("Client: " + firstName + " " + lastName + " (" + email + ")");
     }
 
-    // Tydzień 1, Wzorzec builder, Kamil Pietrak
+    // Tydzień 2, Wzorzec builder, Kamil Pietrak
     // Implementacja klasy Builder dla klasy Client, wymaga ona, aby użytkownik podał imię, nazwisko, email (pola obowiązkowe)
     // natomiast reszta parametrów jest opcjonalna
     public static class Builder {
@@ -62,5 +62,5 @@ public class Client {
             return new Client(firstName, lastName, email, paymentMethod, phoneNumber, address);
         }
     }
-    // Koniec, Tydzień 1, Wzorzec builder, Kamil Pietrak
+    // Koniec, Tydzień 2, Wzorzec builder, Kamil Pietrak
 }

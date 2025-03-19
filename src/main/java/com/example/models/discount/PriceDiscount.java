@@ -1,6 +1,6 @@
 package com.example.models.discount;
 
-// Tydzień 2, Wzorzec Composite, Kamil Pietrak
+// Tydzień 3, Wzorzec Composite, Kamil Pietrak
 // Interfejs reprezentujący zniżkę
 public interface PriceDiscount {
 
@@ -8,4 +8,4 @@ public interface PriceDiscount {
 
     double getSalePrice();
 }
-// Konic, Tydzień 2, Wzorzec Composite, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Composite, Kamil Pietrak

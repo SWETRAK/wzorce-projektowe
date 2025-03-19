@@ -1,6 +1,6 @@
 package com.example.models.albums;
 
-// Tydzień 1, Wzorzec Builder, Joanna Kozar
+// Tydzień 2, Wzorzec Builder, Joanna Kozar
 // Klasa AlbumBuilder umożliwia stopniowe tworzenie obiektów Album
 
 import com.example.models.Author;
@@ -41,4 +41,4 @@ public class AlbumBuilder {
     }
 }
 
-// tydzień 1, koniec wzorca Builder, Joanna Kozar
+// Tydzień 2, Koniec wzorca Builder, Joanna Kozar

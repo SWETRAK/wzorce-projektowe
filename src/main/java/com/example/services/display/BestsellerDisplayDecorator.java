@@ -1,6 +1,6 @@
 package com.example.services.display;
 
-// Tydzień 2, Wzorzec Decorator, Kamil Pietrak
+// Tydzień 3, Wzorzec Decorator, Kamil Pietrak
 // Klasa dekoratora dodająca info o fakcie że książka jest bestselerem
 public class BestsellerDisplayDecorator extends BookDisplayDecorator {
 
@@ -14,4 +14,4 @@ public class BestsellerDisplayDecorator extends BookDisplayDecorator {
         bookDisplay.showBookInfo();
     }
 }
-// Koniec, Tydzień 2, Wzorzec Decorator, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Decorator, Kamil Pietrak

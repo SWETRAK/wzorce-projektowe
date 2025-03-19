@@ -1,6 +1,6 @@
 package com.example.models.utils;
 
-// Tydzień 1, Wzorzec Singleton, Joanna Kozar
+// Tydzień 2, Wzorzec Singleton, Joanna Kozar
 // Klasa Printer zapewnia istnienie tylko jednej instancji drukarki
 
 public class Printer {
@@ -27,4 +27,4 @@ public class Printer {
     }
 }
 
-// tydzień 1, koniec wzorca Singleton, Joanna Kozar
+// Tydzień 2, Koniec wzorca Singleton, Joanna Kozar

@@ -1,6 +1,6 @@
 package com.example.models.discount;
 
-// Tydzień 2, Wzorzec Composite, Kamil Pietrak
+// Tydzień 3, Wzorzec Composite, Kamil Pietrak
 // Klasa implementująca pojedynczą zniżkę
 public class SingleDiscount implements PriceDiscount {
 
@@ -22,4 +22,4 @@ public class SingleDiscount implements PriceDiscount {
         return salePrice;
     }
 }
-// Konic, Tydzień 2, Wzorzec Composite, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Composite, Kamil Pietrak

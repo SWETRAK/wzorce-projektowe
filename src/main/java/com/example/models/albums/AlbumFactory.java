@@ -2,7 +2,7 @@ package com.example.models.albums;
 import com.example.models.Author;
 import com.example.models.enums.AlbumType;
 
-// Tydzień 1, wzorzec Factory Method, Joanna Kozar
+// Tydzień 2, wzorzec Factory Method, Joanna Kozar
 // klasa Album Factory odpowiada za tworzenie obiektów Album na podstawie podanego typu
 
 public class AlbumFactory {
@@ -14,4 +14,4 @@ public class AlbumFactory {
         };
     }
 }
-// tydzień 1, koniec wzorca Factory Method, Joanna Kozar
+// Tydzień 2, Koniec wzorca Factory Method, Joanna Kozar

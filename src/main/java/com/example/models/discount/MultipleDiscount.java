@@ -3,7 +3,7 @@ package com.example.models.discount;
 import java.util.ArrayList;
 import java.util.List;
 
-// Tydzień 2, Wzorzec Composite, Kamil Pietrak
+// Tydzień 3, Wzorzec Composite, Kamil Pietrak
 // Klasa reprezentujac wiele zniżek, gdy pobieramy cenę po zniżce liczona jest średnia
 public class MultipleDiscount implements PriceDiscount {
 
@@ -34,4 +34,4 @@ public class MultipleDiscount implements PriceDiscount {
         return salePrice / count;
     }
 }
-// Konic, Tydzień 2, Wzorzec Composite, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Composite, Kamil Pietrak

@@ -1,6 +1,6 @@
 package com.example.models.albums;
 
-// Tydzień 1, Wzorzec Prototype, Joanna Kozar
+// Tydzień 2, Wzorzec Prototype, Joanna Kozar
 // Klasa VinylAlbum implemntuje interfejs Album i reprezentuje album muzyczny w winylu
 
 import com.example.models.Author;
@@ -29,4 +29,4 @@ public class VinylAlbum implements Album {
         return "VinylAlbum{" + "title='" + title + '\'' + ", artist='" + author + '\'' + '}';
     }
 }
-// tydzień 1, koniec wzorca Prototype, Joanna Kozar
+// Tydzień 2, Koniec wzorca Prototype, Joanna Kozar

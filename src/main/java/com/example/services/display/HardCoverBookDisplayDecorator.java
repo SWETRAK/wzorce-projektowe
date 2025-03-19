@@ -1,6 +1,6 @@
 package com.example.services.display;
 
-// Tydzień 2, Wzorzec Decorator, Kamil Pietrak
+// Tydzień 3, Wzorzec Decorator, Kamil Pietrak
 // Klasa dekoratora dodająca info o fakcie że książka jest w twardej okładce
 public class HardCoverBookDisplayDecorator extends BookDisplayDecorator {
 
@@ -14,4 +14,4 @@ public class HardCoverBookDisplayDecorator extends BookDisplayDecorator {
         System.out.println(" - Hard Cover Book");
     }
 }
-// Koniec, Tydzień 2, Wzorzec Decorator, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Decorator, Kamil Pietrak

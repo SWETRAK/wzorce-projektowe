@@ -1,6 +1,6 @@
 package com.example.models.books;
 
-// Tydzień 2, Wzorzec Bridge, Kamil Pietrak
+// Tydzień 3, Wzorzec Bridge, Kamil Pietrak
 // Klasa reprezentująca AudioBook jako format książki
 public class AudioBook implements BookFormat{
 
@@ -9,4 +9,4 @@ public class AudioBook implements BookFormat{
         System.out.println("This book is a Ebook");
     }
 }
-// Koniec, Tydzień 2, Wzorzec Bridge, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Bridge, Kamil Pietrak

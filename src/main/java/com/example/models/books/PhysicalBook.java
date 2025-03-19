@@ -1,6 +1,6 @@
 package com.example.models.books;
 
-// Tydzień 2, Wzorzec Bridge, Kamil Pietrak
+// Tydzień 3, Wzorzec Bridge, Kamil Pietrak
 // Klasa reprezentująca fizyczną książkę jako format książki
 public class PhysicalBook implements BookFormat {
     @Override
@@ -8,4 +8,4 @@ public class PhysicalBook implements BookFormat {
         System.out.println("This book is a PhysicalBook");
     }
 }
-// Koniec, Tydzień 2, Wzorzec Bridge, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Bridge, Kamil Pietrak

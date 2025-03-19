@@ -1,6 +1,6 @@
 package com.example.services.external;
 
-// Tydzień 2, Wzorzec Adapter, Kamil Pietrak
+// Tydzień 3, Wzorzec Adapter, Kamil Pietrak
 // "Zewnetrzny" dostawca usług InPost
 public class InPostDeliveryService {
     public void deliver(String orderId) {
@@ -11,4 +11,4 @@ public class InPostDeliveryService {
         System.out.println("Getting order status via InPost service: " + orderId);
     }
 }
-// Koniec, Tydzień 2, Wzorzec Adapter, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Adapter, Kamil Pietrak

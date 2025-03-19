@@ -1,6 +1,6 @@
 package com.example.services.external;
 
-// Tydzień 2, Wzorzec Adapter, Kamil Pietrak
+// Tydzień 3, Wzorzec Adapter, Kamil Pietrak
 // "Zewnetrzny" dostawca usług DHL
 public class DHLDeliveryService {
 
@@ -12,4 +12,4 @@ public class DHLDeliveryService {
         System.out.println("Getting order via DHL service: " + orderId);
     }
 }
-// Koniec, Tydzień 2, Wzorzec Adapter, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Adapter, Kamil Pietrak

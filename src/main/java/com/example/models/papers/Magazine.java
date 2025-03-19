@@ -49,7 +49,7 @@ public class Magazine extends Paper {
                 '}';
     }
 
-    // Tydzień 1, Wzorzec prototype, Kamil Pietrak
+    // Tydzień 2, Wzorzec prototype, Kamil Pietrak
     // Nadpisanie, implementacja abstrakcyjnej metoda copy służąca do głębokiego kopiowania obiektu Magazine
     @Override
     public Paper copy() {
@@ -63,13 +63,13 @@ public class Magazine extends Paper {
                 this.getISSNIdentifier(),
                 this.getAuthors());
     }
-    // Koniec, Tydzień 1, Wzorzec factory, Kamil Pietrak
+    // Koniec, Tydzień 2, Wzorzec factory, Kamil Pietrak
 
-    // Tydzień 1, Wzorzec factory, Kamil Pietrak
+    // Tydzień 2, Wzorzec factory, Kamil Pietrak
     // Nadpisanie, implementacja metoda build służąca do budowania obiektu podczas procesu zachodzącego w fabryce, np. pobieranie informacji z bazy danych itp
     @Override
     public void build() {
         System.out.println("Getting magazine data from ISDN catalogue");
     }
-    // Koniec, Tydzień 1, Wzorzec factory, Kamil Pietrak
+    // Koniec, Tydzień 2, Wzorzec factory, Kamil Pietrak
 }

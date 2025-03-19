@@ -1,6 +1,6 @@
 package com.example.models.books;
 
-// Tydzień 2, Wzorzec Bridge, Kamil Pietrak
+// Tydzień 3, Wzorzec Bridge, Kamil Pietrak
 // Klasa abstrakcyjna zawierająca format książki
 public abstract class BookWithFormat {
 
@@ -12,4 +12,4 @@ public abstract class BookWithFormat {
 
     abstract void showBookInfo();
 }
-// Koniec, Tydzień 2, Wzorzec Bridge, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Bridge, Kamil Pietrak

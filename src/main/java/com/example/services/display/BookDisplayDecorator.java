@@ -1,6 +1,6 @@
 package com.example.services.display;
 
-// Tydzień 2, Wzorzec Decorator, Kamil Pietrak
+// Tydzień 3, Wzorzec Decorator, Kamil Pietrak
 // Klasa abstrakcyjna dekoratora, która zawiera pole przechowujące dekoratora
 public abstract class BookDisplayDecorator implements BookDisplay{
 
@@ -15,4 +15,4 @@ public abstract class BookDisplayDecorator implements BookDisplay{
         bookDisplay.showBookInfo();
     }
 }
-// Koniec, Tydzień 2, Wzorzec Decorator, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Decorator, Kamil Pietrak

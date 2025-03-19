@@ -2,7 +2,7 @@ package com.example.services.delivery;
 
 import com.example.services.external.DHLDeliveryService;
 
-// Tydzień 2, Wzorzec Adapter, Kamil Pietrak
+// Tydzień 3, Wzorzec Adapter, Kamil Pietrak
 // Klasa adaptera dla wysyłek DHL korzystająca z "zewnętrznego serwisu". Dostosowuje "zewnętrzną" bibliotekę do designu systemu
 public class DHLServiceAdapter implements DeliveryService {
 
@@ -19,4 +19,4 @@ public class DHLServiceAdapter implements DeliveryService {
     }
 }
 
-// Koniec, Tydzień 2, Wzorzec Adapter, Kamil Pietrak
+// Koniec, Tydzień 3, Wzorzec Adapter, Kamil Pietrak

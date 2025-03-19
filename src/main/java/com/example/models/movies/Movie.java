@@ -19,14 +19,14 @@ public abstract class Movie {
         protected String genre;
         protected List<Author> authors;
 
-        // Tydzień 1, Wzorzec prototype, Maciej Potręć
+        // Tydzień 2, Wzorzec prototype, Maciej Potręć
         // Metoda copy kopiuje obiekt Movie
         abstract Movie copy();
-        // Koniec, Tydzień 1, Wzorzec prototype, Maciej Potręć
+        // Koniec, Tydzień 2, Wzorzec prototype, Maciej Potręć
 
 
-        // Tydzień 1, Wzorzec factory, Maciej Potręć
+        // Tydzień 2, Wzorzec factory, Maciej Potręć
         // Metoda build buduje obiekt Movie (w klasach dziedziczących)
         abstract void build();
-        // Koniec, Tydzień 1, Wzorzec factory, Maciej Potręć
+        // Koniec, Tydzień 2, Wzorzec factory, Maciej Potręć
 }
