@@ -9,7 +9,8 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Book {
+public class Book extends BookWithFormat {
+
     private final String title;
     private final String description;
     private final List<Author> authors;
@@ -19,7 +20,8 @@ public class Book {
     private final int pages;
     private final String ISBNIdentifier;
 
-    public Book(String title, String description, List<Author> authors, Date publishedDate, String genre, String publisher, int pages, String ISBNIdentifier) {
+    public Book(String title, String description, List<Author> authors, Date publishedDate, String genre, String publisher, int pages, String ISBNIdentifier, BookFormat bookFormat) {
+        super(bookFormat);
         this.title = title;
         this.description = description;
         this.authors = authors;
@@ -28,6 +30,12 @@ public class Book {
         this.publisher = publisher;
         this.pages = pages;
         this.ISBNIdentifier = ISBNIdentifier;
+    }
+
+    @Override
+    public void showBookInfo() {
+        System.out.println("Book: " + title + " - " + description );
+        bookFormat.showBookFormat();
     }
 
     // Tydzień 1, Wzorzec builder, Maciej Potręć
@@ -42,12 +50,14 @@ public class Book {
         private String publisher;
         private int pages;
         private String ISBNIdentifier;
+        private final BookFormat bookFormat;
 
-        public Builder(String title, String description, List<Author> authors, Date publishedDate) {
+        public Builder(String title, String description, List<Author> authors, Date publishedDate, BookFormat bookFormat) {
             this.title = title;
             this.description = description;
             this.authors = authors;
             this.publishedDate = publishedDate;
+            this.bookFormat = bookFormat;
         }
 
         public Builder genre(String genre) {
@@ -71,8 +81,7 @@ public class Book {
         }
 
         public Book build() {
-            return new Book(title, description, authors, publishedDate, genre, publisher, pages, ISBNIdentifier);
+            return new Book(title, description, authors, publishedDate, genre, publisher, pages, ISBNIdentifier, bookFormat);
         }
     }
-
 }

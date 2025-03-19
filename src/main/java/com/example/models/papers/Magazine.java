@@ -1,12 +1,16 @@
 package com.example.models.papers;
 
 import com.example.models.Author;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
 
+@Getter
 public class Magazine extends Paper {
 
+    @Setter
     private int articleNumber;
 
     public Magazine(String ISSNIdentifier) {
@@ -30,14 +34,6 @@ public class Magazine extends Paper {
         this.articleNumber = articleNumber;
         this.ISSNIdentifier = ISSNIdentifier;
         this.authors = authors;
-    }
-
-    public int getArticleNumber() {
-        return articleNumber;
-    }
-
-    public void setArticleNumber(int articleNumber) {
-        this.articleNumber = articleNumber;
     }
 
     @Override

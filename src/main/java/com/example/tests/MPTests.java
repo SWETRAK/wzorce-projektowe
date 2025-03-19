@@ -1,7 +1,9 @@
 package com.example.tests;
 
 import com.example.models.Author;
+import com.example.models.books.AudioBook;
 import com.example.models.books.Book;
+import com.example.models.books.Ebook;
 import com.example.models.movies.BlueRayMovie;
 import com.example.models.movies.BlueRayMovieFactory;
 import com.example.models.movies.DVDMovie;
@@ -23,14 +25,14 @@ public class MPTests {
         Author author1 = new Author("Andrzej", "Sapkowski");
         Author author2 = new Author("John Ronald Reuel", "Tolkien");
 
-        Book book1 = new Book.Builder("The Last Wish", "Desc", Collections.singletonList(author1), new Date())
+        Book book1 = new Book.Builder("The Last Wish", "Desc", Collections.singletonList(author1), new Date(), new Ebook())
                 .ISBNIdentifier("0316333522")
                 .genre("Fantasy")
                 .publisher("SuperNowa")
                 .pages(288)
                 .build();
 
-        Book book2 = new Book.Builder("The Hobbit", "Desc", Collections.singletonList(author2), new Date())
+        Book book2 = new Book.Builder("The Hobbit", "Desc", Collections.singletonList(author2), new Date(), new AudioBook())
                 .ISBNIdentifier("054792822X")
                 .genre("Fantasy")
                 .publisher("George Allen & Unwin")

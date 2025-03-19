@@ -1,10 +1,14 @@
 package com.example.models.papers;
 
 import com.example.models.Author;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
 
+@Getter
+@Setter
 public class Newspaper extends Paper {
 
     public Newspaper(String ISSNIdentifier) {

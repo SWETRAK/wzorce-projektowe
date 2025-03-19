@@ -29,7 +29,11 @@ innym id, lub inne wydanie.
 Działamy na Feature Branch, gdy zaimplementujemy swoją część robimy PR na GH i po approve od innych robimy merge do
 develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
-## Tydzień 1
+
+## Opcje na
+
+
+## Tydzień 2
 
 ### Joanna
 
@@ -51,3 +55,24 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 - [x] Singleton -> Dyrektor
 - [x] Factory -> Magazyn/Gazety
 - [x] Prototype -> Magazyn/Gazety
+
+## Tydzień 3
+
+
+### Joanna  
+- [ ] **Adapter** → System płatności  
+- [ ] **Composite** → System kategorii książek  
+- [ ] **Bridge** → Mechanizm rekomendacji  
+- [ ] **Decorator** → System recenzji  
+
+### Maciej  
+- [ ] **Adapter** → Zewnętrzny dostawca książek  
+- [ ] **Composite** → Koszyk zakupowy  
+- [ ] **Bridge** → System powiadomień  
+- [ ] **Decorator** → System zamówień  
+
+### Kamil  
+- [x] **Adapter** → System dostaw  
+- [x] **Composite** → System rabatów  
+- [x] **Bridge** → Obsługa wersji książek  
+- [x] **Decorator** → Personalizacja wyświetlania książek  
