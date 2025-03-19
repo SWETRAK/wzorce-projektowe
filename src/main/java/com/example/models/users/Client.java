@@ -1,5 +1,8 @@
 package com.example.models.users;
 
+import lombok.Getter;
+
+@Getter
 public class Client {
 
     private final String firstName;
@@ -20,30 +23,6 @@ public class Client {
 
     public void printInfo() {
         System.out.println("Client: " + firstName + " " + lastName + " (" + email + ")");
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPaymentMethod() {
-        return paymentMethod;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getAddress() {
-        return address;
     }
 
     // Tydzień 1, Wzorzec builder, Kamil Pietrak
