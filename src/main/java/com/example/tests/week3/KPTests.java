@@ -1,4 +1,4 @@
-package com.example.tests;
+package com.example.tests.week3;
 
 import com.example.models.Author;
 import com.example.models.books.AudioBook;

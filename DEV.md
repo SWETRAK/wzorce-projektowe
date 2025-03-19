@@ -66,10 +66,10 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 - [ ] **Decorator** → System recenzji  
 
 ### Maciej  
-- [ ] **Adapter** → Zewnętrzny dostawca książek  
-- [ ] **Composite** → Koszyk zakupowy  
-- [ ] **Bridge** → System powiadomień  
-- [ ] **Decorator** → System zamówień  
+- [x] **Adapter** → Zewnętrzny dostawca książek  
+- [x] **Composite** → Koszyk zakupowy  
+- [x] **Bridge** → System powiadomień  
+- [x] **Decorator** → System zamówień  
 
 ### Kamil  
 - [x] **Adapter** → System dostaw  
