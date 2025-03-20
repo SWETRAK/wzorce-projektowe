@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Book extends BookWithFormat {
+public class Book extends BookWithFormat implements BookComponent {
 
     private final String title;
     private final String description;
@@ -36,6 +36,13 @@ public class Book extends BookWithFormat {
     public void showBookInfo() {
         System.out.println("Book: " + title + " - " + description );
         bookFormat.showBookFormat();
+    }
+
+
+    //Asia
+    @Override
+    public void displayBookTitle() {
+        System.out.println("BookTitle: " + title);
     }
 
     // Tydzień 2, Wzorzec builder, Maciej Potręć
