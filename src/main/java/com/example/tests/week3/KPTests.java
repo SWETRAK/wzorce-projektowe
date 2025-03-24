@@ -55,7 +55,7 @@ public class KPTests {
                 .build();
 
         ebook.showBookInfo();
-        ebook.showBookInfo();
+        audiobook.showBookInfo();
 
         // Decorator
         BookDisplay simplaeBookDisplay = new SimpleBookDisplay(audiobook);
