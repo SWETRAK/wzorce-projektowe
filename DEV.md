@@ -82,13 +82,13 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 
 ### **Joanna**  
-- [ ] **Facade** → Obsługa zamówienia (zarządzanie płatnością, wysyłką i fakturą przez jeden interfejs)  
+- [ ] **Facade** → System rekomendacji (ukrywanie złożoności algorytmów rekomendacji)
 - [ ] **Proxy** → Zdalny dostęp do API wydawnictwa (ograniczanie liczby zapytań)  
 - [ ] **Flyweight** → Optymalizacja przechowywania danych o autorach książek (wielokrotne użycie tych samych obiektów)  
 
 
 ### **Maciej**  
-- [ ] **Facade** → System rekomendacji (ukrywanie złożoności algorytmów rekomendacji)  
+- [ ] **Facade** → Obsługa zamówienia (zarządzanie płatnością, wysyłką i fakturą przez jeden interfejs)
 - [ ] **Proxy** → Ochrona dostępu do systemu rabatów (np. limitowane oferty dla wybranych klientów)  
 - [ ] **Flyweight** → Przechowywanie danych o recenzjach użytkowników (często powtarzające się oceny, tagi)  
 
