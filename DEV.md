@@ -60,10 +60,10 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 
 ### Joanna  
-- [ ] **Adapter** → System płatności  
-- [ ] **Composite** → System kategorii książek  
-- [ ] **Bridge** → Mechanizm rekomendacji  
-- [ ] **Decorator** → System recenzji  
+- [x] **Adapter** → System płatności  
+- [x] **Composite** → System kategorii książek  
+- [x] **Bridge** → Mechanizm rekomendacji  
+- [x] **Decorator** → System recenzji  
 
 ### Maciej  
 - [x] **Adapter** → Zewnętrzny dostawca książek  
@@ -76,3 +76,24 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 - [x] **Composite** → System rabatów  
 - [x] **Bridge** → Obsługa wersji książek  
 - [x] **Decorator** → Personalizacja wyświetlania książek  
+
+
+## Tydzień 4
+
+
+### **Joanna**  
+- [ ] **Facade** → System rekomendacji (ukrywanie złożoności algorytmów rekomendacji)
+- [ ] **Proxy** → Zdalny dostęp do API wydawnictwa (ograniczanie liczby zapytań)  
+- [ ] **Flyweight** → Optymalizacja przechowywania danych o autorach książek (wielokrotne użycie tych samych obiektów)  
+
+
+### **Maciej**  
+- [ ] **Facade** → Obsługa zamówienia (zarządzanie płatnością, wysyłką i fakturą przez jeden interfejs)
+- [ ] **Proxy** → Ochrona dostępu do systemu rabatów (np. limitowane oferty dla wybranych klientów)  
+- [ ] **Flyweight** → Przechowywanie danych o recenzjach użytkowników (często powtarzające się oceny, tagi)  
+
+
+### **Kamil**  
+- [ ] **Facade** → Zarządzanie kontem użytkownika (zmiana danych, historia zakupów, zapisane książki)  
+- [ ] **Proxy** → Buforowanie wyników wyszukiwania książek (zmniejszenie obciążenia bazy danych)  
+- [ ] **Flyweight** → Przechowywanie informacji o dostawach (kurier, statusy przesyłek)  

@@ -6,7 +6,7 @@ public class AudioBook implements BookFormat{
 
     @Override
     public void showBookFormat() {
-        System.out.println("This book is a Ebook");
+        System.out.println("This book is a Audiobook");
     }
 }
 // Koniec, Tydzień 3, Wzorzec Bridge, Kamil Pietrak
