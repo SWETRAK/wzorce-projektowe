@@ -1,6 +1,5 @@
 package com.example.services.delivery;
 
-
 // Tydzień 3, Wzorzec Adapter, Kamil Pietrak
 // Interfejs reprezentujący funkcjonalności wysyłek paczek
 public interface DeliveryService {
