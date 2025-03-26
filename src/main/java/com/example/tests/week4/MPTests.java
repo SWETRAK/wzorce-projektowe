@@ -15,6 +15,9 @@ import com.example.services.order.facade.OrderFacade;
 import com.example.services.payment.PayPalAdapter;
 import com.example.services.payment.PayPalPayment;
 import com.example.services.payment.PaymentProcessor;
+import com.example.services.review.flyweight.RatingFactory;
+import com.example.services.review.flyweight.ReviewTagFactory;
+import com.example.services.review.flyweight.UserReview;
 
 import java.util.Collections;
 import java.util.Date;
@@ -25,6 +28,7 @@ public class MPTests {
     public static void main(String[] args) {
         testFacade();
         testProxy();
+        testFlyweight();
     }
 
     private static void testFacade() {
@@ -121,5 +125,85 @@ public class MPTests {
         System.out.println("\nTesting caching - Premium client using PREMIUM20 again (should be cached):");
         double cachedPremiumPrice = proxyService.applyDiscount(premiumClient, originalPrice, "PREMIUM20");
         System.out.println("Original price: $" + originalPrice + ", After discount: $" + cachedPremiumPrice);
+    }
+
+    private static void testFlyweight() {
+        System.out.println("\n--- Flyweight Pattern Test ---");
+
+        Client regularClient1 = new Client.Builder("Klient", "Zwykły", "klient.zwykly@gmail.com")
+                .phoneNumber("123456789")
+                .build();
+
+        Client regularClient2 = new Client.Builder("Klient", "Zwykły", "klient.zwykly@gmail.com")
+                .phoneNumber("123456789")
+                .build();
+
+        Client regularClient3 = new Client.Builder("Klient", "Zwykły", "klient.zwykly@gmail.com")
+                .phoneNumber("123456789")
+                .build();
+
+        Client regularClient4 = new Client.Builder("Klient", "Zwykły", "klient.zwykly@gmail.com")
+                .phoneNumber("123456789")
+                .build();
+
+        // Create multiple reviews with the same ratings to demonstrate reuse
+        System.out.println("Creating reviews with flyweight objects...");
+        UserReview review1 = new UserReview("Great book!", 5, regularClient1);
+        UserReview review2 = new UserReview("Decent read", 3, regularClient2);
+        UserReview review3 = new UserReview("Loved it", 5, regularClient3);
+        UserReview review4 = new UserReview("Not bad", 3, regularClient4);
+
+        // Add common tags to demonstrate tag reuse
+        review1.addTag("fiction");
+        review1.addTag("thriller");
+
+        review2.addTag("fiction");
+        review2.addTag("slow-paced");
+
+        review3.addTag("fiction");
+        review3.addTag("thriller");
+        review3.addTag("page-turner");
+
+        review4.addTag("fiction");
+        review4.addTag("slow-paced");
+
+        // Demonstrate memory usage
+        System.out.println("\nMemory usage with Flyweight pattern:");
+        System.out.println("Number of unique Rating objects: " + RatingFactory.getRatingCount());
+        System.out.println("Number of Rating references in reviews: 4");
+
+        System.out.println("\nNumber of unique ReviewTag objects: " + ReviewTagFactory.getTagCount());
+
+        // Count total tag references
+        int totalTagReferences = review1.getTags().size() +
+                              review2.getTags().size() +
+                              review3.getTags().size() +
+                              review4.getTags().size();
+        System.out.println("Number of ReviewTag references in reviews: " + totalTagReferences);
+
+        // Demonstrate object identity (same objects are reused)
+        System.out.println("\nDemonstrating object reuse:");
+        System.out.println("review1 and review3 have same 5-star rating object: " +
+                        (review1.getRating() == review3.getRating()));
+        System.out.println("review2 and review4 have same 3-star rating object: " +
+                        (review2.getRating() == review4.getRating()));
+
+        // Show that the same tag objects are reused
+        System.out.println("\nTag 'fiction' is shared across reviews:");
+        System.out.println("review1 and review2 share the same 'fiction' tag object: " +
+                        (review1.getTags().get(0) == review2.getTags().get(0)));
+
+        // Demonstrate memory savings
+        System.out.println("\nWithout flyweight, we would need:");
+        System.out.println("- 4 separate Rating objects instead of " + RatingFactory.getRatingCount());
+        System.out.println("- " + totalTagReferences + " separate ReviewTag objects instead of " +
+                        ReviewTagFactory.getTagCount());
+
+        // Display reviews
+        System.out.println("\nReviews created:");
+        System.out.println("Review 1: " + review1);
+        System.out.println("Review 2: " + review2);
+        System.out.println("Review 3: " + review3);
+        System.out.println("Review 4: " + review4);
     }
 }
