@@ -1,7 +1,7 @@
 package com.example.models.delivery;
 
 // Tydzień 4, Wzorzec Flyweight, Kamil Pietrak
-// Klasa przechowująca informacje o o przesyłkach
+// Klasa przechowująca informacje o przesyłkach
 public class DeliveryInfo {
     private final String courierName;
     private final String trackingNumber;
