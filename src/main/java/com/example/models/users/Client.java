@@ -1,13 +1,20 @@
 package com.example.models.users;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 public class Client {
 
-    private final String firstName;
-    private final String lastName;
-    private final String email;
+    @Setter
+    private String firstName;
+
+    @Setter
+    private String lastName;
+
+    @Setter
+    private String email;
+
     private final String paymentMethod;
     private final String phoneNumber;
     private final String address;

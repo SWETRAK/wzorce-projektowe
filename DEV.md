@@ -94,6 +94,6 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 
 ### **Kamil**  
-- [ ] **Facade** → Zarządzanie kontem użytkownika (zmiana danych, historia zakupów, zapisane książki)  
-- [ ] **Proxy** → Buforowanie wyników wyszukiwania książek (zmniejszenie obciążenia bazy danych)  
-- [ ] **Flyweight** → Przechowywanie informacji o dostawach (kurier, statusy przesyłek)  
+- [x] **Facade** → Zarządzanie kontem użytkownika (zmiana danych, historia zakupów, zapisane książki)  
+- [x] **Proxy** → Buforowanie wyników wyszukiwania książek (zmniejszenie obciążenia bazy danych)  
+- [x] **Flyweight** → Przechowywanie informacji o dostawach (kurier, statusy przesyłek)  
