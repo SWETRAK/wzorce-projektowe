@@ -10,3 +10,4 @@ public class PublisherAPI implements PublisherInterfaceAPI {
         return "Dane o książce dla ISBN: " + ISBN;
     }
 }
+// Koniec - Tydzień 4, Wzorzec Proxy, Joanna Kozar

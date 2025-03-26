@@ -15,3 +15,4 @@ public class AuthorFactory {
         return authors.get(key);
     }
 }
+//Koniec - Tydzień 4, Wzorzec Flyweight, Joanna Kozar

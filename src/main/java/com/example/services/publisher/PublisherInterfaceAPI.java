@@ -5,3 +5,4 @@ package com.example.services.publisher;
 public interface PublisherInterfaceAPI {
     String getBookInfo(String ISBN);
 }
+//Koniec - Tydzień 4, Wzorzec Proxy, Joanna Kozar

@@ -14,3 +14,4 @@ public class RecommendationFacade {
         engine.executeRecommendation();
     }
 }
+// Koniec - Tydzień 4, Wzorzec Facade, Joanna Kozar

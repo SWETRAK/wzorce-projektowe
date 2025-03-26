@@ -24,3 +24,4 @@ public class PublisherAPIProxy implements PublisherInterfaceAPI {
         return bookInfo;
     }
 }
+//Koniec - Tydzień 4, Wzorzec Proxy, Joanna Kozar
