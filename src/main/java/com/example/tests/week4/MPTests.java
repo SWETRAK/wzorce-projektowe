@@ -95,8 +95,7 @@ public class MPTests {
 
         realService.registerDiscount("BASIC10", tenPercentOff, eligibleForBasic);
         realService.registerDiscount("PREMIUM20", twentyPercentOff, eligibleForPremium);
-        //realService.registerDiscount("BASE5", discountForAll); // Zniżka dla wszystkich
-        //realService.addEligibleClient("BASIC10", unauthorizedClient.getEmail()); // Można dodać klienta do zniżki po jej utworzeniu
+        realService.registerDiscount("BASE5", discountForAll); // Zniżka dla wszystkich
 
         DiscountServiceProxy proxyService = new DiscountServiceProxy(realService);
 
@@ -125,6 +124,11 @@ public class MPTests {
         System.out.println("\nTesting caching - Premium client using PREMIUM20 again (should be cached):");
         double cachedPremiumPrice = proxyService.applyDiscount(premiumClient, originalPrice, "PREMIUM20");
         System.out.println("Original price: $" + originalPrice + ", After discount: $" + cachedPremiumPrice);
+
+        System.out.println("\nTesting base discount - Regular client using BASE5:");
+        double baseDiscountPrice = proxyService.applyDiscount(regularClient, originalPrice, "BASE5");
+        System.out.println("Original price: $" + originalPrice + ", After discount: $" + baseDiscountPrice);
+
     }
 
     private static void testFlyweight() {
