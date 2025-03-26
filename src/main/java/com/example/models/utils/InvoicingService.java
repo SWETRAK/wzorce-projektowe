@@ -1,5 +1,7 @@
 package com.example.models.utils;
 
+import com.example.models.cart.ShoppingCart;
+
 // Tydzień 2, Wzorzec Singleton, Maciej Potręć
 // Wzorzec ten pozwala na stworzenie tylko jednej instancji danej klasy
 public class InvoicingService {
@@ -19,6 +21,16 @@ public class InvoicingService {
         System.out.println("Printing Invoice:");
         System.out.println("----------------------------");
         System.out.println(invoiceDetails);
+        System.out.println("----------------------------");
+        System.out.println("Invoice printed successfully!\n");
+    }
+
+    public void printInvoice(String invoiceDetails, ShoppingCart cart) {
+        System.out.println("Printing Invoice:");
+        System.out.println("----------------------------");
+        System.out.println(invoiceDetails);
+        cart.display();
+        System.out.println("----------------------------");
         System.out.println("Invoice printed successfully!\n");
     }
 }
