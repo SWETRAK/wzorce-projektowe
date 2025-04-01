@@ -32,6 +32,7 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ## Opcje na
 
+---
 
 ## Tydzień 2
 
@@ -56,35 +57,36 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 - [x] Factory -> Magazyn/Gazety
 - [x] Prototype -> Magazyn/Gazety
 
+---
+
 ## Tydzień 3
 
-
-### Joanna  
+### **Joanna**  
 - [x] **Adapter** → System płatności  
 - [x] **Composite** → System kategorii książek  
 - [x] **Bridge** → Mechanizm rekomendacji  
 - [x] **Decorator** → System recenzji  
 
-### Maciej  
+### **Maciej**  
 - [x] **Adapter** → Zewnętrzny dostawca książek  
 - [x] **Composite** → Koszyk zakupowy  
 - [x] **Bridge** → System powiadomień  
 - [x] **Decorator** → System zamówień  
 
-### Kamil  
+### **Kamil**  
 - [x] **Adapter** → System dostaw  
 - [x] **Composite** → System rabatów  
 - [x] **Bridge** → Obsługa wersji książek  
 - [x] **Decorator** → Personalizacja wyświetlania książek  
 
+---
 
 ## Tydzień 4
 
-
 ### **Joanna**  
-- [ ] **Facade** → System rekomendacji (ukrywanie złożoności algorytmów rekomendacji)
-- [ ] **Proxy** → Zdalny dostęp do API wydawnictwa (ograniczanie liczby zapytań)  
-- [ ] **Flyweight** → Optymalizacja przechowywania danych o autorach książek (wielokrotne użycie tych samych obiektów)  
+- [x] **Facade** → System rekomendacji (ukrywanie złożoności algorytmów rekomendacji)
+- [x] **Proxy** → Zdalny dostęp do API wydawnictwa (ograniczanie liczby zapytań)  
+- [x] **Flyweight** → Optymalizacja przechowywania danych o autorach książek (wielokrotne użycie tych samych obiektów)  
 
 
 ### **Maciej**  
@@ -97,3 +99,27 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 - [x] **Facade** → Zarządzanie kontem użytkownika (zmiana danych, historia zakupów, zapisane książki)  
 - [x] **Proxy** → Buforowanie wyników wyszukiwania książek (zmniejszenie obciążenia bazy danych)  
 - [x] **Flyweight** → Przechowywanie informacji o dostawach (kurier, statusy przesyłek)  
+
+---
+
+## Tydzień 5
+
+### **Joanna**
+- [ ] **Command** → System zarządzania rabatami (dodawanie/usuwanie kuponów, aktywacja promocji)
+- [ ] **Interpreter** → Prosty język zapytań dla rekomendacji książek (np. `GENRE:Fantasy AND RATING>4.5`)
+- [ ] **Iterator** → Iteracja po historii zakupów użytkownika
+- [ ] **Mediator** → Zarządzanie powiadomieniami (e-mail, SMS, push)
+
+
+### **Maciej**
+- [ ] **Command** → System obsługi zamówień (operacje na zamówieniach: anulowanie, zatwierdzanie, zwroty)
+- [ ] **Interpreter** → Analiza recenzji użytkowników (np. analiza sentymentu poprzez proste reguły)
+- [ ] **Iterator** → Przechodzenie po wynikach wyszukiwania książek
+- [ ] **Mediator** → System obsługi klienta (koordynacja między chatbotem, konsultantem i bazą wiedzy)
+
+
+### **Kamil**
+- [ ] **Command** → Operacje na koszyku (dodanie/usunięcie książki, finalizacja zakupu)
+- [ ] **Interpreter** → Parsowanie zapytań filtrujących książki (np. `PRICE<50 AND AUTHOR:Rowling`)
+- [ ] **Iterator** → Iteracja po książkach w koszyku użytkownika
+- [ ] **Mediator** → Obsługa procesu dostawy (koordynacja między systemem zamówień, magazynem i firmą kurierską)  
