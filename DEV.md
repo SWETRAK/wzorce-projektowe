@@ -119,7 +119,7 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 
 ### **Kamil**
-- [ ] **Command** → Operacje na koszyku (dodanie/usunięcie książki, finalizacja zakupu)
-- [ ] **Interpreter** → Parsowanie zapytań filtrujących książki (np. `PRICE<50 AND AUTHOR:Rowling`)
-- [ ] **Iterator** → Iteracja po książkach w koszyku użytkownika
-- [ ] **Mediator** → Obsługa procesu dostawy (koordynacja między systemem zamówień, magazynem i firmą kurierską)  
+- [x] **Command** → Operacje na koszyku (dodanie/usunięcie książki, finalizacja zakupu)
+- [x] **Interpreter** → Parsowanie zapytań filtrujących książki (np. `PRICE<50 AND AUTHOR:Rowling`)
+- [x] **Iterator** → Iteracja po książkach w koszyku użytkownika
+- [x] **Mediator** → Obsługa procesu dostawy (koordynacja między systemem zamówień, magazynem i firmą kurierską)  
