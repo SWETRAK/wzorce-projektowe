@@ -112,10 +112,10 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 
 ### **Maciej**
-- [ ] **Command** → System obsługi zamówień (operacje na zamówieniach: anulowanie, zatwierdzanie, zwroty)
-- [ ] **Interpreter** → Analiza recenzji użytkowników (np. analiza sentymentu poprzez proste reguły)
-- [ ] **Iterator** → Przechodzenie po wynikach wyszukiwania książek
-- [ ] **Mediator** → System obsługi klienta (koordynacja między chatbotem, konsultantem i bazą wiedzy)
+- [x] **Command** → System obsługi zamówień (operacje na zamówieniach: anulowanie, zatwierdzanie, zwroty)
+- [x] **Interpreter** → Analiza recenzji użytkowników (np. analiza sentymentu poprzez proste reguły)
+- [x] **Iterator** → Przechodzenie po wynikach wyszukiwania książek
+- [x] **Mediator** → System obsługi klienta (koordynacja między chatbotem, konsultantem i bazą wiedzy)
 
 
 ### **Kamil**
