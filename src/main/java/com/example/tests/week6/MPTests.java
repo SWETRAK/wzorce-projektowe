@@ -5,6 +5,8 @@ import com.example.models.papers.MagazineFactory;
 import com.example.models.papers.Newspaper;
 import com.example.models.papers.NewspaperFactory;
 import com.example.models.users.Client;
+import com.example.services.order.Order;
+import com.example.services.order.state.OrderStateService;
 import com.example.services.subscription.PublicationSubscriptionService;
 import com.example.services.subscription.Subscriber;
 
@@ -13,7 +15,8 @@ import java.util.Date;
 public class MPTests {
 
     public static void main(String[] args) {
-        testObserver();
+//        testObserver();
+        testState();
     }
 
     private static void testObserver() {
@@ -89,5 +92,50 @@ public class MPTests {
                 subscriptionService.getSubscriberCount("Scientific American"));
 
         subscriptionService.publishNewIssue(scientificAmerican, "New Issue of Scientific American", "New issue is out!");
+    }
+
+    private static void testState() {
+        System.out.println("\n--- State Pattern Test (Order State Management) ---");
+
+        OrderStateService orderService = OrderStateService.getInstance();
+
+        // Create a new order
+        Order order1 = orderService.createOrder("customer@example.com", 129.99);
+        String orderId1 = order1.getOrderId();
+
+        Order order2 = orderService.createOrder("another@example.com", 75.50);
+        String orderId2 = order2.getOrderId();
+
+        // Process first order
+        System.out.println("\nProcessing first order:");
+        orderService.processOrder(orderId1);
+        orderService.printOrderStatus(orderId1);
+
+        // Ship first order
+        System.out.println("\nShipping first order:");
+        orderService.shipOrder(orderId1);
+        orderService.printOrderStatus(orderId1);
+
+        // Try to ship second order without processing (should show error)
+        System.out.println("\nAttempting to ship second order without processing:");
+        orderService.shipOrder(orderId2);
+        orderService.printOrderStatus(orderId2);
+
+        // Process and then cancel second order
+        System.out.println("\nProcessing second order:");
+        orderService.processOrder(orderId2);
+        System.out.println("\nCancelling second order:");
+        orderService.cancelOrder(orderId2);
+        orderService.printOrderStatus(orderId2);
+
+        // Deliver first order
+        System.out.println("\nDelivering first order:");
+        orderService.deliverOrder(orderId1);
+        orderService.printOrderStatus(orderId1);
+
+        // Try to cancel delivered order (should show error)
+        System.out.println("\nAttempting to cancel delivered order:");
+        orderService.cancelOrder(orderId1);
+        orderService.printOrderStatus(orderId1);
     }
 }
