@@ -1,22 +1,31 @@
 package com.example.tests.week6;
 
+import com.example.models.Author;
+import com.example.models.books.AudioBook;
+import com.example.models.books.Book;
+import com.example.models.books.Ebook;
 import com.example.models.papers.Magazine;
 import com.example.models.papers.MagazineFactory;
 import com.example.models.papers.Newspaper;
 import com.example.models.papers.NewspaperFactory;
 import com.example.models.users.Client;
+import com.example.services.books.strategy.*;
 import com.example.services.order.Order;
 import com.example.services.order.state.OrderStateService;
 import com.example.services.subscription.PublicationSubscriptionService;
 import com.example.services.subscription.Subscriber;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 public class MPTests {
 
     public static void main(String[] args) {
 //        testObserver();
-        testState();
+//        testState();
+        testStrategy();
     }
 
     private static void testObserver() {
@@ -137,5 +146,89 @@ public class MPTests {
         System.out.println("\nAttempting to cancel delivered order:");
         orderService.cancelOrder(orderId1);
         orderService.printOrderStatus(orderId1);
+    }
+
+    private static void testStrategy()
+    {
+        System.out.println("\n--- Strategy Pattern Test (Book Sorting) ---");
+
+        Author author1 = new Author("Andrzej", "Sapkowski");
+        Author author2 = new Author("John Ronald Reuel", "Tolkien");
+
+        Book book1 = new Book.Builder("The Last Wish", "Desc", Collections.singletonList(author1), new Date(), new Ebook())
+                .ISBNIdentifier("0316333522")
+                .genre("Fantasy")
+                .publisher("SuperNowa")
+                .pages(288)
+                .build();
+
+        Book book2 = new Book.Builder("The Hobbit", "Desc", Collections.singletonList(author2), new Date(), new AudioBook())
+                .ISBNIdentifier("054792822X")
+                .genre("Fantasy")
+                .publisher("George Allen & Unwin")
+                .pages(310)
+                .build();
+
+        Book book3 = new Book.Builder("The Witcher", "Desc", Collections.singletonList(author1), new Date(), new Ebook())
+                .ISBNIdentifier("0316333522")
+                .genre("Not Fantasy")
+                .publisher("SuperNowa")
+                .pages(288)
+                .build();
+
+        Book book4 = new Book.Builder("The Lord of the Rings", "Desc", Collections.singletonList(author2), new Date(), new AudioBook())
+                .ISBNIdentifier("054792822X")
+                .genre("Action")
+                .publisher("George Allen & Unwin")
+                .pages(350)
+                .build();
+
+        List<Book> books = new ArrayList<>();
+
+        books.add(book1);
+        books.add(book2);
+        books.add(book3);
+        books.add(book4);
+
+        BookCatalog bookCatalog = new BookCatalog(books);
+        bookCatalog.setSortingStrategy(new DateSortingStrategy());
+
+        System.out.println("Books sorted by date:");
+        for (Book book : bookCatalog.getSortedBooks()) {
+            System.out.println(book.getTitle()+ ", "+book.getPublishedDate());
+        }
+
+        bookCatalog.setSortingStrategy(new GenreSortingStrategy());
+        System.out.println("\nBooks sorted by genre:");
+        for (Book book : bookCatalog.getSortedBooks()) {
+            System.out.println(book.getTitle()+ ", "+book.getGenre());
+        }
+
+        bookCatalog.setSortingStrategy(new PageCountSortingStrategy());
+
+        System.out.println("\nBooks sorted by page count:");
+        for (Book book : bookCatalog.getSortedBooks()) {
+            System.out.println(book.getTitle()+ ", "+book.getPages());
+        }
+
+        bookCatalog.setSortingStrategy(new PublisherSortingStrategy());
+
+        System.out.println("\nBooks sorted by publisher:");
+        for (Book book : bookCatalog.getSortedBooks()) {
+            System.out.println(book.getTitle()+ ", "+book.getPublisher());
+        }
+
+        bookCatalog.setSortingStrategy(new AuthorSortingStrategy());
+        System.out.println("\nBooks sorted by author:");
+        for (Book book : bookCatalog.getSortedBooks()) {
+            System.out.println(book.getTitle()+ ", "+book.getAuthors());
+        }
+
+        bookCatalog.setSortingStrategy(new TitleSortingStrategy());
+
+        System.out.println("\nBooks sorted by title:");
+        for (Book book : bookCatalog.getSortedBooks()) {
+            System.out.println(book.getTitle()+ ", "+book.getTitle());
+        }
     }
 }

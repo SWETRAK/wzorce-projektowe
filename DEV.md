@@ -143,9 +143,9 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ### Maciej
 
-- [ ] **Observer** – Subskrypcje magazynów/gazet
-- [ ] **State** – Stan realizacji zamówienia
-- [ ] **Strategy** – Sortowanie książek (cena, data, popularność)
+- [x] **Observer** – Subskrypcje magazynów/gazet
+- [x] **State** – Stan realizacji zamówienia
+- [x] **Strategy** – Sortowanie książek (data, autor, gatunek, itp...)
 - [ ] **Template** – Obsługa różnych typów zamówień (papier, e-book)
 
 
