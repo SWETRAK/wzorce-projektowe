@@ -4,16 +4,29 @@ import com.example.models.Author;
 import com.example.models.books.AudioBook;
 import com.example.models.books.Book;
 import com.example.models.books.Ebook;
+import com.example.models.books.PhysicalBook;
+import com.example.models.cart.ProductCartItem;
+import com.example.models.cart.ShoppingCart;
+import com.example.models.cart.memento.CartHistory;
 import com.example.models.papers.Magazine;
 import com.example.models.papers.MagazineFactory;
 import com.example.models.papers.Newspaper;
 import com.example.models.papers.NewspaperFactory;
 import com.example.models.users.Client;
 import com.example.services.books.strategy.*;
+import com.example.services.order.BasicOrder;
 import com.example.services.order.Order;
 import com.example.services.order.state.OrderStateService;
+import com.example.services.order.template.AudioBookOrderProcessor;
+import com.example.services.order.template.EbookOrderProcessor;
+import com.example.services.order.template.OrderProcessor;
+import com.example.services.order.template.PhysicalBookOrderProcessor;
 import com.example.services.subscription.PublicationSubscriptionService;
 import com.example.services.subscription.Subscriber;
+import com.example.services.validation.ValidationResult;
+import com.example.services.validation.ValidationService;
+import com.example.services.validation.Visitable;
+import com.example.services.validation.VisitableAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,9 +36,12 @@ import java.util.List;
 public class MPTests {
 
     public static void main(String[] args) {
-//        testObserver();
-//        testState();
+        testObserver();
+        testState();
         testStrategy();
+        testTemplateMethod();
+        testVisitor();
+        testMemento();
     }
 
     private static void testObserver() {
@@ -230,5 +246,108 @@ public class MPTests {
         for (Book book : bookCatalog.getSortedBooks()) {
             System.out.println(book.getTitle()+ ", "+book.getTitle());
         }
+    }
+
+    private static void testTemplateMethod() {
+        System.out.println("\n--- Template Method Pattern Test ---");
+
+        OrderProcessor physicalBookProcessor = new PhysicalBookOrderProcessor();
+        OrderProcessor ebookProcessor = new EbookOrderProcessor();
+        OrderProcessor audiobookProcessor = new AudioBookOrderProcessor();
+
+        System.out.println("\nProcessing physical book order:");
+        physicalBookProcessor.processOrder("ORD-PB-001", 29.99);
+
+        System.out.println("\nProcessing e-book order:");
+        ebookProcessor.processOrder("ORD-EB-001", 14.99);
+
+        System.out.println("\nProcessing audiobook order:");
+        audiobookProcessor.processOrder("ORD-AB-001", 19.99);
+    }
+
+    private static void testVisitor() {
+        System.out.println("\n--- Visitor Pattern Test (Data Validation) ---");
+
+        Client validClient = new Client.Builder("Jan", "Kowalski", "jan.kowalski@example.com")
+                .phoneNumber("123456789")
+                .build();
+
+        Client invalidClient = new Client.Builder("", "  ", "invalid-email")
+                .build();
+
+        BasicOrder validOrder = new BasicOrder("ORD-001", 99.99);
+        BasicOrder invalidOrder = new BasicOrder("", -10.0);
+
+        ValidationService validationService = new ValidationService();
+
+        // Validate client data
+        System.out.println("\nValidating valid client:");
+        ValidationResult clientResult = validationService.validate(VisitableAdapter.adapt(validClient));
+        System.out.println(clientResult);
+
+        System.out.println("\nValidating invalid client:");
+        ValidationResult invalidClientResult = validationService.validate(VisitableAdapter.adapt(invalidClient));
+        System.out.println(invalidClientResult);
+
+        // Validate order data
+        System.out.println("\nValidating valid order:");
+        ValidationResult orderResult = validationService.validate(VisitableAdapter.adapt(validOrder));
+        System.out.println(orderResult);
+
+        System.out.println("\nValidating invalid order:");
+        ValidationResult invalidOrderResult = validationService.validate(VisitableAdapter.adapt(invalidOrder));
+        System.out.println(invalidOrderResult);
+
+        // Validate multiple objects at once
+        List<Visitable> allObjects = new ArrayList<>();
+        allObjects.add(VisitableAdapter.adapt(validClient));
+        allObjects.add(VisitableAdapter.adapt(invalidClient));
+        allObjects.add(VisitableAdapter.adapt(validOrder));
+        allObjects.add(VisitableAdapter.adapt(invalidOrder));
+
+        System.out.println("\nValidating multiple objects at once:");
+        ValidationResult multiResult = validationService.validateAll(allObjects);
+        System.out.println(multiResult);
+    }
+
+    private static void testMemento() {
+        System.out.println("\n--- Memento Pattern Test (Shopping Cart Undo) ---");
+
+        Book book1 = new Book.Builder(
+                "Bardzo zwyczajna książka",
+                "Opis",
+                Collections.singletonList(new Author("Imie", "Nazwisko")),
+                new Date(),
+                new PhysicalBook()
+        ).build();
+
+        Book book2 = new Book.Builder(
+                "Bardzo zwyczajna książka 2",
+                "Opis",
+                Collections.singletonList(new Author("Imie 2", "Nazwisko 2")),
+                new Date(),
+                new PhysicalBook()
+        ).build();
+
+        ShoppingCart cart = new ShoppingCart();
+        CartHistory cartHistory = new CartHistory(cart);
+
+        cart.addItem(new ProductCartItem(book1, 21.37, 5));
+        cartHistory.saveState();
+        cart.display();
+
+        System.out.println("\nAdding second item:");
+
+        cart.addItem(new ProductCartItem(book2, 42.00, 2));
+        cartHistory.saveState();
+        cart.display();
+
+        // Undo last action (remove second item)
+        cartHistory.undo();
+        cart.display();
+
+        // Try to undo beyond history
+        cartHistory.undo();
+        cartHistory.undo(); // Should show "No more changes to undo"
     }
 }

@@ -1,12 +1,14 @@
 package com.example.models.cart;
 
+import com.example.models.cart.memento.CartMemento;
+
 import java.util.ArrayList;
 import java.util.List;
 
 // Tydzień 3, Wzorzec Composite, Maciej Potręć
 // Kompozyt - koszyk zakupowy zawierający wiele elementów
 public class ShoppingCart implements CartItem, CartIterator{
-    private final List<CartItem> items = new ArrayList<>();
+    private List<CartItem> items = new ArrayList<>();
     private int index = 0;
 
 
@@ -53,5 +55,16 @@ public class ShoppingCart implements CartItem, CartIterator{
         return index > 0;
     }
     // Koniec, Tydzień 5, Wzorzec Iterator, Kamil Pietrak
+
+    // Tydzień 6, Wzorzec Memento, Maciej Potręć
+    // Metody do zapisywania i przywracania stanu koszyka
+    public CartMemento save() {
+        return new CartMemento(new ArrayList<>(items));
+    }
+
+    public void restore(CartMemento memento) {
+        this.items = new ArrayList<>(memento.getSavedItems());
+    }
+    // Koniec, Tydzień 6, Wzorzec Memento, Maciej Potręć
 }
 // Koniec, Tydzień 3, Wzorzec Composite, Maciej Potręć

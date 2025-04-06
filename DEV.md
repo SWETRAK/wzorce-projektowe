@@ -146,11 +146,11 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 - [x] **Observer** – Subskrypcje magazynów/gazet
 - [x] **State** – Stan realizacji zamówienia
 - [x] **Strategy** – Sortowanie książek (data, autor, gatunek, itp...)
-- [ ] **Template** – Obsługa różnych typów zamówień (papier, e-book)
+- [x] **Template** – Obsługa różnych typów zamówień (papier, e-book)
 
 
-- [ ] **Visitor** – Walidacja danych użytkownika i zamówień
-- [ ] **Memento** – Cofanie zmian w koszyku zakupowym
+- [x] **Visitor** – Walidacja danych użytkownika i zamówień
+- [x] **Memento** – Cofanie zmian w koszyku zakupowym
 
 ### Kamil
 
