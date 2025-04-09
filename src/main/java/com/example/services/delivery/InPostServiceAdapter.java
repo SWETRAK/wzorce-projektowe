@@ -27,6 +27,19 @@ public class InPostServiceAdapter extends DeliveryComponent implements DeliveryS
     }
     // Koniec, Tydzień 5, Wzorzec Mediator, Kamil Pietrak
 
+    // Tydzień 6, Wzorzec Template, Kamil Pietrak
+    // Konkretny proces wysyłki dla InPost
+    @Override
+    protected void preparePackage(String packageId) {
+        System.out.println("Preparing package for InPost: " + packageId);
+    }
+
+    @Override
+    protected void send(String packageId) {
+        System.out.println("Sending via InPost: " + packageId);
+    }
+    // Koniec, Tydzień 6, Wzorzec Template, Kamil Pietrak
+
     @Override
     public void deliverOrder(String orderId) {
         inPostDeliveryService.deliver(orderId);

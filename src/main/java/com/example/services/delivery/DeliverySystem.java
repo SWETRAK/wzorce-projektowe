@@ -21,5 +21,15 @@ public class DeliverySystem extends DeliveryComponent {
     public void receiveMessage(String sender, String message) {
         System.out.println("OrderSystem received message from " + sender + ": " + message);
     }
+
+    @Override
+    protected void preparePackage(String packageId) {
+        System.out.println("OrderSystem preparing package " + packageId);
+    }
+
+    @Override
+    protected void send(String packageId) {
+        System.out.println("OrderSystem sending package " + packageId);
+    }
 }
 // Koniec, Tydzień 5, Wzorzec Mediator, Kamil Pietrak
