@@ -154,11 +154,11 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ### Kamil
 
-- [ ] **Observer** – Aktualizacja stanu magazynowego
-- [ ] **State** – Proces rejestracji użytkownika
-- [ ] **Strategy** – Wybór sposobu dostawy
-- [ ] **Template** – Różne procesy wysyłki
+- [x] **Observer** – Aktualizacja stanu magazynowego
+- [x] **State** – Proces rejestracji użytkownika
+- [x] **Strategy** – Wybór sposobu dostawy
+- [x] **Template** – Różne procesy wysyłki
 
 
-- [ ] **Visitor** – Eksport danych (CSV, XML, PDF)
-- [ ] **Memento** – Historia edycji danych klienta
+- [x] **Visitor** – Eksport danych (CSV, XML, PDF)
+- [x] **Memento** – Historia edycji danych klienta

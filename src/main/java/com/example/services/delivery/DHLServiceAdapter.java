@@ -25,6 +25,19 @@ public class DHLServiceAdapter extends DeliveryComponent implements DeliveryServ
     }
     // Koniec, Tydzień 5, Wzorzec Mediator, Kamil Pietrak
 
+    // Tydzień 6, Wzorzec Template, Kamil Pietrak
+    // Konkretny proces wysyłki dla DHL
+    @Override
+    protected void preparePackage(String packageId) {
+        System.out.println("Preparing package for DHL: " + packageId);
+    }
+
+    @Override
+    protected void send(String packageId) {
+        System.out.println("Sending via DHL: " + packageId);
+    }
+    // Koniec, Tydzień 6, Wzorzec Strategy, Kamil Pietrak
+
     private final DHLDeliveryService deliveryService = new DHLDeliveryService();
 
     @Override
@@ -36,7 +49,6 @@ public class DHLServiceAdapter extends DeliveryComponent implements DeliveryServ
     public void getOrderStatus(String orderId) {
         deliveryService.getOrderStatus(orderId);
     }
-
 }
 
 // Koniec, Tydzień 3, Wzorzec Adapter, Kamil Pietrak
