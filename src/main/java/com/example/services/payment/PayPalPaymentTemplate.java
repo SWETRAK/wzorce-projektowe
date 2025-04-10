@@ -1,5 +1,7 @@
 package com.example.services.payment;
 
+//Tydzień 6, wzorzec Template, Joanna Kozar
+//Implementacja klasy płatności paypalem
 public class PayPalPaymentTemplate extends PaymentTemplate{
     private final PayPalAdapter adapter;
 
@@ -19,3 +21,4 @@ public class PayPalPaymentTemplate extends PaymentTemplate{
         System.out.println("Płatność PayPal została zrealizowana.");
     }
 }
+//Tydzień 6, wzorzec Template, Joanna Kozar
