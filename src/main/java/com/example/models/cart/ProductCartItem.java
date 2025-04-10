@@ -1,10 +1,13 @@
 package com.example.models.cart;
 
 import com.example.models.books.Book;
+import lombok.Getter;
 
 // Tydzień 3, Wzorzec Composite, Maciej Potręć
 // Liść w strukturze Composite - pojedynczy produkt w koszyku
+@Getter
 public class ProductCartItem implements CartItem {
+
     private final Object product;
     private final double price;
     private final int quantity;

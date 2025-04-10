@@ -2,6 +2,8 @@ package com.example.models.books;
 
 import com.example.models.Author;
 import com.example.services.reporting.ProductVisitor;
+import com.example.services.exporter.Exportable;
+import com.example.services.exporter.Exporter;
 import lombok.*;
 
 import java.util.Date;
@@ -10,7 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Book extends BookWithFormat implements BookComponent {
+public class Book extends BookWithFormat implements BookComponent, Exportable {
 
     private final String title;
     private final String description;
@@ -38,12 +40,19 @@ public class Book extends BookWithFormat implements BookComponent {
         System.out.println("Book: " + title + " - " + description );
         bookFormat.showBookFormat();
     }
-
+// Koniec, Tydzień 6, Wzorzec Visitor, Kamil Pietrak
 
     //Asia
     @Override
     public void displayBookTitle() {
         System.out.println("BookTitle: " + title);
+    }
+
+    // Tydzień 6, Wzorzec Visitor, Kamil Pietrak
+    // Klasa reprezentująca książkę, którą można eksportować
+    @Override
+    public void accept(Exporter visitor) {
+        visitor.visitBook(this);
     }
 
     // Tydzień 2, Wzorzec builder, Maciej Potręć

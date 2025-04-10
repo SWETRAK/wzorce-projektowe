@@ -1,6 +1,7 @@
 package com.example.models.users;
 
 import com.example.services.notification.Observer;
+import com.example.models.users.memento.ClientMemento;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -32,6 +33,18 @@ public class Client implements Observer {
     public void printInfo() {
         System.out.println("Client: " + firstName + " " + lastName + " (" + email + ")");
     }
+
+    // Tydzień 6, Wzorzec Memento, Kamil Pietrak
+    // Klasa reprezentuje klienta, którego dane można zapisać i przywrócić
+    public ClientMemento save() {
+        return new ClientMemento(this.email);
+    }
+
+    public void restore(ClientMemento memento) {
+        this.email = memento.getState();
+        System.out.println("Email restored: " + email);
+    }
+    // Koniec, Tydzień 6, Wzorzec Memento, Kamil Pietrak
 
     // Tydzień 2, Wzorzec builder, Kamil Pietrak
     // Implementacja klasy Builder dla klasy Client, wymaga ona, aby użytkownik podał imię, nazwisko, email (pola obowiązkowe)

@@ -105,10 +105,10 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 ## Tydzień 5
 
 ### **Joanna**
-- [ ] **Command** → System zarządzania rabatami (dodawanie/usuwanie kuponów, aktywacja promocji)
-- [ ] **Interpreter** → Prosty język zapytań dla rekomendacji książek (np. `GENRE:Fantasy AND RATING>4.5`)
-- [ ] **Iterator** → Iteracja po historii zakupów użytkownika
-- [ ] **Mediator** → Zarządzanie powiadomieniami (e-mail, SMS, push)
+- [x] **Command** → System zarządzania rabatami (dodawanie/usuwanie kuponów, aktywacja promocji)
+- [x] **Interpreter** → Prosty język zapytań dla rekomendacji książek (np. `GENRE:Fantasy AND RATING>4.5`)
+- [x] **Iterator** → Iteracja po historii zakupów użytkownika
+- [x] **Mediator** → Zarządzanie powiadomieniami (e-mail, SMS, push)
 
 
 ### **Maciej**
@@ -119,7 +119,46 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 
 ### **Kamil**
-- [ ] **Command** → Operacje na koszyku (dodanie/usunięcie książki, finalizacja zakupu)
-- [ ] **Interpreter** → Parsowanie zapytań filtrujących książki (np. `PRICE<50 AND AUTHOR:Rowling`)
-- [ ] **Iterator** → Iteracja po książkach w koszyku użytkownika
-- [ ] **Mediator** → Obsługa procesu dostawy (koordynacja między systemem zamówień, magazynem i firmą kurierską)  
+- [x] **Command** → Operacje na koszyku (dodanie/usunięcie książki, finalizacja zakupu)
+- [x] **Interpreter** → Parsowanie zapytań filtrujących książki (np. `PRICE<50 AND AUTHOR:Rowling`)
+- [x] **Iterator** → Iteracja po książkach w koszyku użytkownika
+- [x] **Mediator** → Obsługa procesu dostawy (koordynacja między systemem zamówień, magazynem i firmą kurierską)  
+
+---
+
+## Tydzień 6
+
+### Joanna
+
+- [ ] **Observer** – Powiadamianie klientów o promocjach
+- [ ] **State** – Stan konta użytkownika
+- [ ] **Strategy** – Promocje zależne od typu klienta
+- [ ] **Template** – Procesy płatności (karta, przelew, blik)
+
+
+
+- [ ] **Visitor** – Raportowanie danych produktów
+- [ ] **Memento** – Historia edycji książki przez administratora
+
+
+### Maciej
+
+- [x] **Observer** – Subskrypcje magazynów/gazet
+- [x] **State** – Stan realizacji zamówienia
+- [x] **Strategy** – Sortowanie książek (data, autor, gatunek, itp...)
+- [x] **Template** – Obsługa różnych typów zamówień (papier, e-book)
+
+
+- [x] **Visitor** – Walidacja danych użytkownika i zamówień
+- [x] **Memento** – Cofanie zmian w koszyku zakupowym
+
+### Kamil
+
+- [x] **Observer** – Aktualizacja stanu magazynowego
+- [x] **State** – Proces rejestracji użytkownika
+- [x] **Strategy** – Wybór sposobu dostawy
+- [x] **Template** – Różne procesy wysyłki
+
+
+- [x] **Visitor** – Eksport danych (CSV, XML, PDF)
+- [x] **Memento** – Historia edycji danych klienta

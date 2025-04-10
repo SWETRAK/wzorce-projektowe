@@ -20,7 +20,6 @@ public class KPTest {
     public static void main(String[] args) {
 
         // Facade
-
         Author author1 = new Author("Andrzej", "Sapkowski");
         Author author2 = new Author("John Ronald Reuel", "Tolkien");
 
