@@ -99,21 +99,21 @@ import java.util.Date;
 
 public class JKTest {
     public static void main(String[] args) {
-        // OBSERVER – powiadamianie o promocjach
+        // Tydzień 6, OBSERVER – powiadamianie o promocjach, Joanna Kozar
         System.out.println("=== OBSERVER ===");
         PromotionService promoService = new PromotionService();
         Client c1 = new Client("Asia", "Kozar", "aaa@bjn.dg","Blik", "123456789", "aaa78");
         promoService.subscribe(c1);
         promoService.notifyObservers("Nowa promocja -50% na ebooki!");
 
-        // STATE – stan konta użytkownika
+        // Tydzień 6, STATE – stan konta użytkownika, Joanna Kozar
         System.out.println("\n=== STATE ===");
         UserAccount account = new UserAccount();
         account.handle(); // aktywne
         account.setState(new SuspendedState());
         account.handle(); // zawieszone
 
-        // STRATEGY – promocje zależne od klienta
+        //Tydzień 6, STRATEGY – promocje zależne od klienta, Joanna Kozar
         System.out.println("\n=== STRATEGY ===");
         PromotionCalculator calculator = new PromotionCalculator();
         calculator.setStrategy(new RegularCustomer());
@@ -121,14 +121,14 @@ public class JKTest {
         calculator.setStrategy(new VipCustomer());
         System.out.println("Cena dla VIP: " + calculator.calculate(100));
 
-        // TEMPLATE – różne metody płatności
+        // Tydzień 6, TEMPLATE – różne metody płatności, Joanna Kozar
         System.out.println("\n=== TEMPLATE ===");
         PaymentTemplate card = new CardPayment();
         PaymentTemplate blik = new BlikPaymentTemplate();
         card.processPayment();
         blik.processPayment();
 
-        // VISITOR – raportowanie danych o książce
+        //Tydzień 6,  VISITOR – raportowanie danych o książce, Joanna Kozar
         System.out.println("\n=== VISITOR ===");
         Author author = new Author("J.K.", "Rowling");
         Book book = new Book.Builder("Harry Potter i Czara Ognia", "Magiczna historia", Collections.singletonList(author), new Date(), null)
@@ -139,7 +139,7 @@ public class JKTest {
         ReportGenerator visitor = new ReportGenerator();
         book.accept(visitor);
 
-        // MEMENTO – historia edycji książki
+        //Tydzień 6,  MEMENTO – historia edycji książki, Joanna Kozar
         System.out.println("\n=== MEMENTO ===");
         EditableBook editable = new EditableBook();
         editable.setTitle("Harry Potter i Czara Ognia");
