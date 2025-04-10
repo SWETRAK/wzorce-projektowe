@@ -1,11 +1,12 @@
 package com.example.models.users;
 
+import com.example.services.notification.Observer;
 import com.example.models.users.memento.ClientMemento;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
-public class Client {
+public class Client implements Observer {
 
     @Setter
     private String firstName;
@@ -20,7 +21,7 @@ public class Client {
     private final String phoneNumber;
     private final String address;
 
-    Client(String firstName, String lastName, String email, String paymentMethod, String phoneNumber, String address) {
+    public Client(String firstName, String lastName, String email, String paymentMethod, String phoneNumber, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -83,4 +84,14 @@ public class Client {
         }
     }
     // Koniec, Tydzień 2, Wzorzec builder, Kamil Pietrak
+
+
+    // Tydzień 6, wzorzec Observer, Joanna Kozar
+    // Implementacja wzorca Observer w klasie klienta w celu powiadamiania go o promocjach
+    @Override
+    public void update(String promo) {
+        System.out.println(firstName + lastName + " otrzymał powiadomienie o promocji: " + promo);
+    }
+    // Koniec - Tydzień 6, wzorzec Observer, Joanna Kozar
+
 }

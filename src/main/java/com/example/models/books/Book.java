@@ -1,6 +1,8 @@
 package com.example.models.books;
 
 import com.example.models.Author;
+import com.example.models.bookhistory.BookMemento;
+import com.example.services.reporting.ProductVisitor;
 import com.example.services.exporter.Exportable;
 import com.example.services.exporter.Exporter;
 import lombok.*;
@@ -13,8 +15,8 @@ import java.util.List;
 @ToString
 public class Book extends BookWithFormat implements BookComponent, Exportable {
 
-    private final String title;
-    private final String description;
+    private String title;
+    private String description;
     private final List<Author> authors;
     private final Date publishedDate;
     private final String genre;
@@ -100,4 +102,24 @@ public class Book extends BookWithFormat implements BookComponent, Exportable {
             return new Book(title, description, authors, publishedDate, genre, publisher, pages, ISBNIdentifier, bookFormat);
         }
     }
+
+    //Tydzień 6, Wzorzec Visitor, Joanna Kozar
+    //dodanie do klasy ksiązki metody akceptacji umożliwiającej raportowanie danych produktów
+    @Override
+    public void accept(ProductVisitor visitor) {
+        visitor.visit(this);
+    }
+    //Koniec - Tydzień 6, Wzorzec Visitor, Joanna Kozar
+
+    //Tydzień 6, wzorzec Memento, Joanna Kozar
+    //Implementacja klasy do historii edycji książki przez administratora
+    public BookMemento save() {
+        return new BookMemento(title, description);
+    }
+
+    public void restore(BookMemento memento) {
+        this.title = memento.getTitle();
+        this.description = memento.getDescription();
+    }
+    //Tydzień 6, wzorzec Memento, Joanna Kozar
 }
