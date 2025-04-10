@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Tydzień 6, wzorzec Observer, Joanna Kozar
-//Implementacja serwera promocji
+//Implementacja serwisu promocji
 public class PromotionService {
     private final List<Observer> observers = new ArrayList<>();
 
