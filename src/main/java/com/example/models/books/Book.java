@@ -1,6 +1,7 @@
 package com.example.models.books;
 
 import com.example.models.Author;
+import com.example.services.reporting.ProductVisitor;
 import lombok.*;
 
 import java.util.Date;
@@ -91,4 +92,12 @@ public class Book extends BookWithFormat implements BookComponent {
             return new Book(title, description, authors, publishedDate, genre, publisher, pages, ISBNIdentifier, bookFormat);
         }
     }
+    //Tydzień 6, Wzorzec Visitor, Joanna Kozar
+    //dodanie do klasy ksiązki metody akceptacji umożliwiającej raportowanie danych produktów
+    @Override
+    public void accept(ProductVisitor visitor) {
+        visitor.visit(this);
+    }
+    //Koniec - Tydzień 6, Wzorzec Visitor, Joanna Kozar
+
 }

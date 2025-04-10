@@ -1,5 +1,7 @@
 package com.example.models.books;
 
+import com.example.services.reporting.ProductVisitor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,5 +26,13 @@ public class Category implements BookComponent {
             component.displayBookTitle();
         }
     }
+
+    @Override
+    public void accept(ProductVisitor visitor) {
+        for (BookComponent component : components) {
+            component.accept(visitor);
+        }
+    }
+
 }
 // Koniec - Tydzień 3, Wzorzec Composite, Joanna Kozar
