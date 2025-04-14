@@ -130,15 +130,14 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ### Joanna
 
-- [ ] **Observer** – Powiadamianie klientów o promocjach
-- [ ] **State** – Stan konta użytkownika
-- [ ] **Strategy** – Promocje zależne od typu klienta
-- [ ] **Template** – Procesy płatności (karta, przelew, blik)
+- [x] **Observer** – Powiadamianie klientów o promocjach
+- [x] **State** – Stan konta użytkownika
+- [x] **Strategy** – Promocje zależne od typu klienta
+- [x] **Template** – Procesy płatności (karta, przelew, blik)
 
 
-
-- [ ] **Visitor** – Raportowanie danych produktów
-- [ ] **Memento** – Historia edycji książki przez administratora
+- [x] **Visitor** – Raportowanie danych produktów
+- [x] **Memento** – Historia edycji książki przez administratora
 
 
 ### Maciej
@@ -162,3 +161,63 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 - [x] **Visitor** – Eksport danych (CSV, XML, PDF)
 - [x] **Memento** – Historia edycji danych klienta
+
+---
+
+## Tydzień 7
+
+### Joanna
+
+- [ ] **Single Responsibility Principle**
+  - [ ] Klasa `PromotionNotifier` – odpowiada tylko za wysyłkę powiadomień o promocjach
+  - [ ] Klasa `UserProfileManager` – odpowiada tylko za edycję danych użytkownika
+  - [ ] Klasa `PaymentValidator` – odpowiada tylko za walidację płatności
+
+- [ ] **Open/Closed Principle**
+  - [ ] `PromotionEngine`
+    - Abstrakcja: Interfejs `PromotionRule` + różne klasy z logiką promocji
+    - Sterowanie danymi: lista reguł jako dane wejściowe (`List<PromotionRule>`)
+  - [ ] `PaymentMethod`
+    - Abstrakcja: Klasa bazowa `PaymentMethod` rozszerzana przez `CreditCard`, `BLIK`
+    - Sterowanie danymi: wybór metody przez string/fabrykę
+  - [ ] `UserNotification`
+    - Abstrakcja: interfejs `Notifier` (np. EmailNotifier, SMSNotifier)
+    - Sterowanie danymi: mapowanie typu notyfikacji na klasę (`Map<String, Notifier>`)
+
+
+### Maciej
+
+- [ ] **Single Responsibility Principle**
+  - [ ] Klasa `OrderProcessor` – przetwarza tylko zamówienia
+  - [ ] Klasa `BookSorter` – odpowiada tylko za sortowanie książek
+  - [ ] Klasa `ClientHistoryManager` – odpowiada za zapis i odtwarzanie danych klienta
+
+- [ ] **Open/Closed Principle**
+  - [ ] `OrderHandler`
+    - Abstrakcja: `OrderHandler` jako interfejs z `PhysicalOrder`, `DigitalOrder`
+    - Sterowanie danymi: wybór przez typ zamówienia (np. enum)
+  - [ ] `SortingStrategy`
+    - Abstrakcja: różne implementacje `SortingStrategy` (po cenie, dacie, popularności)
+    - Sterowanie danymi: wybór strategii przez mapę strategii
+  - [ ] `InvoiceExporter`
+    - Abstrakcja: interfejs `Exporter` (np. CSV, PDF, XML)
+    - Sterowanie danymi: wybór typu eksportu przez parametr lub konfigurację
+    
+
+### Kamil
+
+- [ ] **Single Responsibility Principle**
+  - [ ] Klasa `StockUpdater` – aktualizuje tylko stan magazynu
+  - [ ] Klasa `DeliveryScheduler` – zarządza planowaniem dostaw
+  - [ ] Klasa `PDFInvoiceGenerator` – odpowiada tylko za generowanie faktur PDF
+
+- [ ] **Open/Closed Principle**
+  - [ ] `ShippingProcess`
+    - Abstrakcja: `ShippingProcess` + klasy `DHLShipping`, `InPostShipping`
+    - Sterowanie danymi: wybór procesu przez `Map<String, ShippingProcess>`
+  - [ ] `DeliveryStrategy`
+    - Abstrakcja: interfejs + `CourierDelivery`, `LockerDelivery`
+    - Sterowanie danymi: przekazanie strategii na podstawie danych użytkownika
+  - [ ] `Exporter`
+    - Abstrakcja: `Exporter` + `CSVExporter`, `XMLExporter`, `PDFExporter`
+    - Sterowanie danymi: konfiguracja formatu eksportu (np. przez UI lub parametryzację)
