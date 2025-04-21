@@ -1,7 +1,6 @@
 package com.example.services.delivery.startegies;
 
 import com.example.services.delivery.DHLServiceAdapter;
-import com.example.services.delivery.DeliveryService;
 
 // Tydzień 6, Wzorzec Strategy, Kamil Pietrak
 // Implementacja strategii dostawy do paczkomatu

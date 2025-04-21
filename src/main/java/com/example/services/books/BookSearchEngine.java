@@ -7,11 +7,15 @@ import java.util.Map;
 // Proxy, które buforuje wyniki wyszukiwania, aby uniknąć zbędnych zapytań do bazy danych.
 public class BookSearchEngine implements BookSearch {
 
-    private DatabaseBookSearch realBookSearch = new DatabaseBookSearch();
+    private final DatabaseBookSearch realBookSearch = new DatabaseBookSearch();
 
-    private WarehauseBookSearch realWarehauseBookSearch = new WarehauseBookSearch();
+    private final WarehauseBookSearch realWarehauseBookSearch;
 
-    private Map<String, String> cache = new HashMap<>();
+    private final Map<String, String> cache = new HashMap<>();
+
+    public BookSearchEngine(WarehouseRepository warehouseRepository) {
+        realWarehauseBookSearch = new WarehauseBookSearch(warehouseRepository);
+    }
 
     @Override
     public String searchBook(String title) {
@@ -29,5 +33,4 @@ public class BookSearchEngine implements BookSearch {
         }
     }
 }
-
 // Koniec, Tydzień 4, Wzorzec Proxy, Kamil Pietrak

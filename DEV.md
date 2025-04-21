@@ -206,18 +206,18 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ### Kamil
 
-- [ ] **Single Responsibility Principle**
-  - [ ] Klasa `StockUpdater` – aktualizuje tylko stan magazynu
-  - [ ] Klasa `DeliveryScheduler` – zarządza planowaniem dostaw
-  - [ ] Klasa `PDFInvoiceGenerator` – odpowiada tylko za generowanie faktur PDF
+- [x] **Single Responsibility Principle**
+  - [x] `StockUpdater` – klasa odpowiedzialna wyłącznie za aktualizację stanu magazynu
+  - [x] `DeliveryScheduler` – klasa zajmująca się planowaniem dostaw
+  - [x] `PDFInvoiceGenerator` – odpowiada jedynie za tworzenie faktur PDF
 
-- [ ] **Open/Closed Principle**
-  - [ ] `ShippingProcess`
-    - Abstrakcja: `ShippingProcess` + klasy `DHLShipping`, `InPostShipping`
-    - Sterowanie danymi: wybór procesu przez `Map<String, ShippingProcess>`
-  - [ ] `DeliveryStrategy`
+- [x] **Open/Closed Principle**
+  - [x] `Wyszukiwanie książek`
+    - Abstrakcja: BookSearch.
+    - Sterowanie danymi: `BookSearchManager` wybiera strategię na podstawie typu źródła (`db`, `warehouse`).
+  - [x] `DeliveryStrategy`
     - Abstrakcja: interfejs + `CourierDelivery`, `LockerDelivery`
     - Sterowanie danymi: przekazanie strategii na podstawie danych użytkownika
-  - [ ] `Exporter`
-    - Abstrakcja: `Exporter` + `CSVExporter`, `XMLExporter`, `PDFExporter`
+  - [x] `Exporter`
+    - Abstrakcja: `Exporter` + `CSVExporter`, `XMLExporter`
     - Sterowanie danymi: konfiguracja formatu eksportu (np. przez UI lub parametryzację)
