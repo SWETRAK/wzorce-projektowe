@@ -2,9 +2,9 @@ package com.example.services.books.iterator;
 
 import com.example.models.Author;
 import com.example.models.books.Book;
-import com.example.models.books.Ebook;
 import com.example.models.books.PhysicalBook;
 import com.example.services.books.BookSearchEngine;
+import com.example.services.books.WarehouseBookRepository;
 
 import java.util.Collections;
 import java.util.Date;
@@ -16,6 +16,10 @@ import java.util.Map;
 public class EnhancedBookSearchEngine extends BookSearchEngine {
 
     private final Map<String, BookSearchResults> searchResultsCache = new HashMap<>();
+
+    public EnhancedBookSearchEngine(WarehouseBookRepository warehouseBookRepository) {
+        super(warehouseBookRepository);
+    }
 
     public BookSearchResults findBooksByTitle(String title) {
         if (searchResultsCache.containsKey(title)) {

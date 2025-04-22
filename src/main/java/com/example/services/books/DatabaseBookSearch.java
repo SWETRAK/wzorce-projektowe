@@ -1,6 +1,7 @@
 package com.example.services.books;
 
 // Tydzień 4, Wzorzec Proxy, Kamil Pietrak
+// Tydzień 7, Zasada OCP (Abstrakcja), Kamil Pietrak
 // Klasa do wyszukiwania książek w bazie danych
 public class DatabaseBookSearch implements BookSearch {
     @Override
@@ -9,3 +10,4 @@ public class DatabaseBookSearch implements BookSearch {
     }
 }
 // Koniec, Tydzień 4, Wzorzec Proxy, Kamil Pietrak
+// Koniec, Tydzień 7, Zasada OCP (Abstrakcja), Kamil Pietrak
