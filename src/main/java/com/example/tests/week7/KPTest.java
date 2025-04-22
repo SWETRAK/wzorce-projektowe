@@ -12,7 +12,7 @@ import com.example.services.books.BookSearchType;
 import com.example.services.books.DatabaseBookSearch;
 import com.example.services.books.StockUpdater;
 import com.example.services.books.WarehauseBookSearch;
-import com.example.services.books.WarehouseRepository;
+import com.example.services.books.WarehouseBookRepository;
 import com.example.services.delivery.DHLServiceAdapter;
 import com.example.services.delivery.DeliveryManager;
 import com.example.services.delivery.DeliveryScheduler;
@@ -40,8 +40,8 @@ public class KPTest {
     }
 
     private static void SRPTest() {
-        WarehouseRepository warehouseRepository = new WarehouseRepository();
-        StockUpdater stockUpdater = new StockUpdater(warehouseRepository);
+        WarehouseBookRepository warehouseBookRepository = new WarehouseBookRepository();
+        StockUpdater stockUpdater = new StockUpdater(warehouseBookRepository);
         stockUpdater.updateStock("BOOK001", 50);
 
         DeliveryScheduler scheduler = new DeliveryScheduler(new CalendarService());
@@ -80,9 +80,9 @@ public class KPTest {
     }
 
     private static void OCPTestOne() {
-        WarehouseRepository warehouseRepository = new WarehouseRepository();
+        WarehouseBookRepository warehouseBookRepository = new WarehouseBookRepository();
         DatabaseBookSearch databaseBookSearch = new DatabaseBookSearch();
-        WarehauseBookSearch warehouseBookSearch = new WarehauseBookSearch(warehouseRepository);
+        WarehauseBookSearch warehouseBookSearch = new WarehauseBookSearch(warehouseBookRepository);
 
         BookSearchManager bookManager = new BookSearchManager(databaseBookSearch, warehouseBookSearch);
         bookManager.search(BookSearchType.DATABASE, "Clean Code");

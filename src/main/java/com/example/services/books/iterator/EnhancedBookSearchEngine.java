@@ -4,7 +4,7 @@ import com.example.models.Author;
 import com.example.models.books.Book;
 import com.example.models.books.PhysicalBook;
 import com.example.services.books.BookSearchEngine;
-import com.example.services.books.WarehouseRepository;
+import com.example.services.books.WarehouseBookRepository;
 
 import java.util.Collections;
 import java.util.Date;
@@ -17,8 +17,8 @@ public class EnhancedBookSearchEngine extends BookSearchEngine {
 
     private final Map<String, BookSearchResults> searchResultsCache = new HashMap<>();
 
-    public EnhancedBookSearchEngine(WarehouseRepository warehouseRepository) {
-        super(warehouseRepository);
+    public EnhancedBookSearchEngine(WarehouseBookRepository warehouseBookRepository) {
+        super(warehouseBookRepository);
     }
 
     public BookSearchResults findBooksByTitle(String title) {

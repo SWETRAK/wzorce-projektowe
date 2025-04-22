@@ -13,8 +13,8 @@ public class BookSearchEngine implements BookSearch {
 
     private final Map<String, String> cache = new HashMap<>();
 
-    public BookSearchEngine(WarehouseRepository warehouseRepository) {
-        realWarehauseBookSearch = new WarehauseBookSearch(warehouseRepository);
+    public BookSearchEngine(WarehouseBookRepository warehouseBookRepository) {
+        realWarehauseBookSearch = new WarehauseBookSearch(warehouseBookRepository);
     }
 
     @Override
