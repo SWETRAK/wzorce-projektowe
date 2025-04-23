@@ -34,13 +34,13 @@ public class JKTest {
         engine.evaluatePromotions("NEW");
         engine.evaluatePromotions("STANDARD");
 
-        PaymentMethod card = new Card();
-        PaymentMethod blik = new BLIK();
-        PaymentMethod paypal = new PayPal();
+        PaymentProcessor processor1 = new PayPalAdapter(new PayPalPayment());
+        PaymentProcessor processor2 = new BlikAdapter(new BlikPayment());
+        PaymentProcessor processor3 = new CardAdapter(new CardPayment());
+        processor1.processPayment(300);
+        processor2.processPayment(450);
+        processor3.processPayment(500);
 
-        card.processPayment(150.00);
-        blik.processPayment(75.50);
-        paypal.processPayment(127.00);
 
         UserNotification userNotification = new UserNotification();
         userNotification.notifyUser("email", "asia@example.com", "Twoje zamówienie zostało wysłane!");
