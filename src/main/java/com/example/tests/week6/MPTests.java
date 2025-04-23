@@ -206,44 +206,47 @@ public class MPTests {
         books.add(book3);
         books.add(book4);
 
+
         BookCatalog bookCatalog = new BookCatalog(books);
-        bookCatalog.setSortingStrategy(new DateSortingStrategy());
+        BookSorter bookSorter = new BookSorter();
+        bookSorter.setCatalog(bookCatalog);
+        bookSorter.setSortingStrategy(new DateSortingStrategy());
 
         System.out.println("Books sorted by date:");
-        for (Book book : bookCatalog.getSortedBooks()) {
+        for (Book book : bookSorter.getSortedBooks()) {
             System.out.println(book.getTitle()+ ", "+book.getPublishedDate());
         }
 
-        bookCatalog.setSortingStrategy(new GenreSortingStrategy());
+        bookSorter.setSortingStrategy(new GenreSortingStrategy());
         System.out.println("\nBooks sorted by genre:");
-        for (Book book : bookCatalog.getSortedBooks()) {
+        for (Book book : bookSorter.getSortedBooks()) {
             System.out.println(book.getTitle()+ ", "+book.getGenre());
         }
 
-        bookCatalog.setSortingStrategy(new PageCountSortingStrategy());
+        bookSorter.setSortingStrategy(new PageCountSortingStrategy());
 
         System.out.println("\nBooks sorted by page count:");
-        for (Book book : bookCatalog.getSortedBooks()) {
+        for (Book book : bookSorter.getSortedBooks()) {
             System.out.println(book.getTitle()+ ", "+book.getPages());
         }
 
-        bookCatalog.setSortingStrategy(new PublisherSortingStrategy());
+        bookSorter.setSortingStrategy(new PublisherSortingStrategy());
 
         System.out.println("\nBooks sorted by publisher:");
-        for (Book book : bookCatalog.getSortedBooks()) {
+        for (Book book : bookSorter.getSortedBooks()) {
             System.out.println(book.getTitle()+ ", "+book.getPublisher());
         }
 
-        bookCatalog.setSortingStrategy(new AuthorSortingStrategy());
+        bookSorter.setSortingStrategy(new AuthorSortingStrategy());
         System.out.println("\nBooks sorted by author:");
-        for (Book book : bookCatalog.getSortedBooks()) {
+        for (Book book : bookSorter.getSortedBooks()) {
             System.out.println(book.getTitle()+ ", "+book.getAuthors());
         }
 
-        bookCatalog.setSortingStrategy(new TitleSortingStrategy());
+        bookSorter.setSortingStrategy(new TitleSortingStrategy());
 
         System.out.println("\nBooks sorted by title:");
-        for (Book book : bookCatalog.getSortedBooks()) {
+        for (Book book : bookSorter.getSortedBooks()) {
             System.out.println(book.getTitle()+ ", "+book.getTitle());
         }
     }

@@ -168,38 +168,38 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ### Joanna
 
-- [ ] **Single Responsibility Principle**
-  - [ ] Klasa `PromotionNotifier` – odpowiada tylko za wysyłkę powiadomień o promocjach
-  - [ ] Klasa `UserProfileManager` – odpowiada tylko za edycję danych użytkownika
-  - [ ] Klasa `PaymentValidator` – odpowiada tylko za walidację płatności
+- [x] **Single Responsibility Principle**
+  - [x] Klasa `PromotionNotifier` – odpowiada tylko za wysyłkę powiadomień o promocjach
+  - [x] Klasa `UserProfileManager` – odpowiada tylko za edycję danych użytkownika
+  - [x] Klasa `PaymentValidator` – odpowiada tylko za walidację płatności
 
-- [ ] **Open/Closed Principle**
-  - [ ] `PromotionEngine`
+- [x] **Open/Closed Principle**
+  - [x] `PromotionEngine`
     - Abstrakcja: Interfejs `PromotionRule` + różne klasy z logiką promocji
     - Sterowanie danymi: lista reguł jako dane wejściowe (`List<PromotionRule>`)
-  - [ ] `PaymentMethod`
+  - [x] `PaymentMethod`
     - Abstrakcja: Klasa bazowa `PaymentMethod` rozszerzana przez `CreditCard`, `BLIK`
     - Sterowanie danymi: wybór metody przez string/fabrykę
-  - [ ] `UserNotification`
+  - [x] `UserNotification`
     - Abstrakcja: interfejs `Notifier` (np. EmailNotifier, SMSNotifier)
     - Sterowanie danymi: mapowanie typu notyfikacji na klasę (`Map<String, Notifier>`)
 
 
 ### Maciej
 
-- [ ] **Single Responsibility Principle**
-  - [ ] Klasa `OrderProcessor` – przetwarza tylko zamówienia
-  - [ ] Klasa `BookSorter` – odpowiada tylko za sortowanie książek
-  - [ ] Klasa `ClientHistoryManager` – odpowiada za zapis i odtwarzanie danych klienta
+- [x] **Single Responsibility Principle**
+  - [x] Klasa `OrderProcessor` – przetwarza tylko zamówienia
+  - [x] Klasa `BookSorter` – odpowiada tylko za sortowanie książek
+  - [x] Klasa `ClientHistoryManager` – odpowiada za zapis i odtwarzanie danych klienta
 
-- [ ] **Open/Closed Principle**
-  - [ ] `OrderHandler`
+- [x] **Open/Closed Principle**
+  - [x] `OrderHandler`
     - Abstrakcja: `OrderHandler` jako interfejs z `PhysicalOrder`, `DigitalOrder`
     - Sterowanie danymi: wybór przez typ zamówienia (np. enum)
-  - [ ] `SortingStrategy`
+  - [x] `SortingStrategy`
     - Abstrakcja: różne implementacje `SortingStrategy` (po cenie, dacie, popularności)
     - Sterowanie danymi: wybór strategii przez mapę strategii
-  - [ ] `InvoiceExporter`
+  - [x] `InvoiceExporter`
     - Abstrakcja: interfejs `Exporter` (np. CSV, PDF, XML)
     - Sterowanie danymi: wybór typu eksportu przez parametr lub konfigurację
     
