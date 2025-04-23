@@ -12,15 +12,9 @@ import java.util.List;
 @Setter
 public class BookCatalog {
     private List<Book> books;
-    private BookSortingStrategy sortingStrategy;
 
     public BookCatalog(List<Book> books) {
         this.books = books;
-        this.sortingStrategy = new DateSortingStrategy();
-    }
-
-    public List<Book> getSortedBooks() {
-        return sortingStrategy.sort(books);
     }
 
     public void addBook(Book book) {

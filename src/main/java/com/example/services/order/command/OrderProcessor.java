@@ -1,5 +1,8 @@
 package com.example.services.order.command;
 
+// Tydzień 7, Zasada SRP, Maciej Potręć
+// Klasa która odpowiada za wykonanie różnych operacji na zamówieniach
+
 // Tydzień 5, Wzorzec Command, Maciej Potręć
 // Receiver - wykonuje operacje na zamówieniach
 public class OrderProcessor {
@@ -32,3 +35,4 @@ public class OrderProcessor {
     }
 }
 // Koniec, Tydzień 5, Wzorzec Command, Maciej Potręć
+// Koniec, Tydzień 7, Zasada SRP, Maciej Potręć
