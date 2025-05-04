@@ -34,6 +34,7 @@ public class JKTest {
         engine.evaluatePromotions("NEW");
         engine.evaluatePromotions("STANDARD");
 
+
         PaymentProcessor processor1 = new PayPalAdapter(new PayPalPayment());
         PaymentProcessor processor2 = new BlikAdapter(new BlikPayment());
         PaymentProcessor processor3 = new CardAdapter(new CardPayment());

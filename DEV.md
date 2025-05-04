@@ -221,3 +221,72 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
   - [x] `Exporter`
     - Abstrakcja: `Exporter` + `CSVExporter`, `XMLExporter`
     - Sterowanie danymi: konfiguracja formatu eksportu (np. przez UI lub parametryzację)
+
+
+---
+
+## Tydzień 8
+
+### Joanna
+ 
+
+- [ ] Zasada Podstawienia Liskov (LSP)
+  - [ ] Klasa bazowa: `User`
+  - [ ] Klasa pochodna: `AdminUser`
+  - [ ] Przykład użycia: lista użytkowników `List<User>` zawierająca również `AdminUser`
+ 
+- [ ] Zasada Odwrócenia Zależności (DIP)
+  - [ ] Interfejs: `NotificationSender`
+  - [ ] Klasa abstrakcyjna: `BaseNotifier`
+  - [ ] Implementacja: `EmailNotifier`
+  - [ ] Moduł wysokopoziomowy: `NotificationService` używa tylko `NotificationSender`
+
+[ ] Zasada Segregacji Interfejsów (ISP)
+- [ ] Gruby interfejs: `UserOperations`
+- [ ] Podział interfejsów:
+  - `LoginCapability`
+  - `ProfileEditing`
+  - `UserStatistics`
+
+  
+### Maciej
+
+- [ ] Zasada Podstawienia Liskov (LSP)
+  - [ ] Klasa bazowa: `Order`
+  - [ ] Klasa pochodna: `SpecialDiscountOrder`
+  - [ ] Przykład użycia: `List<Order>` obsługuje `SpecialDiscountOrder` bez błędów
+
+- [ ] Zasada Odwrócenia Zależności (DIP)
+  - [ ] Interfejs: `PaymentProcessor`
+  - [ ] Klasa abstrakcyjna: `AbstractPaymentHandler`
+  - [ ] Implementacja: `CreditCardProcessor`
+  - [ ] Klasa `CheckoutService` używa tylko `PaymentProcessor`
+
+- [ ] Zasada Segregacji Interfejsów (ISP)
+  - [ ] Gruby interfejs: `OrderManagement`
+  - [ ] Podział interfejsów:
+    - `OrderCreation`
+    - `OrderTracking`
+    - `OrderCancellation`
+
+
+### Kamil
+
+- [ ] Zasada Podstawienia Liskov (LSP)
+  - [ ] Klasa bazowa: `Exporter`
+  - [ ] Klasa pochodna: `JSONExporter`
+  - [ ] Przykład użycia: `List<Exporter>` współpracuje z wszystkimi implementacjami
+
+- [ ] Zasada Odwrócenia Zależności (DIP)
+  - [ ] Interfejs: `SearchProvider`
+  - [ ] Klasa abstrakcyjna: `AbstractSearchEngine`
+  - [ ] Implementacja: `ElasticSearchEngine`
+  - [ ] Klasa `SearchService` korzysta z `SearchProvider`, nie z konkretnego silnika
+
+- [ ] Zasada Segregacji Interfejsów (ISP)
+  - [ ] Gruby interfejs: `ExportCapabilities`
+  - [ ] Podział interfejsów:
+    - `PDFExport`
+    - `CSVExport`
+    - `XMLExport`
+
