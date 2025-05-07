@@ -290,3 +290,87 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
     - `CSVExport`
     - `XMLExport`
 
+---
+
+# NOWE
+
+# Tydzień 8 – SOLID: LSP, DIP, ISP – Zadania indywidualne (Księgarnia Internetowa)
+
+## Joanna
+
+### 🔷 Zasada Podstawienia Liskov (LSP)
+- [ ] `Book` → `EBook`, `PrintedBook`  
+  (używane wymiennie w katalogu książek)
+- [ ] `User` → `RegularUser`, `PremiumUser`  
+  (wspólna obsługa konta i rabatów)
+- [ ] `PaymentMethod` → `CardPayment`, `BLIKPayment`  
+  (proces płatności)
+
+### 🔷 Zasada Odwrócenia Zależności (DIP)
+- [ ] Interfejsy: `PaymentProcessor`, `UserNotifier`, `BookSource`
+- [ ] Abstrakcje: `AbstractPaymentService`, `AbstractNotifier`, `AbstractBookFetcher`
+- [ ] Implementacje: `StripeProcessor`, `EmailNotifier`, `LocalDatabaseBookFetcher`
+- [ ] Klasa `OrderService` korzysta tylko z abstrakcji, nie implementacji
+
+### 🔷 Zasada Segregacji Interfejsów (ISP)
+- [ ] Grube interfejsy:
+  - `UserService` (logowanie, rejestracja, historia zakupów, zmiana hasła)
+  - `BookService` (wyszukiwanie, filtrowanie, dodawanie, edycja, usuwanie)
+  - `OrderService` (tworzenie zamówienia, anulowanie, status)
+- [ ] Podzielone interfejsy:
+  - `AuthenticationService`, `AccountManagement`, `HistoryService`
+  - `BookSearch`, `BookEditor`
+  - `OrderCreator`, `OrderStatusViewer`
+
+## Maciej
+
+### 🔷 Zasada Podstawienia Liskov (LSP)
+- [ ] `Discount` → `PercentageDiscount`, `FixedDiscount`  
+  (mechanizm rabatów)
+- [ ] `Notification` → `EmailNotification`, `SMSNotification`  
+  (system powiadomień)
+- [ ] `Invoice` → `PDFInvoice`, `HTMLInvoice`  
+  (generowanie faktur)
+
+### 🔷 Zasada Odwrócenia Zależności (DIP)
+- [ ] Interfejsy: `InvoiceGenerator`, `DiscountStrategy`, `NotificationService`
+- [ ] Abstrakcje: `BaseInvoiceGenerator`, `BaseDiscount`, `BaseNotifier`
+- [ ] Implementacje: `SimplePDFInvoice`, `LoyaltyDiscount`, `TwilioNotifier`
+- [ ] Klasa `CheckoutProcessor` działa tylko na interfejsach i abstrakcjach
+
+### 🔷 Zasada Segregacji Interfejsów (ISP)
+- [ ] Grube interfejsy:
+  - `InvoiceService` (generowanie, zapis, wysyłka)
+  - `DiscountManager` (obliczanie, przydzielanie, logowanie rabatu)
+  - `Notifier` (powiadom klienta, admina, księgowość)
+- [ ] Podzielone interfejsy:
+  - `InvoiceRenderer`, `InvoiceSaver`, `InvoiceSender`
+  - `DiscountApplier`, `DiscountLogger`
+  - `CustomerNotifier`, `AdminNotifier`
+
+## Kamil
+
+### 🔷 Zasada Podstawienia Liskov (LSP)
+- [ ] `DeliveryStrategy` → `CourierDelivery`, `LockerDelivery`  
+  (dostawa zamówień)
+- [ ] `BookSearchStrategy` → `WarehouseSearch`, `DatabaseSearch`  
+  (wyszukiwanie książek)
+- [ ] `Exporter` → `CSVExporter`, `PDFExporter`  
+  (eksport danych księgarni)
+
+### 🔷 Zasada Odwrócenia Zależności (DIP)
+- [ ] Interfejsy: `BookRepository`, `DeliveryService`, `InvoiceRenderer`
+- [ ] Abstrakcje: `AbstractBookStorage`, `AbstractDelivery`, `AbstractInvoiceRenderer`
+- [ ] Implementacje: `MySQLBookRepo`, `DHLDeliveryService`, `SimplePDFRenderer`
+- [ ] Klasa `OrderProcessor` operuje wyłącznie na abstrakcjach
+
+### 🔷 Zasada Segregacji Interfejsów (ISP)
+- [ ] Grube interfejsy:
+  - `ExportService` (eksport książek, zamówień, faktur)
+  - `SearchService` (szukaj po autorze, tytule, ISBN, magazynie)
+  - `DeliveryManager` (planuj, wyślij, śledź)
+- [ ] Podzielone interfejsy:
+  - `BookExport`, `OrderExport`, `InvoiceExport`
+  - `TitleSearch`, `AuthorSearch`, `ISBNSearch`, `LocationSearch`
+  - `DeliveryPlanner`, `PackageShipper`, `TrackingService`
+
