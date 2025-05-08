@@ -225,83 +225,83 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ---
 
-##  Tydzień 8 – SOLID: LSP, DIP, ISP
+# Tydzień 8 – SOLID: LSP, DIP, ISP – Zadania indywidualne (Księgarnia Internetowa)
 
-### Joanna
- 
-- [ ] Zasada Podstawienia Liskov (LSP)
-  - [ ] `Book` → `EBook`, `PrintedBook`  
-    (używane wymiennie w katalogu książek)
-  - [ ] `User` → `RegularUser`, `PremiumUser`  
-    (wspólna obsługa konta i rabatów)
-  - [ ] `PaymentMethod` → `CardPayment`, `BLIKPayment`  
-    (proces płatności)
+## Joanna
 
-- [ ] Zasada Odwrócenia Zależności (DIP)
-  - [ ] Interfejsy: `PaymentProcessor`, `UserNotifier`, `BookSource`
-  - [ ] Abstrakcje: `AbstractPaymentService`, `AbstractNotifier`, `AbstractBookFetcher`
-  - [ ] Implementacje: `StripeProcessor`, `EmailNotifier`, `LocalDatabaseBookFetcher`
-  - [ ] Klasa `OrderService` korzysta tylko z abstrakcji, nie implementacji
+### 🔷 Zasada Podstawienia Liskov (LSP)
+- [ ] `Book` → `EBook`, `PrintedBook`  
+  (używane wymiennie w katalogu książek)
+- [ ] `User` → `RegularUser`, `PremiumUser`  
+  (wspólna obsługa konta i rabatów)
+- [ ] `PaymentMethod` → `CardPayment`, `BLIKPayment`  
+  (proces płatności)
 
-- [ ] Zasada Segregacji Interfejsów (ISP)
-  - [ ] Grube interfejsy:
-    - `UserService` (logowanie, rejestracja, historia zakupów, zmiana hasła)
-    - `BookService` (wyszukiwanie, filtrowanie, dodawanie, edycja, usuwanie)
-    - `OrderService` (tworzenie zamówienia, anulowanie, status)
-  - [ ] Podzielone interfejsy:
-    - `AuthenticationService`, `AccountManagement`, `HistoryService`
-    - `BookSearch`, `BookEditor`
-    - `OrderCreator`, `OrderStatusViewer`
+### 🔷 Zasada Odwrócenia Zależności (DIP)
+- [ ] Interfejsy: `PaymentProcessor`, `UserNotifier`, `BookSource`
+- [ ] Abstrakcje: `AbstractPaymentService`, `AbstractNotifier`, `AbstractBookFetcher`
+- [ ] Implementacje: `StripeProcessor`, `EmailNotifier`, `LocalDatabaseBookFetcher`
+- [ ] Klasa `OrderService` korzysta tylko z abstrakcji, nie implementacji
 
-### Maciej
+### 🔷 Zasada Segregacji Interfejsów (ISP)
+- [ ] Grube interfejsy:
+  - `UserService` (logowanie, rejestracja, historia zakupów, zmiana hasła)
+  - `BookService` (wyszukiwanie, filtrowanie, dodawanie, edycja, usuwanie)
+  - `OrderService` (tworzenie zamówienia, anulowanie, status)
+- [ ] Podzielone interfejsy:
+  - `AuthenticationService`, `AccountManagement`, `HistoryService`
+  - `BookSearch`, `BookEditor`
+  - `OrderCreator`, `OrderStatusViewer`
 
-- [ ] Zasada Podstawienia Liskov (LSP)
-  - [ ] `Discount` → `PercentageDiscount`, `FixedDiscount`  
-    (mechanizm rabatów)
-  - [ ] `Notification` → `EmailNotification`, `SMSNotification`  
-    (system powiadomień)
-  - [ ] `Invoice` → `PDFInvoice`, `HTMLInvoice`  
-    (generowanie faktur)
+## Maciej
 
-- [ ] Zasada Odwrócenia Zależności (DIP)
-  - [ ] Interfejsy: `InvoiceGenerator`, `DiscountStrategy`, `NotificationService`
-  - [ ] Abstrakcje: `BaseInvoiceGenerator`, `BaseDiscount`, `BaseNotifier`
-  - [ ] Implementacje: `SimplePDFInvoice`, `LoyaltyDiscount`, `TwilioNotifier`
-  - [ ] Klasa `CheckoutProcessor` działa tylko na interfejsach i abstrakcjach
+### 🔷 Zasada Podstawienia Liskov (LSP)
+- [X] `Discount` → `PercentageDiscount`, `FixedDiscount`  
+  (mechanizm rabatów)
+- [X] `Notification` → `EmailNotification`, `SMSNotification`  
+  (system powiadomień)
+- [X] `Invoice` → `PDFInvoice`, `HTMLInvoice`  
+  (generowanie faktur)
 
-- [ ] Zasada Segregacji Interfejsów (ISP)
-  - [ ] Grube interfejsy:
-    - `InvoiceService` (generowanie, zapis, wysyłka)
-    - `DiscountManager` (obliczanie, przydzielanie, logowanie rabatu)
-    - `Notifier` (powiadom klienta, admina, księgowość)
-  - [ ] Podzielone interfejsy:
-    - `InvoiceRenderer`, `InvoiceSaver`, `InvoiceSender`
-    - `DiscountApplier`, `DiscountLogger`
-    - `CustomerNotifier`, `AdminNotifier`
+### 🔷 Zasada Odwrócenia Zależności (DIP)
+- [x] Interfejsy: `InvoiceGenerator`, `DiscountStrategy`, `NotificationService`
+- [x] Abstrakcje: `BaseInvoiceGenerator`, `BaseDiscount`, `BaseNotifier`
+- [x] Implementacje: `SimplePDFInvoice`, `LoyaltyDiscount`, `TwilioNotifier`
+- [x] Klasa `CheckoutProcessor` działa tylko na interfejsach i abstrakcjach
 
-### Kamil
+### 🔷 Zasada Segregacji Interfejsów (ISP)
+- [x] Grube interfejsy:
+  - `InvoiceService` (generowanie, zapis, wysyłka)
+  - `DiscountManager` (obliczanie, przydzielanie, logowanie rabatu)
+  - `Notifier` (powiadom klienta, admina, księgowość)
+- [x] Podzielone interfejsy:
+  - `InvoiceRenderer`, `InvoiceSaver`, `InvoiceSender`
+  - `DiscountApplier`, `DiscountLogger`
+  - `CustomerNotifier`, `AdminNotifier`
 
-- [x] Zasada Podstawienia Liskov (LSP)
-  - [x] `DeliveryStrategy` → `CourierDelivery`, `LockerDelivery`  
-    (dostawa zamówień)
-  - [x] `BookSearchStrategy` → `WarehouseSearch`, `DatabaseSearch`  
-    (wyszukiwanie książek)
-  - [x] `Exporter` → `CSVExporter`, `PDFExporter`  
-    (eksport danych księgarni)
+## Kamil
 
-- [x] Zasada Odwrócenia Zależności (DIP)
-  - [x] Interfejsy: `BookRepository`, `DeliveryService`, `InvoiceRenderer`
-  - [x] Abstrakcje: `AbstractBookStorage`, `AbstractDelivery`, `AbstractInvoiceRenderer`
-  - [x] Implementacje: `WarechauseRepository`, `DHLDeliveryService`, `SimplePDFRenderer`
-  - [x] Klasa `OrderProcessor` operuje wyłącznie na abstrakcjach
+### 🔷 Zasada Podstawienia Liskov (LSP)
+- [x] `DeliveryStrategy` → `CourierDelivery`, `LockerDelivery`  
+  (dostawa zamówień)
+- [x] `BookSearchStrategy` → `WarehouseSearch`, `DatabaseSearch`  
+  (wyszukiwanie książek)
+- [x] `Exporter` → `CSVExporter`, `PDFExporter`  
+  (eksport danych księgarni)
 
-- [x] Zasada Segregacji Interfejsów (ISP)
-  - [x] Grube interfejsy:
+### 🔷 Zasada Odwrócenia Zależności (DIP)
+- [x] Interfejsy: `BookRepository`, `DeliveryService`, `InvoiceRenderer`
+- [x] Abstrakcje: `AbstractBookStorage`, `AbstractDelivery`, `AbstractInvoiceRenderer`
+- [x] Implementacje: `MySQLBookRepo`, `DHLDeliveryService`, `SimplePDFRenderer`
+- [x] Klasa `OrderProcessor` operuje wyłącznie na abstrakcjach
+
+### 🔷 Zasada Segregacji Interfejsów (ISP)
+- [x] Grube interfejsy:
   - `ExportService` (eksport książek, zamówień, faktur)
   - `SearchService` (szukaj po autorze, tytule, ISBN, magazynie)
   - `DeliveryManager` (planuj, wyślij, śledź)
-  - [x] Podzielone interfejsy:
-    - `BookExport`, `OrderExport`, `InvoiceExport`
-    - `TitleSearch`, `AuthorSearch`, `ISBNSearch`, `LocationSearch`
-    - `DeliveryPlanner`, `PackageShipper`, `TrackingService`
+- [x] Podzielone interfejsy:
+  - `BookExport`, `OrderExport`, `InvoiceExport`
+  - `TitleSearch`, `AuthorSearch`, `ISBNSearch`, `LocationSearch`
+  - `DeliveryPlanner`, `PackageShipper`, `TrackingService`
 
