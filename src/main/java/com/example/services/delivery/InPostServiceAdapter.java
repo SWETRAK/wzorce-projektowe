@@ -7,7 +7,9 @@ import com.example.services.external.InPostDeliveryService;
 
 // Tydzień 3, Wzorzec Adapter, Kamil Pietrak
 // Klasa adaptera dla wysyłek InPost korzystająca z "zewnętrznego serwisu". Dostosowuje "zewnętrzną" bibliotekę do designu systemu
-public class InPostServiceAdapter extends DeliveryComponent implements DeliveryService{
+// Tydzień 8, Zasada Podstawienia Liskov, Kamil Pietrak
+// InPostServiceAdapter implementuje DeliveryService, realizując dostawę do paczkomatu.
+public class InPostServiceAdapter extends DeliveryComponent implements DeliveryService {
 
     private final InPostDeliveryService inPostDeliveryService = new InPostDeliveryService();
 
@@ -50,4 +52,5 @@ public class InPostServiceAdapter extends DeliveryComponent implements DeliveryS
         inPostDeliveryService.getStatus(orderId);
     }
 }
+// Koniec, Tydzień 8, Zasada Podstawienia Liskov, Kamil Pietrak
 // Koniec, Tydzień 3, Wzorzec Adapter, Kamil Pietrak
