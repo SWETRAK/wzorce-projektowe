@@ -2,6 +2,9 @@ package com.example.services.payment;
 
 // Tydzień 3, Wzorzec Adapter, Joanna Kozar
 // Adapter pozwalający na użycie systemu PayPal jako procesora płatności
+
+// Tydzień 7, Open/Closed Principle, Joanna Kozar
+// Płatność PayPal
 public class PayPalAdapter implements PaymentProcessor {
     private final PayPalPayment paypal;
 
@@ -14,4 +17,5 @@ public class PayPalAdapter implements PaymentProcessor {
         paypal.makePayment(amount);
     }
 }
+// Koniec - Tydzień 7, Open/Closed Principle, Joanna Kozar
 // Koniec - Tydzień 3, Wzorzec Adapter, Joanna Kozar

@@ -168,56 +168,140 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ### Joanna
 
-- [ ] **Single Responsibility Principle**
-  - [ ] Klasa `PromotionNotifier` – odpowiada tylko za wysyłkę powiadomień o promocjach
-  - [ ] Klasa `UserProfileManager` – odpowiada tylko za edycję danych użytkownika
-  - [ ] Klasa `PaymentValidator` – odpowiada tylko za walidację płatności
+- [x] **Single Responsibility Principle**
+  - [x] Klasa `PromotionNotifier` – odpowiada tylko za wysyłkę powiadomień o promocjach
+  - [x] Klasa `UserProfileManager` – odpowiada tylko za edycję danych użytkownika
+  - [x] Klasa `PaymentValidator` – odpowiada tylko za walidację płatności
 
-- [ ] **Open/Closed Principle**
-  - [ ] `PromotionEngine`
+- [x] **Open/Closed Principle**
+  - [x] `PromotionEngine`
     - Abstrakcja: Interfejs `PromotionRule` + różne klasy z logiką promocji
     - Sterowanie danymi: lista reguł jako dane wejściowe (`List<PromotionRule>`)
-  - [ ] `PaymentMethod`
+  - [x] `PaymentMethod`
     - Abstrakcja: Klasa bazowa `PaymentMethod` rozszerzana przez `CreditCard`, `BLIK`
     - Sterowanie danymi: wybór metody przez string/fabrykę
-  - [ ] `UserNotification`
+  - [x] `UserNotification`
     - Abstrakcja: interfejs `Notifier` (np. EmailNotifier, SMSNotifier)
     - Sterowanie danymi: mapowanie typu notyfikacji na klasę (`Map<String, Notifier>`)
 
 
 ### Maciej
 
-- [ ] **Single Responsibility Principle**
-  - [ ] Klasa `OrderProcessor` – przetwarza tylko zamówienia
-  - [ ] Klasa `BookSorter` – odpowiada tylko za sortowanie książek
-  - [ ] Klasa `ClientHistoryManager` – odpowiada za zapis i odtwarzanie danych klienta
+- [x] **Single Responsibility Principle**
+  - [x] Klasa `OrderProcessor` – przetwarza tylko zamówienia
+  - [x] Klasa `BookSorter` – odpowiada tylko za sortowanie książek
+  - [x] Klasa `ClientHistoryManager` – odpowiada za zapis i odtwarzanie danych klienta
 
-- [ ] **Open/Closed Principle**
-  - [ ] `OrderHandler`
+- [x] **Open/Closed Principle**
+  - [x] `OrderHandler`
     - Abstrakcja: `OrderHandler` jako interfejs z `PhysicalOrder`, `DigitalOrder`
     - Sterowanie danymi: wybór przez typ zamówienia (np. enum)
-  - [ ] `SortingStrategy`
+  - [x] `SortingStrategy`
     - Abstrakcja: różne implementacje `SortingStrategy` (po cenie, dacie, popularności)
     - Sterowanie danymi: wybór strategii przez mapę strategii
-  - [ ] `InvoiceExporter`
+  - [x] `InvoiceExporter`
     - Abstrakcja: interfejs `Exporter` (np. CSV, PDF, XML)
     - Sterowanie danymi: wybór typu eksportu przez parametr lub konfigurację
     
 
 ### Kamil
 
-- [ ] **Single Responsibility Principle**
-  - [ ] Klasa `StockUpdater` – aktualizuje tylko stan magazynu
-  - [ ] Klasa `DeliveryScheduler` – zarządza planowaniem dostaw
-  - [ ] Klasa `PDFInvoiceGenerator` – odpowiada tylko za generowanie faktur PDF
+- [x] **Single Responsibility Principle**
+  - [x] `StockUpdater` – klasa odpowiedzialna wyłącznie za aktualizację stanu magazynu
+  - [x] `DeliveryScheduler` – klasa zajmująca się planowaniem dostaw
+  - [x] `PDFInvoiceGenerator` – odpowiada jedynie za tworzenie faktur PDF
 
-- [ ] **Open/Closed Principle**
-  - [ ] `ShippingProcess`
-    - Abstrakcja: `ShippingProcess` + klasy `DHLShipping`, `InPostShipping`
-    - Sterowanie danymi: wybór procesu przez `Map<String, ShippingProcess>`
-  - [ ] `DeliveryStrategy`
+- [x] **Open/Closed Principle**
+  - [x] `Wyszukiwanie książek`
+    - Abstrakcja: BookSearch.
+    - Sterowanie danymi: `BookSearchManager` wybiera strategię na podstawie typu źródła (`db`, `warehouse`).
+  - [x] `DeliveryStrategy`
     - Abstrakcja: interfejs + `CourierDelivery`, `LockerDelivery`
     - Sterowanie danymi: przekazanie strategii na podstawie danych użytkownika
-  - [ ] `Exporter`
-    - Abstrakcja: `Exporter` + `CSVExporter`, `XMLExporter`, `PDFExporter`
+  - [x] `Exporter`
+    - Abstrakcja: `Exporter` + `CSVExporter`, `XMLExporter`
     - Sterowanie danymi: konfiguracja formatu eksportu (np. przez UI lub parametryzację)
+
+
+---
+
+# Tydzień 8 – SOLID: LSP, DIP, ISP – Zadania indywidualne (Księgarnia Internetowa)
+
+## Joanna
+
+### 🔷 Zasada Podstawienia Liskov (LSP)
+- [ ] `Book` → `EBook`, `PrintedBook`  
+  (używane wymiennie w katalogu książek)
+- [ ] `User` → `RegularUser`, `PremiumUser`  
+  (wspólna obsługa konta i rabatów)
+- [ ] `PaymentMethod` → `CardPayment`, `BLIKPayment`  
+  (proces płatności)
+
+### 🔷 Zasada Odwrócenia Zależności (DIP)
+- [ ] Interfejsy: `PaymentProcessor`, `UserNotifier`, `BookSource`
+- [ ] Abstrakcje: `AbstractPaymentService`, `AbstractNotifier`, `AbstractBookFetcher`
+- [ ] Implementacje: `StripeProcessor`, `EmailNotifier`, `LocalDatabaseBookFetcher`
+- [ ] Klasa `OrderService` korzysta tylko z abstrakcji, nie implementacji
+
+### 🔷 Zasada Segregacji Interfejsów (ISP)
+- [ ] Grube interfejsy:
+  - `UserService` (logowanie, rejestracja, historia zakupów, zmiana hasła)
+  - `BookService` (wyszukiwanie, filtrowanie, dodawanie, edycja, usuwanie)
+  - `OrderService` (tworzenie zamówienia, anulowanie, status)
+- [ ] Podzielone interfejsy:
+  - `AuthenticationService`, `AccountManagement`, `HistoryService`
+  - `BookSearch`, `BookEditor`
+  - `OrderCreator`, `OrderStatusViewer`
+
+## Maciej
+
+### 🔷 Zasada Podstawienia Liskov (LSP)
+- [X] `Discount` → `PercentageDiscount`, `FixedDiscount`  
+  (mechanizm rabatów)
+- [X] `Notification` → `EmailNotification`, `SMSNotification`  
+  (system powiadomień)
+- [X] `Invoice` → `PDFInvoice`, `HTMLInvoice`  
+  (generowanie faktur)
+
+### 🔷 Zasada Odwrócenia Zależności (DIP)
+- [x] Interfejsy: `InvoiceGenerator`, `DiscountStrategy`, `NotificationService`
+- [x] Abstrakcje: `BaseInvoiceGenerator`, `BaseDiscount`, `BaseNotifier`
+- [x] Implementacje: `SimplePDFInvoice`, `LoyaltyDiscount`, `TwilioNotifier`
+- [x] Klasa `CheckoutProcessor` działa tylko na interfejsach i abstrakcjach
+
+### 🔷 Zasada Segregacji Interfejsów (ISP)
+- [x] Grube interfejsy:
+  - `InvoiceService` (generowanie, zapis, wysyłka)
+  - `DiscountManager` (obliczanie, przydzielanie, logowanie rabatu)
+  - `Notifier` (powiadom klienta, admina, księgowość)
+- [x] Podzielone interfejsy:
+  - `InvoiceRenderer`, `InvoiceSaver`, `InvoiceSender`
+  - `DiscountApplier`, `DiscountLogger`
+  - `CustomerNotifier`, `AdminNotifier`
+
+## Kamil
+
+### 🔷 Zasada Podstawienia Liskov (LSP)
+- [x] `DeliveryStrategy` → `CourierDelivery`, `LockerDelivery`  
+  (dostawa zamówień)
+- [x] `BookSearchStrategy` → `WarehouseSearch`, `DatabaseSearch`  
+  (wyszukiwanie książek)
+- [x] `Exporter` → `CSVExporter`, `PDFExporter`  
+  (eksport danych księgarni)
+
+### 🔷 Zasada Odwrócenia Zależności (DIP)
+- [x] Interfejsy: `BookRepository`, `DeliveryService`, `InvoiceRenderer`
+- [x] Abstrakcje: `AbstractBookStorage`, `AbstractDelivery`, `AbstractInvoiceRenderer`
+- [x] Implementacje: `MySQLBookRepo`, `DHLDeliveryService`, `SimplePDFRenderer`
+- [x] Klasa `OrderProcessor` operuje wyłącznie na abstrakcjach
+
+### 🔷 Zasada Segregacji Interfejsów (ISP)
+- [x] Grube interfejsy:
+  - `ExportService` (eksport książek, zamówień, faktur)
+  - `SearchService` (szukaj po autorze, tytule, ISBN, magazynie)
+  - `DeliveryManager` (planuj, wyślij, śledź)
+- [x] Podzielone interfejsy:
+  - `BookExport`, `OrderExport`, `InvoiceExport`
+  - `TitleSearch`, `AuthorSearch`, `ISBNSearch`, `LocationSearch`
+  - `DeliveryPlanner`, `PackageShipper`, `TrackingService`
+

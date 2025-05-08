@@ -43,8 +43,8 @@ public class Book extends BookWithFormat implements BookComponent, Exportable {
         System.out.println("Book: " + title + " - " + description );
         bookFormat.showBookFormat();
     }
-
     // Koniec, Tydzień 6, Wzorzec Visitor, Kamil Pietrak
+
 
     //Asia
     @Override
@@ -58,6 +58,8 @@ public class Book extends BookWithFormat implements BookComponent, Exportable {
     public void accept(Exporter visitor) {
         visitor.visitBook(this);
     }
+    // Koniec, Tydzień 6, Wzorzec Visitor, Kamil Pietrak
+
 
     // Tydzień 2, Wzorzec builder, Maciej Potręć
     // Implementacja klasy Builder dla klasy Book, wymaga ona, aby użytkownik podał tytuł, opis, listę autorów oraz datę publikacji (pola obowiązkowe)
