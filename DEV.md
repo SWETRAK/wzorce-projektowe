@@ -325,25 +325,25 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 ## Maciej
 
 ### 🔷 Zasada Podstawienia Liskov (LSP)
-- [ ] `Discount` → `PercentageDiscount`, `FixedDiscount`  
+- [X] `Discount` → `PercentageDiscount`, `FixedDiscount`  
   (mechanizm rabatów)
-- [ ] `Notification` → `EmailNotification`, `SMSNotification`  
+- [X] `Notification` → `EmailNotification`, `SMSNotification`  
   (system powiadomień)
-- [ ] `Invoice` → `PDFInvoice`, `HTMLInvoice`  
+- [X] `Invoice` → `PDFInvoice`, `HTMLInvoice`  
   (generowanie faktur)
 
 ### 🔷 Zasada Odwrócenia Zależności (DIP)
-- [ ] Interfejsy: `InvoiceGenerator`, `DiscountStrategy`, `NotificationService`
-- [ ] Abstrakcje: `BaseInvoiceGenerator`, `BaseDiscount`, `BaseNotifier`
-- [ ] Implementacje: `SimplePDFInvoice`, `LoyaltyDiscount`, `TwilioNotifier`
-- [ ] Klasa `CheckoutProcessor` działa tylko na interfejsach i abstrakcjach
+- [x] Interfejsy: `InvoiceGenerator`, `DiscountStrategy`, `NotificationService`
+- [x] Abstrakcje: `BaseInvoiceGenerator`, `BaseDiscount`, `BaseNotifier`
+- [x] Implementacje: `SimplePDFInvoice`, `LoyaltyDiscount`, `TwilioNotifier`
+- [x] Klasa `CheckoutProcessor` działa tylko na interfejsach i abstrakcjach
 
 ### 🔷 Zasada Segregacji Interfejsów (ISP)
-- [ ] Grube interfejsy:
+- [x] Grube interfejsy:
   - `InvoiceService` (generowanie, zapis, wysyłka)
   - `DiscountManager` (obliczanie, przydzielanie, logowanie rabatu)
   - `Notifier` (powiadom klienta, admina, księgowość)
-- [ ] Podzielone interfejsy:
+- [x] Podzielone interfejsy:
   - `InvoiceRenderer`, `InvoiceSaver`, `InvoiceSender`
   - `DiscountApplier`, `DiscountLogger`
   - `CustomerNotifier`, `AdminNotifier`
