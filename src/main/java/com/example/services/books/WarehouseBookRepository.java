@@ -6,7 +6,9 @@ import java.util.Random;
 
 // Tydzień 7, Zasada SRP, Kamil Pietrak
 // Klasa zarządzająca dostępem do danych o stanie magazynu
-public class WarehouseBookRepository {
+// Tydzień 8, Zasada Odwrócenia Zależności, Kamil Pietrak
+// WarehouseBookRepository - konkretna implementacja repozytorium książek w pamięci.
+public class WarehouseBookRepository extends AbstractRepository  {
 
     private static final Map<String, Integer> stocks = new HashMap<>();
 
@@ -28,5 +30,16 @@ public class WarehouseBookRepository {
     public String searchBook(String title) {
         return "Book found in warehouse: " + title;
     }
+
+    @Override
+    public void save(String book, Integer quantity) {
+        stocks.put(book, quantity);
+    }
+
+    @Override
+    public Integer find(String title) {
+         return stocks.getOrDefault(title, 0);
+    }
 }
 // Koniec, Tydzień 7, Zasada SRP, Kamil Pietrak
+// Koniec, Tydzień 8, Zasada Odwrócenia Zależności, Kamil Pietrak
