@@ -13,8 +13,10 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+
 public class Book extends BookWithFormat implements BookComponent, Exportable {
 
+    @Getter
     private String title;
     private String description;
     private final List<Author> authors;
@@ -41,6 +43,8 @@ public class Book extends BookWithFormat implements BookComponent, Exportable {
         System.out.println("Book: " + title + " - " + description );
         bookFormat.showBookFormat();
     }
+    // Koniec, Tydzień 6, Wzorzec Visitor, Kamil Pietrak
+
 
     //Asia
     @Override
