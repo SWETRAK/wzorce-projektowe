@@ -1,6 +1,6 @@
 package com.example.services.invoice.dip;
 
-import com.example.services.notification.dip.NotificationService;
+import com.example.services.notification.DIP.NotificationService;
 
 // Tydzień 8, Zasada Odwrócenia Zależności, Maciej Potręć
 // SimplePDFInvoice jako konkretna implementacja generowania faktur PDF

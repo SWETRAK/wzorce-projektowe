@@ -8,8 +8,7 @@ import com.example.models.cart.CartItem;
 import com.example.models.cart.ProductCartItem;
 import com.example.models.delivery.DeliveryInfo;
 import com.example.models.users.Client;
-import com.example.services.books.BookSearchEngine;
-import com.example.services.books.WarehouseBookRepository;
+import com.example.services.books.*;
 import com.example.services.delivery.DeliveryFactory;
 import com.example.services.user.UserAccountService;
 
@@ -53,8 +52,13 @@ public class KPTest {
         user.showAccountInfo();
 
         // Proxy
-        WarehouseBookRepository warehouseBookRepository = new WarehouseBookRepository();
-        BookSearchEngine bookSearchEngine = new BookSearchEngine(warehouseBookRepository);
+        AbstractRepository warehouseBookRepository = new WarehouseBookRepository();
+
+        BookSearch databaseBookSearch = new DatabaseBookSearch();
+        BookSearch warehouseBookSearch = new WarehauseBookSearch(warehouseBookRepository);
+
+        BookSearch bookSearchEngine = new BookSearchEngine(warehouseBookSearch, databaseBookSearch);
+
         System.out.println(bookSearchEngine.searchBook("The Hobbit"));
         System.out.println(bookSearchEngine.searchBook("The Hobbit"));
 
