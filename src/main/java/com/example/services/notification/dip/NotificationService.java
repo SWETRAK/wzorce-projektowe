@@ -1,4 +1,4 @@
-package com.example.services.notification.dip;
+package com.example.services.notification.DIP;
 
 // Tydzień 8, Zasada Odwrócenia Zależności, Maciej Potręć
 // NotificationService jako interfejs wysokiego poziomu dla wysyłania powiadomień

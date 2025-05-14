@@ -3,9 +3,12 @@ package com.example.services.discount.isp.split;
 // Tydzień 8, Zasada Segregacji Interfejsów, Maciej Potręć
 // Implementacja DiscountApplier
 public class DiscountApplierImpl implements DiscountApplier {
+
+    private final static double DISCOUNT_VALUE = 0.1;
+
     @Override
     public double calculateDiscount(String userId, double orderAmount) {
-        return orderAmount * 0.1;
+        return orderAmount * DISCOUNT_VALUE;
     }
 
     @Override

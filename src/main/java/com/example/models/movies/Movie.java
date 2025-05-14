@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 @ToString
 public abstract class Movie {
+
         protected String title;
         protected String description;
         protected int duration;

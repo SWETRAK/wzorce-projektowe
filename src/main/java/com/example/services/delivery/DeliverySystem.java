@@ -31,5 +31,19 @@ public class DeliverySystem extends DeliveryComponent {
     protected void send(String packageId) {
         System.out.println("OrderSystem sending package " + packageId);
     }
+
+    @Override
+    public void deliverOrder(String orderId) {
+        System.out.println("OrderSystem delivering order " + orderId);
+        mediator.sendMessage(getName(), "DHL", "Deliver order");
+        mediator.sendMessage(getName(), "InPost", "Deliver order");
+    }
+
+    @Override
+    public void getOrderStatus(String orderId) {
+        System.out.println("OrderSystem getting order status for " + orderId);
+        mediator.sendMessage(getName(), "DHL", "Check order status");
+        mediator.sendMessage(getName(), "InPost", "Check order status");
+    }
 }
 // Koniec, Tydzień 5, Wzorzec Mediator, Kamil Pietrak

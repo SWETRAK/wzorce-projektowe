@@ -21,7 +21,13 @@ public class Client implements Observer {
     private final String phoneNumber;
     private final String address;
 
-    public Client(String firstName, String lastName, String email, String paymentMethod, String phoneNumber, String address) {
+    public Client(String firstName,
+                  String lastName,
+                  String email,
+                  String paymentMethod,
+                  String phoneNumber,
+                  String address) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -93,5 +99,4 @@ public class Client implements Observer {
         System.out.println(firstName + lastName + " otrzymał powiadomienie o promocji: " + promo);
     }
     // Koniec - Tydzień 6, wzorzec Observer, Joanna Kozar
-
 }

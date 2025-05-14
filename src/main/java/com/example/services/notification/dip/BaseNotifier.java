@@ -1,4 +1,4 @@
-package com.example.services.notification.dip;
+package com.example.services.notification.DIP;
 
 // Tydzień 8, Zasada Odwrócenia Zależności, Maciej Potręć
 // BaseNotifier jako abstrakcja implementująca interfejs NotificationService

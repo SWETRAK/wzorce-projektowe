@@ -230,25 +230,25 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 ## Joanna
 
 ### 🔷 Zasada Podstawienia Liskov (LSP)
-- [ ] `Book` → `EBook`, `PrintedBook`  
+- [x] `Book` → `EBook`, `PrintedBook`  
   (używane wymiennie w katalogu książek)
-- [ ] `User` → `RegularUser`, `PremiumUser`  
+- [x] `User` → `RegularUser`, `PremiumUser`  
   (wspólna obsługa konta i rabatów)
-- [ ] `PaymentMethod` → `CardPayment`, `BLIKPayment`  
+- [x] `PaymentMethod` → `CardPayment`, `BLIKPayment`  
   (proces płatności)
 
 ### 🔷 Zasada Odwrócenia Zależności (DIP)
-- [ ] Interfejsy: `PaymentProcessor`, `UserNotifier`, `BookSource`
-- [ ] Abstrakcje: `AbstractPaymentService`, `AbstractNotifier`, `AbstractBookFetcher`
-- [ ] Implementacje: `StripeProcessor`, `EmailNotifier`, `LocalDatabaseBookFetcher`
-- [ ] Klasa `OrderService` korzysta tylko z abstrakcji, nie implementacji
+- [x] Interfejsy: `PaymentProcessor`, `UserNotifier`, `BookSource`
+- [x] Abstrakcje: `AbstractPaymentService`, `AbstractNotifier`, `AbstractBookFetcher`
+- [x] Implementacje: `StripeProcessor`, `EmailNotifier`, `LocalDatabaseBookFetcher`
+- [x] Klasa `OrderService` korzysta tylko z abstrakcji, nie implementacji
 
 ### 🔷 Zasada Segregacji Interfejsów (ISP)
-- [ ] Grube interfejsy:
+- [x] Grube interfejsy:
   - `UserService` (logowanie, rejestracja, historia zakupów, zmiana hasła)
   - `BookService` (wyszukiwanie, filtrowanie, dodawanie, edycja, usuwanie)
   - `OrderService` (tworzenie zamówienia, anulowanie, status)
-- [ ] Podzielone interfejsy:
+- [x] Podzielone interfejsy:
   - `AuthenticationService`, `AccountManagement`, `HistoryService`
   - `BookSearch`, `BookEditor`
   - `OrderCreator`, `OrderStatusViewer`

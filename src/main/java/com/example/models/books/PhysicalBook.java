@@ -7,7 +7,7 @@ public class PhysicalBook implements BookFormat {
 
     @Override
     public void showBookFormat() {
-        System.out.println("This book is a Ebook");
+        System.out.println("This book is a Physical book");
     }
 }
 // Koniec, Tydzień 3, Wzorzec Bridge, Kamil Pietrak
