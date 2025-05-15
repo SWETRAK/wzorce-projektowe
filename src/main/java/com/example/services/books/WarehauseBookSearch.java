@@ -7,9 +7,9 @@ package com.example.services.books;
 // WarehouseSearch implementuje BookSearch i przeszukuje dane w magazynie.
 public class WarehauseBookSearch implements BookSearch {
 
-    private final WarehouseBookRepository warehouseBookRepository;
+    private final AbstractRepository warehouseBookRepository;
 
-    public WarehauseBookSearch(WarehouseBookRepository warehouseBookRepository) {
+    public WarehauseBookSearch(AbstractRepository warehouseBookRepository) {
         this.warehouseBookRepository = warehouseBookRepository;
     }
 

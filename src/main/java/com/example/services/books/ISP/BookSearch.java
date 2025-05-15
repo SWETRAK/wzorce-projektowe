@@ -4,6 +4,6 @@ package com.example.services.books.ISP;
 //Podzielony interfejs BookSearch
 public interface BookSearch {
     void search(String keyword);
-    void filterByCategory(String category);
+    void filterByGenre(String genre);
 }
 //Koniec - Tydzień 8 – Zasada Segregacji Interfejsów (ISP) - Joanna Kozar

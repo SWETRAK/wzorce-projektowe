@@ -2,7 +2,7 @@ package com.example.services.checkout;
 
 import com.example.services.discount.dip.DiscountStrategy;
 import com.example.services.invoice.dip.InvoiceGenerator;
-import com.example.services.notification.dip.NotificationService;
+import com.example.services.notification.DIP.NotificationService;
 import com.example.services.order.Order;
 // Tydzień 8, Zasada Odwrócenia Zależności, Maciej Potręć
 // CheckoutProcessor jako klasa wyższego poziomu, która korzysta tylko z abstrakcji

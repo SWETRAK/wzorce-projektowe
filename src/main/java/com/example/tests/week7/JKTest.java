@@ -2,6 +2,7 @@ package com.example.tests.week7;
 
 import com.example.services.discount.*;
 import com.example.services.notification.UserNotification;
+import com.example.services.notification.UserNotificationEnum;
 import com.example.services.payment.*;
 import com.example.services.user.UserProfileManager;
 
@@ -44,9 +45,9 @@ public class JKTest {
 
 
         UserNotification userNotification = new UserNotification();
-        userNotification.notifyUser("email", "asia@example.com", "Twoje zamówienie zostało wysłane!");
-        userNotification.notifyUser("sms", "Asia123", "Twoja płatność została potwierdzona.");
-        userNotification.notifyUser("push", "Asia123", "Brak powiadomienia dla push!");
+        userNotification.notifyUser(UserNotificationEnum.EMAIL, "asia@example.com", "Twoje zamówienie zostało wysłane!");
+        userNotification.notifyUser(UserNotificationEnum.SMS, "Asia123", "Twoja płatność została potwierdzona.");
+        userNotification.notifyUser(UserNotificationEnum.PUSH, "Asia123", "Brak powiadomienia dla push!");
 
         System.out.println("\n=== Test zakończony ===");
     }

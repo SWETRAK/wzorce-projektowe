@@ -2,6 +2,8 @@ package com.example.tests.week5;
 
 import com.example.models.books.Book;
 import com.example.models.users.Client;
+import com.example.services.books.DatabaseBookSearch;
+import com.example.services.books.WarehauseBookSearch;
 import com.example.services.books.WarehouseBookRepository;
 import com.example.services.books.iterator.BookSearchIterator;
 import com.example.services.books.iterator.BookSearchResults;
@@ -87,7 +89,11 @@ public class MPTests {
     {
         System.out.println("\n--- Iterator Pattern Test ---");
 
-        EnhancedBookSearchEngine searchEngine = new EnhancedBookSearchEngine(new WarehouseBookRepository());
+
+        EnhancedBookSearchEngine searchEngine = new EnhancedBookSearchEngine(
+                new WarehauseBookSearch(new WarehouseBookRepository()),
+                new DatabaseBookSearch()
+        );
 
         BookSearchResults results = searchEngine.findBooksByTitle("Harry Potter");
 

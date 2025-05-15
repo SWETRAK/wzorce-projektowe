@@ -27,7 +27,7 @@ public class OrderProcessor {
     // Główna metoda przetwarzająca zamówienie (operuje tylko na abstrakcjach)
     public void processOrder(BasicOrder order, Book book) {
         // 1. Weryfikacja dostępności książki (abstrakcja BookRepository)
-        Integer orderedBook = bookRepository.find(book.getTitle());
+        Integer orderedBook = bookRepository.findStock(book.getTitle());
         if (orderedBook == null || orderedBook == 0) {
             System.out.println("Book not available: " + book.getTitle());
             return;

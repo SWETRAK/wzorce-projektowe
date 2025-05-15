@@ -9,7 +9,9 @@ import java.util.List;
 // Klasa factory dla typu DVDMovie, która dziedziczy po abstrakcyjnej klasie generycznej, do której został przekazany typ DVDMovie
 public class DVDMovieFactory extends MovieFactory<DVDMovie> {
     @Override
-    protected DVDMovie createMovie(String title, String description, int duration, Date releaseDate, String genre, List<Author> authors) {
+    protected DVDMovie createMovie(String title, String description, int duration,
+                                   Date releaseDate, String genre, List<Author> authors) {
+
         DVDMovie dvdMovie = new DVDMovie(title, description, duration, releaseDate, genre, authors);
         dvdMovie.build();
 

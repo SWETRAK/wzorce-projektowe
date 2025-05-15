@@ -1,6 +1,5 @@
 package com.example.services.subscription;
 
-import com.example.models.papers.Magazine;
 import com.example.models.papers.Paper;
 
 import java.util.ArrayList;
@@ -11,6 +10,8 @@ import java.util.Map;
 // Tydzień 6, Wzorzec Observer, Maciej Potręć
 // Klasa do zarządzania subskrypcjami publikacji
 public class PublicationSubscriptionService implements SubscriptionSubject {
+
+    private static final int NONE_SUBSCRIBERS_COUNT = 0;
     private Map<String, List<SubscriptionObserver>> subscribers = new HashMap<>();
     private static PublicationSubscriptionService instance;
 
@@ -68,7 +69,7 @@ public class PublicationSubscriptionService implements SubscriptionSubject {
         if (subscribers.containsKey(publicationType)) {
             return subscribers.get(publicationType).size();
         }
-        return 0;
+        return NONE_SUBSCRIBERS_COUNT;
     }
 }
 // Koniec, Tydzień 6, Wzorzec Observer, Maciej Potręć

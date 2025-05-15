@@ -19,14 +19,23 @@ public class Book extends BookWithFormat implements BookComponent, Exportable {
     @Getter
     private String title;
     private String description;
-    private final List<Author> authors;
-    private final Date publishedDate;
-    private final String genre;
-    private final String publisher;
-    private final int pages;
-    private final String ISBNIdentifier;
+    private List<Author> authors;
+    private Date publishedDate;
+    private String genre;
+    private String publisher;
+    private int pages;
+    private String ISBNIdentifier;
 
-    public Book(String title, String description, List<Author> authors, Date publishedDate, String genre, String publisher, int pages, String ISBNIdentifier, BookFormat bookFormat) {
+    public Book(
+            String title,
+            String description,
+            List<Author> authors,
+            Date publishedDate,
+            String genre,
+            String publisher,
+            int pages,
+            String ISBNIdentifier,
+            BookFormat bookFormat) {
         super(bookFormat);
         this.title = title;
         this.description = description;

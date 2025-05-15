@@ -7,14 +7,15 @@ import java.util.Map;
 // Proxy, które buforuje wyniki wyszukiwania, aby uniknąć zbędnych zapytań do bazy danych.
 public class BookSearchEngine implements BookSearch {
 
-    private final DatabaseBookSearch realBookSearch = new DatabaseBookSearch();
+    private final BookSearch databaseBookSearch;
 
-    private final WarehauseBookSearch realWarehauseBookSearch;
+    private final BookSearch warehauseBookSearch;
 
     private final Map<String, String> cache = new HashMap<>();
 
-    public BookSearchEngine(WarehouseBookRepository warehouseBookRepository) {
-        realWarehauseBookSearch = new WarehauseBookSearch(warehouseBookRepository);
+    public BookSearchEngine(BookSearch warehouseBookRepository, BookSearch databasesBookSearch) {
+        warehauseBookSearch = warehouseBookRepository;
+        this.databaseBookSearch = databasesBookSearch;
     }
 
     @Override
@@ -22,10 +23,10 @@ public class BookSearchEngine implements BookSearch {
         if (cache.containsKey(title)) {
             return "(Cached) " + cache.get(title);
         } else {
-            String result = realBookSearch.searchBook(title);
+            String result = databaseBookSearch.searchBook(title);
 
             if (result == null) {
-                result = realWarehauseBookSearch.searchBook(title);
+                result = warehauseBookSearch.searchBook(title);
             }
 
             cache.put(title, result);

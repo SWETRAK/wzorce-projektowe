@@ -7,6 +7,9 @@ import java.util.Stack;
 // Tydzień 6, Wzorzec Memento, Maciej Potręć
 // Klasa CartHistory przechowuje historię zmian koszyka zakupowego
 public class CartHistory {
+
+    private final static int MIN_HISTORY_SIZE = 1;
+
     private final Stack<CartMemento> history = new Stack<>();
     private final ShoppingCart cart;
 
@@ -21,7 +24,7 @@ public class CartHistory {
     }
 
     public void undo() {
-        if (history.size() <= 1) {
+        if (history.size() <= MIN_HISTORY_SIZE) {
             System.out.println("No more changes to undo");
             return;
         }
