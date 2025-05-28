@@ -13,14 +13,25 @@ import com.example.services.external.DHLDeliveryService;
 
 public class DHLServiceAdapter extends DeliveryComponent implements DeliveryService {
 
+    private final DHLDeliveryService deliveryService;
+
+
     // Tydzień 5, Wzorzec Mediator, Kamil Pietrak
     // Kurier DHL, który otrzymuje powiadomienia o odbiorze przesyłki
     public DHLServiceAdapter() {
         super(new DeliveryMediator(), "DHL");
+        this.deliveryService = new DHLDeliveryService();
+    }
+
+    public DHLServiceAdapter(Mediator mediator, DHLDeliveryService deliveryService) {
+        super(mediator, "DHL");
+        this.deliveryService = deliveryService;
     }
 
     public DHLServiceAdapter(Mediator mediator) {
         super(mediator, "DHL");
+        this.deliveryService = new DHLDeliveryService();
+
     }
 
     @Override
@@ -41,8 +52,6 @@ public class DHLServiceAdapter extends DeliveryComponent implements DeliveryServ
         System.out.println("Sending via DHL: " + packageId);
     }
     // Koniec, Tydzień 6, Wzorzec Strategy, Kamil Pietrak
-
-    private final DHLDeliveryService deliveryService = new DHLDeliveryService();
 
     @Override
     public void deliverOrder(String orderId) {

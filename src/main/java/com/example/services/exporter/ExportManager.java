@@ -9,11 +9,17 @@ import java.util.Map;
 // Klasa odpowiedzialna za dobór odpowiedniego eksportera w zależności od podanych informacji
 public class ExportManager {
 
-    private final Map<ExporterType, Exporter> exporters = new HashMap<>();
+    private final Map<ExporterType, Exporter> exporters;
 
     public ExportManager() {
-        exporters.put(ExporterType.CSV, new CSVExporter());
-        exporters.put(ExporterType.XML, new XMLExporter());
+        this(new HashMap<>() {{
+            put(ExporterType.CSV, new CSVExporter());
+            put(ExporterType.XML, new XMLExporter());
+        }});
+    }
+
+    public ExportManager(Map<ExporterType, Exporter> exporters) {
+        this.exporters = exporters;
     }
 
     public void export(ExporterType exporterType, Book book) {
@@ -21,8 +27,9 @@ public class ExportManager {
         if (exporter != null) {
             exporter.visitBook(book);
         } else {
-            System.out.println("Unsupported format: " + exporterType.toString());
+            System.out.println("Unsupported format: " + exporterType);
         }
     }
 }
+
 // Koniec, Tydzień 7, Zasada OCP, Kamil Pietrak
