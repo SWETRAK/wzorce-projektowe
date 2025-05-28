@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.mockito.Mockito.*;
 
+// Tydzień 12, Testy jednostkowe, Kamil Pietrak
+// Klasa testowa dla DHLServiceAdapter
 class DHLServiceAdapterTest {
 
     private DHLDeliveryService deliveryServiceMock;
@@ -50,3 +52,4 @@ class DHLServiceAdapterTest {
         assertDoesNotThrow(() -> adapter.send("PKG999"));
     }
 }
+// Koniec, Tydzień 12, Testy jednostkowe, Kamil Pietrak

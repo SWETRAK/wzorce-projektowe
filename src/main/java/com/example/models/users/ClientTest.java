@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// Tydzień 12, Testy jednostkowe, Kamil Pietrak
+// Klasa testowa dla Client
 class ClientTest {
 
     @Test
@@ -56,3 +58,4 @@ class ClientTest {
         assertDoesNotThrow(client::printInfo);
     }
 }
+// Koniec, Tydzień 12, Testy jednostkowe, Kamil Pietrak

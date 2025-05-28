@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
 
+// Tydzień 12, Testy jednostkowe, Kamil Pietrak
+// Klasa testowa dla Caretaker
 class CaretakerTest {
 
     private Caretaker caretaker;
@@ -70,3 +72,4 @@ class CaretakerTest {
         verify(client).restore(memento);
     }
 }
+// Koniec, Tydzień 12, Testy jednostkowe, Kamil Pietrak

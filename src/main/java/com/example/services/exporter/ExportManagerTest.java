@@ -9,6 +9,8 @@ import java.util.Map;
 
 import static org.mockito.Mockito.*;
 
+// Tydzień 12, Testy jednostkowe, Kamil Pietrak
+// Klasa testowa dla Export Manager
 class ExportManagerTest {
 
     private ExportManager exportManager;
@@ -64,3 +66,5 @@ class ExportManagerTest {
         verify(csvExporter, never()).visitBook(any());
     }
 }
+
+// Koniec, Tydzień 12, Testy jednostkowe, Kamil Pietrak
