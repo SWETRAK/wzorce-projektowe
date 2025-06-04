@@ -2,7 +2,7 @@ package com.example.services.discount;
 
 //Tydzień 6, wzorzec Strategy, Joanna Kozar
 //Implementacja promocji dla klienta VIP
-public class VipCustomer implements DiscountStrategy {
+public class VipCustomerStrategy implements DiscountStrategy {
 
     private static final double VIP_DEFAULT_DISCOUNT = 0.80;
 

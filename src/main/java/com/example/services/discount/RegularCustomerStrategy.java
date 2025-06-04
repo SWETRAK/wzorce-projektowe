@@ -2,7 +2,7 @@ package com.example.services.discount;
 
 //Tydzień 6, wzorzec Strategy, Joanna Kozar
 //Implementacja promocji dla zwykłego klienta
-public class RegularCustomer implements DiscountStrategy {
+public class RegularCustomerStrategy implements DiscountStrategy {
 
     private static final double REGULAR_DEFAULT_DISCOUNT = 0.95;
 

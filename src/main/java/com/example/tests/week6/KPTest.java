@@ -5,7 +5,7 @@ import com.example.models.books.Book;
 import com.example.models.books.Ebook;
 import com.example.models.cart.ProductCartItem;
 import com.example.models.users.Client;
-import com.example.models.users.memento.Caretaker;
+import com.example.models.users.memento.ClientCaretaker;
 import com.example.services.delivery.DHLServiceAdapter;
 import com.example.services.delivery.InPostServiceAdapter;
 import com.example.services.delivery.mediator.DeliveryComponent;
@@ -105,18 +105,18 @@ public class KPTest {
                 .phoneNumber("123456789")
                 .build();
 
-        Caretaker caretaker = new Caretaker();
+        ClientCaretaker clientCaretaker = new ClientCaretaker();
 
         client.setEmail("klient.pierwszy.nowy@gmail.com");
-        caretaker.save(client);
+        clientCaretaker.save(client);
 
         client.setEmail("klient.pierwszy.nowy.dane@gmail.com");
-        caretaker.save(client);
+        clientCaretaker.save(client);
 
         client.setEmail("klient.pierwszy.nowy.text@gmail.com");
 
-        caretaker.undo(client);
-        caretaker.undo(client);
+        clientCaretaker.undo(client);
+        clientCaretaker.undo(client);
     }
 
 }

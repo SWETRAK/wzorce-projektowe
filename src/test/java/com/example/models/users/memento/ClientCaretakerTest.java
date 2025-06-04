@@ -8,15 +8,15 @@ import static org.mockito.Mockito.*;
 
 // Tydzień 12, Testy jednostkowe, Kamil Pietrak
 // Klasa testowa dla Caretaker
-class CaretakerTest {
+class ClientCaretakerTest {
 
-    private Caretaker caretaker;
+    private ClientCaretaker clientCaretaker;
     private Client client;
     private ClientMemento memento;
 
     @BeforeEach
     void setUp() {
-        caretaker = new Caretaker();
+        clientCaretaker = new ClientCaretaker();
         client = mock(Client.class);
         memento = mock(ClientMemento.class);
     }
@@ -25,7 +25,7 @@ class CaretakerTest {
     void testSaveShouldCallClientSaveAndPushToHistory() {
         when(client.save()).thenReturn(memento);
 
-        caretaker.save(client);
+        clientCaretaker.save(client);
 
         verify(client, times(1)).save();
     }
@@ -33,16 +33,16 @@ class CaretakerTest {
     @Test
     void testUndoShouldCallClientRestoreWithLastMemento() {
         when(client.save()).thenReturn(memento);
-        caretaker.save(client);
+        clientCaretaker.save(client);
 
-        caretaker.undo(client);
+        clientCaretaker.undo(client);
 
         verify(client, times(1)).restore(memento);
     }
 
     @Test
     void testUndoShouldDoNothingWhenHistoryIsEmpty() {
-        caretaker.undo(client);
+        clientCaretaker.undo(client);
         verify(client, never()).restore(any());
     }
 
@@ -53,11 +53,11 @@ class CaretakerTest {
 
         when(client.save()).thenReturn(memento1).thenReturn(memento2);
 
-        caretaker.save(client);
-        caretaker.save(client);
+        clientCaretaker.save(client);
+        clientCaretaker.save(client);
 
-        caretaker.undo(client);
-        caretaker.undo(client);
+        clientCaretaker.undo(client);
+        clientCaretaker.undo(client);
 
         verify(client, times(2)).restore(any());
     }
@@ -66,8 +66,8 @@ class CaretakerTest {
     void testUndoAfterSingleSave() {
         when(client.save()).thenReturn(memento);
 
-        caretaker.save(client);
-        caretaker.undo(client);
+        clientCaretaker.save(client);
+        clientCaretaker.undo(client);
 
         verify(client).restore(memento);
     }

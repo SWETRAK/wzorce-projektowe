@@ -1,6 +1,9 @@
-package com.example.services.exporter;
+package com.example.services.export;
 
 import com.example.models.books.Book;
+import com.example.services.exporter.ExportManager;
+import com.example.services.exporter.Exporter;
+import com.example.services.exporter.ExporterType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

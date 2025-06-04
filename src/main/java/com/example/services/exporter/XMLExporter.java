@@ -18,4 +18,4 @@ public class XMLExporter implements Exporter, XMLExport {
     }
 }
 // Koniec, Tydzień 8, Zasada Podstawienia Liskov (LSP)
-// Koniec, Tydzień 6, Wzorzec Visitor, Kamil Pietrak
+// Koniec, Tydzień 6, Wzorzec Visitor, Kamil Pietrakz
