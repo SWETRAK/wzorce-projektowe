@@ -44,9 +44,9 @@ public class JKTest {
     public static void runStrategyExample() {
         System.out.println("\n=== STRATEGY ===");
         PromotionCalculator calculator = new PromotionCalculator();
-        calculator.setStrategy(new RegularCustomer());
+        calculator.setStrategy(new RegularCustomerStrategy());
         System.out.println("Cena dla klienta zwykłego: " + calculator.calculate(100));
-        calculator.setStrategy(new VipCustomer());
+        calculator.setStrategy(new VipCustomerStrategy());
         System.out.println("Cena dla VIP: " + calculator.calculate(100));
     }
 

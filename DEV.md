@@ -1,128 +1,98 @@
 # System księgarni
 
-Projekt w java 17
+Projekt w języku JAVA w wersji SDK 17. Projekt przedstawia implementacje wzorców projektowych oraz zasad pisania czystego kodu na przykładzie systemu Księgarni internetowej.
 
-## Aktorzy
-
-- **Dyrektor** -> Jeden może być singletonem
-- **Pracownicy** -> Wielu, wszyscy będą mieli te same uprawnienia, tylko dane osobowe i dane wynagrodzenia inne, może prototyp
-- **Klienci** -> wielu, kilka informacji obowiązkowych, reszta parametrów opcjonalna, builder ???
-
-## Produkty
-
-- Książki -> bardzo duża liczba, kilka informacji obowiązkowych, reszta opcjonalne builder ???
-- Magazyny/Gazety -> Wiele, Możemy factory zrobić tutaj
-- Muzyka -> Płyty CD/ Winyle -> Factory
-- Filmy -> DVD/BlueRay -> Factory
-
-Dodatkowo każdy z produktów może być prototypem sam w sobie, bo możemy mieć np.: 10x książkę o tym samym tytule, ale o
-innym id, lub inne wydanie.
-
-## Inne obiekty
-
-- Drukarka -> Może być singletonem, w przyszłości jakaś kolejka czy coś można dodać 
-- Serwis fakturowania -> Może być singletonem, w przyszłości jakaś kolejka czy coś można dodać 
-- Faktura -> Wiele, ale część danych taka sama we wszystkich, wiec można zrobić prototyp 
-
-## Organizacja pracy
-
-Działamy na Feature Branch, gdy zaimplementujemy swoją część robimy PR na GH i po approve od innych robimy merge do
-develop, jak tydzień jest ogarnięty to robimy PR develop do main.
-
-
-## Opcje na
-
----
+ ---
 
 ## Tydzień 2
 
 ### Joanna
 
-- [x] Builder -> Muzyka 
-- [x] Singleton -> Drukarka
-- [x] Factory -> Muzyka
-- [x] Prototype -> Muzyka
+- [x] **Builder** -> Muzyka `AlbumBuilder`
+- [x] **Singleton** -> Drukarka `Printer`
+- [x] **Factory** -> Muzyka `AlbumFactory`
+- [x] **Prototype** -> Muzyka -> Wszystkie pliki w pakiecie `com.example.models.albums`
 
 ### Maciej
 
-- [x] Builder -> Książki
-- [x] Singleton -> Serwis fakturowania
-- [x] Factory -> Filmy
-- [x] Prototype -> Filmy
+- [x] **Builder** -> Książki `Book` (76 -118)
+- [x] **Singleton** -> Serwis fakturowania `InvoicingService`
+- [x] **Factory** -> Filmy -> wszystkie pliki w pakiecie `com.example.models.movies`
+- [x] **Prototype** -> Filmy -> wszystkie pliki w pakiecie `com.example.models.movies`
 
 ### Kamil
 
-- [x] Builder -> Klienci
-- [x] Singleton -> Dyrektor
-- [x] Factory -> Magazyn/Gazety
-- [x] Prototype -> Magazyn/Gazety
+- [x] **Builder** -> Klienci `Client` (58-91)
+- [x] **Singleton** -> Dyrektor `Manager`
+- [x] **Factory** -> Magazyn/Gazety -> wszystkie pliki w pakiecie `package com.example.models.papers`
+- [x] **Prototype** -> Magazyn/Gazety -> wszystkie pliki w pakiecie `package com.example.models.papers`
 
 ---
 
 ## Tydzień 3
 
-### **Joanna**  
-- [x] **Adapter** → System płatności  
-- [x] **Composite** → System kategorii książek  
-- [x] **Bridge** → Mechanizm rekomendacji  
-- [x] **Decorator** → System recenzji  
+### Joanna
+- [x] **Adapter** → System płatności -> Pliki w pakiecie `com.example.services.payment`
+- [x] **Composite** → System kategorii książek -> Pliki w pakiecie `com.example.models.books` (`Book`, `BookComponent`, `Category`)
+- [x] **Bridge** → Mechanizm rekomendacji -> Pliki w pakiecie `com.example.services.recommendation` (`RecommendationStrategy`, `PurchaseHistoryRecommendation`, `UserRatingRecommendation`, `RecommendationEngine`)
+- [x] **Decorator** → System recenzji -> Pliki w pakiecie `com.example.services.review`
 
-### **Maciej**  
-- [x] **Adapter** → Zewnętrzny dostawca książek  
-- [x] **Composite** → Koszyk zakupowy  
-- [x] **Bridge** → System powiadomień  
-- [x] **Decorator** → System zamówień  
+### Maciej
+- [x] **Adapter** → Zewnętrzny dostawca książek -> Pliki w pakiecie `com.example.services.books` 
+- [x] **Composite** → Koszyk zakupowy -> Pliki w pakiecie `com.example.models.cart`
+- [x] **Bridge** → System powiadomień -> Pliki w pakiecie `com.example.services.notification` (`NotificationSender`, `EmailNotificationSender`, `PushNotificationSender`, `SMSNotificationSender`)
+- [x] **Decorator** → System zamówień -> Pliki w pakiecie `com.example.services.order` (`Order`, `OrderDecorator`, `ExpressDeliveryDecorator`, `GiftWrappingDecorator`)
 
-### **Kamil**  
-- [x] **Adapter** → System dostaw  
-- [x] **Composite** → System rabatów  
-- [x] **Bridge** → Obsługa wersji książek  
-- [x] **Decorator** → Personalizacja wyświetlania książek  
+### Kamil
+- [x] **Adapter** → System dostaw -> Pliki w pakiecie `com.example.services.delivery`
+- [x] **Composite** → System rabatów -> Pliki w pakiecie `com.example.models.discount`
+- [x] **Bridge** → Obsługa wersji książek -> Pliki w pakiecie `com.example.models.books` (`AudioBook`, `BookFormat`, `Ebook`, `PhysicalBook`)
+- [x] **Decorator** → Personalizacja wyświetlania książek -> Pliki w pakiecie `com.example.services.display`
 
 ---
 
 ## Tydzień 4
 
-### **Joanna**  
-- [x] **Facade** → System rekomendacji (ukrywanie złożoności algorytmów rekomendacji)
-- [x] **Proxy** → Zdalny dostęp do API wydawnictwa (ograniczanie liczby zapytań)  
-- [x] **Flyweight** → Optymalizacja przechowywania danych o autorach książek (wielokrotne użycie tych samych obiektów)  
+### Joanna
+- [x] **Facade** → System rekomendacji (ukrywanie złożoności algorytmów rekomendacji) `RecommendationFacade`
+- [x] **Proxy** → Zdalny dostęp do API wydawnictwa (ograniczanie liczby zapytań) -> Pliki w pakiecie `com.example.services.publisher`
+- [x] **Flyweight** → Optymalizacja przechowywania danych o autorach książek (wielokrotne użycie tych samych obiektów) `AuthorFactory`
 
 
-### **Maciej**  
-- [x] **Facade** → Obsługa zamówienia (zarządzanie płatnością, wysyłką i fakturą przez jeden interfejs)
-- [x] **Proxy** → Ochrona dostępu do systemu rabatów (np. limitowane oferty dla wybranych klientów)  
-- [x] **Flyweight** → Przechowywanie danych o recenzjach użytkowników (często powtarzające się oceny, tagi)  
+### Maciej
+- [x] **Facade** → Obsługa zamówienia (zarządzanie płatnością, wysyłką i fakturą przez jeden interfejs) -> Pliki w pakiecie `com.example.services.order.facade`
+- [x] **Proxy** → Ochrona dostępu do systemu rabatów (np. limitowane oferty dla wybranych klientów) -> Pliki w pakiecie `com.example.models.discount.proxy`
+- [x] **Flyweight** → Przechowywanie danych o recenzjach użytkowników (często powtarzające się oceny, tagi) -> Pliki w pakiecie `com.example.services.review.flyweight`
 
 
-### **Kamil**  
-- [x] **Facade** → Zarządzanie kontem użytkownika (zmiana danych, historia zakupów, zapisane książki)  
-- [x] **Proxy** → Buforowanie wyników wyszukiwania książek (zmniejszenie obciążenia bazy danych)  
-- [x] **Flyweight** → Przechowywanie informacji o dostawach (kurier, statusy przesyłek)  
+### Kamil
+- [x] **Facade** → Zarządzanie kontem użytkownika (zmiana danych, historia zakupów, zapisane książki)  `UserAccountService`
+- [x] **Proxy** → Buforowanie wyników wyszukiwania książek (zmniejszenie obciążenia bazy danych) -> Pliki w pakiecie `com.example.services.books` (`BookSearchEngine`, `BookSearch`, `WarehauseBookSearch`, `DatabaseBookSearch`)
+- [x] **Flyweight** → Przechowywanie informacji o dostawach (kurier, statusy przesyłek) `DeliveryInfo`, `DeliveryFactory`, 
 
 ---
 
 ## Tydzień 5
 
-### **Joanna**
-- [x] **Command** → System zarządzania rabatami (dodawanie/usuwanie kuponów, aktywacja promocji)
-- [x] **Interpreter** → Prosty język zapytań dla rekomendacji książek (np. `GENRE:Fantasy AND RATING>4.5`)
-- [x] **Iterator** → Iteracja po historii zakupów użytkownika
-- [x] **Mediator** → Zarządzanie powiadomieniami (e-mail, SMS, push)
+### Joanna
+- [x] **Command** → System zarządzania rabatami (dodawanie/usuwanie kuponów, aktywacja promocji) `ActivatePromotionCommand`, `DiscountCommand`, `AddCouponCommand`,  
+- [x] **Interpreter** → Prosty język zapytań dla rekomendacji książek (np. `GENRE:Fantasy AND RATING>4.5`) -> Pliki w pakiecie `com.example.services.recommendation` (`Expression`, `AndExpression`, `GenreExpression`, `RatingExpression`, `BookRecommendationContext`)
+- [x] **Iterator** → Iteracja po historii zakupów użytkownika -> Pliki w pakiecie `com.example.services.purchase`
+- [x] **Mediator** → Zarządzanie powiadomieniami (e-mail, SMS, push) `PushNotificationSender`, `NotificationCoordinator`, `NotificationMediator`, 
 
 
-### **Maciej**
-- [x] **Command** → System obsługi zamówień (operacje na zamówieniach: anulowanie, zatwierdzanie, zwroty)
-- [x] **Interpreter** → Analiza recenzji użytkowników (np. analiza sentymentu poprzez proste reguły)
-- [x] **Iterator** → Przechodzenie po wynikach wyszukiwania książek
-- [x] **Mediator** → System obsługi klienta (koordynacja między chatbotem, konsultantem i bazą wiedzy)
+### Maciej
+- [x] **Command** → System obsługi zamówień (operacje na zamówieniach: anulowanie, zatwierdzanie, zwroty) -> Pliki w pakiecie `com.example.services.order.command`
+- [x] **Interpreter** → Analiza recenzji użytkowników (np. analiza sentymentu poprzez proste reguły) -> Pliki w pakiecie `com.example.services.review.interpreter`
+- [x] **Iterator** → Przechodzenie po wynikach wyszukiwania książek `BookSearchIterator`, `BookSearchResultIterator`
+- [x] **Mediator** → System obsługi klienta (koordynacja między chatbotem, konsultantem i bazą wiedzy) -> Pliki w pakiecie `com.example.services.customer`
 
 
-### **Kamil**
-- [x] **Command** → Operacje na koszyku (dodanie/usunięcie książki, finalizacja zakupu)
-- [x] **Interpreter** → Parsowanie zapytań filtrujących książki (np. `PRICE<50 AND AUTHOR:Rowling`)
-- [x] **Iterator** → Iteracja po książkach w koszyku użytkownika
-- [x] **Mediator** → Obsługa procesu dostawy (koordynacja między systemem zamówień, magazynem i firmą kurierską)  
+### Kamil
+- [x] **Command** → Operacje na koszyku (dodanie/usunięcie książki, finalizacja zakupu) -> Pliki w pakiecie `com.example.services.cart`
+- [x] **Interpreter** → Parsowanie zapytań filtrujących książki (np. `PRICE<50 AND AUTHOR:Rowling`) -> Pliki w pakiecie `com.example.services.books.interpreter`
+- [x] **Iterator** → Iteracja po książkach w koszyku użytkownika `ShoppingCart` (38-54), `CartIterator` 
+- [x] **Mediator** → Obsługa procesu dostawy (koordynacja między systemem zamówień, magazynem i firmą kurierską) -> Pliki w pakiecie `com.example.services.delivery.mediator`
 
 ---
 
@@ -130,37 +100,36 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ### Joanna
 
-- [x] **Observer** – Powiadamianie klientów o promocjach
-- [x] **State** – Stan konta użytkownika
-- [x] **Strategy** – Promocje zależne od typu klienta
-- [x] **Template** – Procesy płatności (karta, przelew, blik)
+- [x] **Observer** – Powiadamianie klientów o promocjach `Client` (97 - 101), `Observer`, `PromotionService`
+- [x] **State** – Stan konta użytkownika -> Pliki w pakiecie `com.example.models.accountstate`
+- [x] **Strategy** – Promocje zależne od typu klienta `PromotionCalculator`, `DiscountStrategy`, `RegularCustomerStrategy`, `VipCustomerStrategy`
+- [x] **Template** – Procesy płatności (karta, przelew, blik) `PaymentTemplate`, `BlikPaymentTemplate`, `PayPalPaymentTemplate`, `CardPaymentTemplate` 
 
 
-- [x] **Visitor** – Raportowanie danych produktów
-- [x] **Memento** – Historia edycji książki przez administratora
-
+- [x] **Visitor** – Raportowanie danych produktów `ProductVisitor`, `ReportGenerator`, `Book` (120-126)
+- [x] **Memento** – Historia edycji książki przez administratora `BookMemento`, `Book` (128-138)
 
 ### Maciej
 
-- [x] **Observer** – Subskrypcje magazynów/gazet
-- [x] **State** – Stan realizacji zamówienia
-- [x] **Strategy** – Sortowanie książek (data, autor, gatunek, itp...)
-- [x] **Template** – Obsługa różnych typów zamówień (papier, e-book)
+- [x] **Observer** – Subskrypcje magazynów/gazet -> Pliki w pakiecie `com.example.services.subscription`
+- [x] **State** – Stan realizacji zamówienia -> PLiki w pakiecie `com.example.services.order.state`
+- [x] **Strategy** – Sortowanie książek (data, autor, gatunek, itp...) -> Pliki w pakiecie `com.example.services.books.strategy`
+- [x] **Template** – Obsługa różnych typów zamówień (papier, e-book) -> Pliki w pakiecie `com.example.services.order.template`
 
 
-- [x] **Visitor** – Walidacja danych użytkownika i zamówień
-- [x] **Memento** – Cofanie zmian w koszyku zakupowym
+- [x] **Visitor** – Walidacja danych użytkownika i zamówień -> Pliki w pakiecie `com.example.services.validation`
+- [x] **Memento** – Cofanie zmian w koszyku zakupowym -> Pliki w pakiecie `com.example.models.cart.memento`
 
 ### Kamil
 
-- [x] **Observer** – Aktualizacja stanu magazynowego
-- [x] **State** – Proces rejestracji użytkownika
-- [x] **Strategy** – Wybór sposobu dostawy
-- [x] **Template** – Różne procesy wysyłki
+- [x] **Observer** – Aktualizacja stanu magazynowego `StockObserver`, `WarechouseObserver`, `StockSystem`
+- [x] **State** – Proces rejestracji użytkownika -> Pliki w pakiecie `com.example.services.user.register` i pod pakietach
+- [x] **Strategy** – Wybór sposobu dostawy -> Pliki w pakiecie `com.example.services.delivery.startegies`
+- [x] **Template** – Różne procesy wysyłki `DHLServiceAdapter` (43 - 68), `InPostServiceAdapter` (32 - 43), `DeliveryComponent` (21 - 35)
 
 
-- [x] **Visitor** – Eksport danych (CSV, XML, PDF)
-- [x] **Memento** – Historia edycji danych klienta
+- [x] **Visitor** – Eksport danych (CSV, XML, PDF) `Exportable`, `Book` (62 - 68), `CSVExporter`, `XMLExporter`, `Exporter`
+- [x] **Memento** – Historia edycji danych klienta `Client` (43-53), `ClientMemento`, `ClientCaretaker`
 
 ---
 
@@ -225,83 +194,137 @@ develop, jak tydzień jest ogarnięty to robimy PR develop do main.
 
 ---
 
-# Tydzień 8 – SOLID: LSP, DIP, ISP – Zadania indywidualne (Księgarnia Internetowa)
+## Tydzień 8
 
-## Joanna
+### Joanna
 
-### 🔷 Zasada Podstawienia Liskov (LSP)
-- [x] `Book` → `EBook`, `PrintedBook`  
-  (używane wymiennie w katalogu książek)
-- [x] `User` → `RegularUser`, `PremiumUser`  
-  (wspólna obsługa konta i rabatów)
-- [x] `PaymentMethod` → `CardPayment`, `BLIKPayment`  
-  (proces płatności)
+- [x] Zasada Podstawienia Liskov (LSP)
+  - [x] `Book` → `EBook`, `PrintedBook` 
+  - [x] `User` → `RegularUser`, `PremiumUser` 
+  - [x] `PaymentMethod` → `CardPayment`, `BLIKPayment`
 
-### 🔷 Zasada Odwrócenia Zależności (DIP)
-- [x] Interfejsy: `PaymentProcessor`, `UserNotifier`, `BookSource`
-- [x] Abstrakcje: `AbstractPaymentService`, `AbstractNotifier`, `AbstractBookFetcher`
-- [x] Implementacje: `StripeProcessor`, `EmailNotifier`, `LocalDatabaseBookFetcher`
-- [x] Klasa `OrderService` korzysta tylko z abstrakcji, nie implementacji
+- [x] Zasada Odwrócenia Zależności (DIP)
+  - [x] Interfejsy: `PaymentProcessor`, `UserNotifier`, `BookSource`
+  - [x] Abstrakcje: `AbstractPaymentService`, `AbstractNotifier`, `AbstractBookFetcher`
+  - [x] Implementacje: `StripeProcessor`, `EmailNotifier`, `LocalDatabaseBookFetcher`
+  - [x] Klasa `OrderService` korzysta tylko z abstrakcji, nie implementacji
 
-### 🔷 Zasada Segregacji Interfejsów (ISP)
-- [x] Grube interfejsy:
-  - `UserService` (logowanie, rejestracja, historia zakupów, zmiana hasła)
-  - `BookService` (wyszukiwanie, filtrowanie, dodawanie, edycja, usuwanie)
-  - `OrderService` (tworzenie zamówienia, anulowanie, status)
-- [x] Podzielone interfejsy:
-  - `AuthenticationService`, `AccountManagement`, `HistoryService`
-  - `BookSearch`, `BookEditor`
-  - `OrderCreator`, `OrderStatusViewer`
+- [x] Zasada Segregacji Interfejsów (ISP)
+  - [x] Grube interfejsy:
+    - `UserService` (logowanie, rejestracja, historia zakupów, zmiana hasła)
+    - `BookService` (wyszukiwanie, filtrowanie, dodawanie, edycja, usuwanie)
+    - `OrderService` (tworzenie zamówienia, anulowanie, status)
+  - [x] Podzielone interfejsy:
+    - `AuthenticationService`, `AccountManagement`, `HistoryService`
+    - `BookSearch`, `BookEditor`
+    - `OrderCreator`, `OrderStatusViewer`
 
-## Maciej
+### Maciej
 
-### 🔷 Zasada Podstawienia Liskov (LSP)
-- [X] `Discount` → `PercentageDiscount`, `FixedDiscount`  
-  (mechanizm rabatów)
-- [X] `Notification` → `EmailNotification`, `SMSNotification`  
-  (system powiadomień)
-- [X] `Invoice` → `PDFInvoice`, `HTMLInvoice`  
-  (generowanie faktur)
+- [x]  Zasada Podstawienia Liskov (LSP)
+  - [X] `Discount` → `PercentageDiscount`, `FixedDiscount` 
+  - [X] `Notification` → `EmailNotification`, `SMSNotification` 
+  - [X] `Invoice` → `PDFInvoice`, `HTMLInvoice`
 
-### 🔷 Zasada Odwrócenia Zależności (DIP)
-- [x] Interfejsy: `InvoiceGenerator`, `DiscountStrategy`, `NotificationService`
-- [x] Abstrakcje: `BaseInvoiceGenerator`, `BaseDiscount`, `BaseNotifier`
-- [x] Implementacje: `SimplePDFInvoice`, `LoyaltyDiscount`, `TwilioNotifier`
-- [x] Klasa `CheckoutProcessor` działa tylko na interfejsach i abstrakcjach
+- [x]  Zasada Odwrócenia Zależności (DIP)
+  - [x] Interfejsy: `InvoiceGenerator`, `DiscountStrategy`, `NotificationService`
+  - [x] Abstrakcje: `BaseInvoiceGenerator`, `BaseDiscount`, `BaseNotifier`
+  - [x] Implementacje: `SimplePDFInvoice`, `LoyaltyDiscount`, `TwilioNotifier`
+  - [x] Klasa `CheckoutProcessor` działa tylko na interfejsach i abstrakcjach
 
-### 🔷 Zasada Segregacji Interfejsów (ISP)
-- [x] Grube interfejsy:
-  - `InvoiceService` (generowanie, zapis, wysyłka)
-  - `DiscountManager` (obliczanie, przydzielanie, logowanie rabatu)
-  - `Notifier` (powiadom klienta, admina, księgowość)
-- [x] Podzielone interfejsy:
-  - `InvoiceRenderer`, `InvoiceSaver`, `InvoiceSender`
-  - `DiscountApplier`, `DiscountLogger`
-  - `CustomerNotifier`, `AdminNotifier`
+- [x] Zasada Segregacji Interfejsów (ISP)
+  - [x] Grube interfejsy:
+    - `InvoiceService`
+    - `DiscountManager`
+    - `Notifier`
+  - [x] Podzielone interfejsy:
+    - `InvoiceRenderer`, `InvoiceSaver`, `InvoiceSender`
+    - `DiscountApplier`, `DiscountLogger`
+    - `CustomerNotifier`, `AdminNotifier`
 
-## Kamil
+### Kamil
 
-### 🔷 Zasada Podstawienia Liskov (LSP)
-- [x] `DeliveryStrategy` → `CourierDelivery`, `LockerDelivery`  
-  (dostawa zamówień)
-- [x] `BookSearchStrategy` → `WarehouseSearch`, `DatabaseSearch`  
-  (wyszukiwanie książek)
-- [x] `Exporter` → `CSVExporter`, `PDFExporter`  
-  (eksport danych księgarni)
+- [x] Zasada Podstawienia Liskov (LSP)
+  - [x] `DeliveryStrategy` → `CourierDelivery`, `LockerDelivery`  
+    (dostawa zamówień)
+  - [x] `BookSearchStrategy` → `WarehouseSearch`, `DatabaseSearch`  
+    (wyszukiwanie książek)
+  - [x] `Exporter` → `CSVExporter`, `PDFExporter`  
+    (eksport danych księgarni)
 
-### 🔷 Zasada Odwrócenia Zależności (DIP)
-- [x] Interfejsy: `BookRepository`, `DeliveryService`, `InvoiceRenderer`
-- [x] Abstrakcje: `AbstractBookStorage`, `AbstractDelivery`, `AbstractInvoiceRenderer`
-- [x] Implementacje: `MySQLBookRepo`, `DHLDeliveryService`, `SimplePDFRenderer`
-- [x] Klasa `OrderProcessor` operuje wyłącznie na abstrakcjach
+- [x] Zasada Odwrócenia Zależności (DIP)
+  - [x] Interfejsy: `BookRepository`, `DeliveryService`, `InvoiceRenderer`
+  - [x] Abstrakcje: `AbstractBookStorage`, `AbstractDelivery`, `AbstractInvoiceRenderer`
+  - [x] Implementacje: `MySQLBookRepo`, `DHLDeliveryService`, `SimplePDFRenderer`
+  - [x] Klasa `OrderProcessor` operuje wyłącznie na abstrakcjach
 
-### 🔷 Zasada Segregacji Interfejsów (ISP)
-- [x] Grube interfejsy:
-  - `ExportService` (eksport książek, zamówień, faktur)
-  - `SearchService` (szukaj po autorze, tytule, ISBN, magazynie)
-  - `DeliveryManager` (planuj, wyślij, śledź)
-- [x] Podzielone interfejsy:
-  - `BookExport`, `OrderExport`, `InvoiceExport`
-  - `TitleSearch`, `AuthorSearch`, `ISBNSearch`, `LocationSearch`
-  - `DeliveryPlanner`, `PackageShipper`, `TrackingService`
+- [x] Zasada Segregacji Interfejsów (ISP)
+  - [x] Grube interfejsy:
+    - `ExportService`
+    - `SearchService`
+    - `DeliveryManager`
+  - [x] Podzielone interfejsy:
+    - `BookExport`, `OrderExport`, `InvoiceExport`
+    - `TitleSearch`, `AuthorSearch`, `ISBNSearch`, `LocationSearch`
+    - `DeliveryPlanner`, `PackageShipper`, `TrackingService`
 
+---
+
+## Tydzień 9
+
+Wymagania dotyczące tego tygodnia zostały zaimplementowane w całości projektu. Wykonano refactor kodu, tak aby spełniał zasady clean code związane z nazewnictwem, powtarzalnością kodu oraz "magic number".
+
+---
+
+## Tydzień 10
+
+### Joanna 
+
+- `BookFormatter`
+- `UserNotifier`
+- `DiscountCalculator`
+
+Implementacje oraz reszta wymagań z tego tygodnia dostępna w `JKTest`
+
+### Maciej 
+
+- `StockValidator`
+- `EmailSender`
+- `ShoppingCartManager`
+
+Implementacje oraz reszta wymagań z tego tygodnia dostępna w `MPTest`
+
+### Kamil
+ 
+- `BookProcessor`
+- `DeliveryNotifier`
+- `InvoiceValidator`
+
+Implementacje oraz reszta wymagań z tego tygodnia dostępna w `KPTest`
+
+---
+
+## Tydzień 12
+
+### Joanna
+
+ - `SongTest`
+ - `PromotionEngineTest`
+ - `NotificationCoordinatorTest`
+ - `PurchaseHistoryTest`
+
+
+### Maciej
+
+ - `BookTest`
+ - `ShoppingCartTest`
+ - `EnhancedBookSorterTest`
+ - `OrderProcessorTest`
+
+
+### Kamil
+
+ - `ClientTest`
+ - `ExportManagerTest`
+ - `CaretakerTest`
+ - `DHLServiceAdapterTest`

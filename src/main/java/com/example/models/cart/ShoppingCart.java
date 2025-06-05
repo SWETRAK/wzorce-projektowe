@@ -7,7 +7,7 @@ import java.util.List;
 
 // Tydzień 3, Wzorzec Composite, Maciej Potręć
 // Kompozyt - koszyk zakupowy zawierający wiele elementów
-public class ShoppingCart implements CartItem, CartIterator{
+public class ShoppingCart implements CartItem, CartIterator {
     private List<CartItem> items = new ArrayList<>();
     private int index = 0;
 

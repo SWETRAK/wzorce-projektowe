@@ -32,7 +32,7 @@ public abstract class DeliveryComponent implements DeliveryService {
     private void labelPackage(String packageId) {
         System.out.println("Labeling package: " + packageId);
     }
-    // Koniec, Tydzień 6, Wzorzec Strategy, Kamil Pietrak
+    // Koniec, Tydzień 6, Wzorzec Template, Kamil Pietrak
 
     public abstract void deliverOrder(String orderId);
 

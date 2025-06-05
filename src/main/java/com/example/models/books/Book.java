@@ -52,10 +52,7 @@ public class Book extends BookWithFormat implements BookComponent, Exportable {
         System.out.println("Book: " + title + " - " + description );
         bookFormat.showBookFormat();
     }
-    // Koniec, Tydzień 6, Wzorzec Visitor, Kamil Pietrak
 
-
-    //Asia
     @Override
     public void displayBookTitle() {
         System.out.println("BookTitle: " + title);

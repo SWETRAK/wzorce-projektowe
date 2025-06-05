@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // Tydzień 4, Wzorzec Flyweight, Kamil Pietrak
-// Klasa cash'ująca dane o wysyłkach
+// Klasa cash`ująca dane o wysyłkach
 public class DeliveryFactory {
 
     private static final Map<String, DeliveryInfo> deliveries = new HashMap<>();

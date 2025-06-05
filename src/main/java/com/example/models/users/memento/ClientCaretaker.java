@@ -6,7 +6,7 @@ import java.util.Stack;
 
 // Tydzień 6, Wzorzec Memento, Kamil Pietrak
 // Klasa zarządzająca historią zmian klienta
-public class Caretaker {
+public class ClientCaretaker {
     private Stack<ClientMemento> history = new Stack<>();
 
     public void save(Client customer) {
